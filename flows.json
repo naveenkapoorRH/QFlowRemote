@@ -415,6 +415,35 @@
         ]
     },
     {
+        "id": "045ba1012eb08b50",
+        "type": "subflow",
+        "name": "Subflow 8",
+        "info": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "57bc9e5538773197"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 340,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "57bc9e5538773197",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "id": "7dc18555ca029842",
         "type": "group",
         "z": "d103860e993c1512",
@@ -1155,6 +1184,23 @@
         ]
     },
     {
+        "id": "57bc9e5538773197",
+        "type": "function",
+        "z": "045ba1012eb08b50",
+        "name": "3.0 All Units",
+        "func": "msg.actions.allUnitsCompleted = true\nmsg.actions.determineStatusCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "f0bda8ccf069c334",
         "type": "inject",
         "z": "d886a3864a88d832",
@@ -1260,7 +1306,7 @@
                 "5a284359f94c5f07"
             ],
             [
-                "57bc9e5538773197"
+                "48c251e7e1851bb1"
             ]
         ]
     },
@@ -1273,26 +1319,7 @@
         "y": 40,
         "wires": [
             [
-                "57bc9e5538773197"
-            ]
-        ]
-    },
-    {
-        "id": "57bc9e5538773197",
-        "type": "function",
-        "z": "d886a3864a88d832",
-        "name": "3.0 All Units",
-        "func": "msg.actions.allUnitsCompleted = true\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 200,
-        "wires": [
-            [
-                "4e38bfa9e516a9d7"
+                "48c251e7e1851bb1"
             ]
         ]
     },
@@ -1415,6 +1442,19 @@
         "x": 3280,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "48c251e7e1851bb1",
+        "type": "subflow:045ba1012eb08b50",
+        "z": "d886a3864a88d832",
+        "name": "3.0 Determine Status",
+        "x": 860,
+        "y": 200,
+        "wires": [
+            [
+                "4e38bfa9e516a9d7"
+            ]
+        ]
     },
     {
         "id": "3626fe7ffedf766a",
