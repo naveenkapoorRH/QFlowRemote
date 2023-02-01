@@ -113,6 +113,39 @@
         "color": "#DDAA99"
     },
     {
+        "id": "0111e67f54e25c8c",
+        "type": "subflow",
+        "name": "1.1 Classification",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "bcea1437bb5bb1a3"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 500,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "bcea1437bb5bb1a3",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "7dc18555ca029842",
         "type": "group",
         "z": "d103860e993c1512",
@@ -664,6 +697,42 @@
         "wires": []
     },
     {
+        "id": "bcea1437bb5bb1a3",
+        "type": "function",
+        "z": "0111e67f54e25c8c",
+        "name": "1.1.1 Classification",
+        "func": "msg.facts.classificationCompleted = true\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "2e40abf0ac9d09f7"
+            ]
+        ]
+    },
+    {
+        "id": "2e40abf0ac9d09f7",
+        "type": "debug",
+        "z": "0111e67f54e25c8c",
+        "name": "Classified Facts",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "facts",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 40,
+        "wires": []
+    },
+    {
         "id": "f0bda8ccf069c334",
         "type": "inject",
         "z": "d886a3864a88d832",
@@ -687,6 +756,85 @@
         "x": 160,
         "y": 60,
         "wires": [
+            []
+        ]
+    },
+    {
+        "id": "508c4d88817d96f3",
+        "type": "switch",
+        "z": "d886a3864a88d832",
+        "name": "1.0 Estab or KAU Switch",
+        "property": "facts.level_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "d",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "e",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 390,
+        "y": 60,
+        "wires": [
+            [
+                "d45b30e5c09c6653"
+            ],
+            [
+                "d45b30e5c09c6653"
+            ],
+            [
+                "d457c366c48ae1e9"
+            ]
+        ]
+    },
+    {
+        "id": "d45b30e5c09c6653",
+        "type": "subflow:0111e67f54e25c8c",
+        "z": "d886a3864a88d832",
+        "name": "",
+        "x": 640,
+        "y": 60,
+        "wires": [
+            [
+                "d457c366c48ae1e9"
+            ]
+        ]
+    },
+    {
+        "id": "d457c366c48ae1e9",
+        "type": "switch",
+        "z": "d886a3864a88d832",
+        "name": "2.0 Estab",
+        "property": "facts.level_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "e",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [],
             []
         ]
     },
