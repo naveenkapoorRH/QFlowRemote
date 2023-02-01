@@ -465,9 +465,7 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1,
-        "w": 838,
-        "h": 208
+        "y": -1
     },
     {
         "id": "5a28e866a67c90ec",
@@ -492,9 +490,7 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279,
-        "w": 1152,
-        "h": 242
+        "y": 279
     },
     {
         "id": "d1e0f39ddacfeb20",
@@ -514,9 +510,7 @@
             "e5ca7c9975e3a6b5"
         ],
         "x": 474,
-        "y": 99,
-        "w": 392,
-        "h": 82
+        "y": 99
     },
     {
         "id": "ea3e0b5d6b96f47a",
@@ -1248,8 +1242,8 @@
         "height": "5",
         "columns": [
             {
-                "field": "SECTOR/TRADE",
-                "title": "SECTOR/TRADE",
+                "field": "Key",
+                "title": "Key",
                 "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
@@ -1258,8 +1252,8 @@
                 }
             },
             {
-                "field": "NAICS",
-                "title": "NAICS",
+                "field": "conditionstring",
+                "title": "Condition",
                 "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
@@ -1268,8 +1262,8 @@
                 }
             },
             {
-                "field": "ERROR CONDITION",
-                "title": "ERROR CONDITION",
+                "field": "message",
+                "title": "Message",
                 "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
@@ -1278,79 +1272,9 @@
                 }
             },
             {
-                "field": "CONDITION",
-                "title": "CONDITION",
+                "field": "action",
+                "title": "Action",
                 "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "ACTION",
-                "title": "ACTION",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "DESCRIPTION",
-                "title": "DESCRIPTION",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "BALANCING ERROR CONDITION",
-                "title": "",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "UNIT TYPE",
-                "title": "UNIT TYPE",
-                "width": "10%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "TOTAL",
-                "title": "TOTAL",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "DETAIL 1",
-                "title": "DETAIL 1",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "DETAIL 2",
-                "title": "DETAIL 2",
-                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1472,7 +1396,8 @@
         "y": 280,
         "wires": [
             [
-                "26b7e67cbaf07c0b"
+                "26b7e67cbaf07c0b",
+                "4440c71e.f88f18"
             ]
         ]
     },
@@ -1485,8 +1410,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "preRules",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 960,
