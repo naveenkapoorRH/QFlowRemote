@@ -994,32 +994,6 @@
         ]
     },
     {
-        "id": "e2a696a17ab82527",
-        "type": "ui_button",
-        "z": "ae7e9f579855357c",
-        "name": "Kavitah Balancing Ratio",
-        "group": "1f48566b.e8958a",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "button",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 190,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "f3903be4e24d8dca",
         "type": "http request",
         "z": "d103860e993c1512",
