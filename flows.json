@@ -328,6 +328,93 @@
         ]
     },
     {
+        "id": "2e55e3e8510e62d0",
+        "type": "subflow",
+        "name": "Subflow 5",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "f40a55ca93f943db"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 440,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "f40a55ca93f943db",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2ad5fa373c21d0a3",
+        "type": "subflow",
+        "name": "Subflow 6",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "42dbbd9f093bf42e"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "42dbbd9f093bf42e",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "67a3cd3b754e4fbd",
+        "type": "subflow",
+        "name": "Subflow 7",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "0f9ffc3cef064808"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "0f9ffc3cef064808",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "id": "7dc18555ca029842",
         "type": "group",
         "z": "d103860e993c1512",
@@ -1017,6 +1104,57 @@
         ]
     },
     {
+        "id": "f40a55ca93f943db",
+        "type": "function",
+        "z": "2e55e3e8510e62d0",
+        "name": "9.0 Company Additivity Check",
+        "func": "msg.actions.companyAdditivityCheckCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "42dbbd9f093bf42e",
+        "type": "function",
+        "z": "2ad5fa373c21d0a3",
+        "name": "10.0 Derived Items",
+        "func": "msg.actions.derivedItemsCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f9ffc3cef064808",
+        "type": "function",
+        "z": "67a3cd3b754e4fbd",
+        "name": "11.0 Post Edit Status Fields",
+        "func": "msg.actions.postEditStatusFieldsCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "f0bda8ccf069c334",
         "type": "inject",
         "z": "d886a3864a88d832",
@@ -1198,63 +1336,12 @@
         ]
     },
     {
-        "id": "f40a55ca93f943db",
-        "type": "function",
-        "z": "d886a3864a88d832",
-        "name": "9.0 Company Additivity Check",
-        "func": "msg.actions.companyAdditivityCheckCompleted = true\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1530,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "42dbbd9f093bf42e",
-        "type": "function",
-        "z": "d886a3864a88d832",
-        "name": "10.0 Derived Items",
-        "func": "msg.actions.derivedItemsCompleted = true\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1470,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0f9ffc3cef064808",
-        "type": "function",
-        "z": "d886a3864a88d832",
-        "name": "11.0 Post Edit Status Fields",
-        "func": "msg.actions.postEditStatusFieldsCompleted = true\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1740,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "4242881485341267",
         "type": "subflow:3fa869ffe40596e5",
         "z": "d886a3864a88d832",
         "name": "7.0 Post Ratio/Range",
-        "x": 1040,
-        "y": 360,
+        "x": 1900,
+        "y": 200,
         "wires": [
             [
                 "69135525ff74076e"
@@ -1266,11 +1353,68 @@
         "type": "subflow:98b684914b5fce08",
         "z": "d886a3864a88d832",
         "name": "8.0 Unit Balance",
-        "x": 1280,
-        "y": 360,
+        "x": 2140,
+        "y": 200,
         "wires": [
-            []
+            [
+                "f57362671b31528b"
+            ]
         ]
+    },
+    {
+        "id": "f57362671b31528b",
+        "type": "subflow:2e55e3e8510e62d0",
+        "z": "d886a3864a88d832",
+        "name": "9.0 Company Additivity Check",
+        "x": 2400,
+        "y": 200,
+        "wires": [
+            [
+                "66f76ef1f55de5b8"
+            ]
+        ]
+    },
+    {
+        "id": "66f76ef1f55de5b8",
+        "type": "subflow:2ad5fa373c21d0a3",
+        "z": "d886a3864a88d832",
+        "name": "10.0 Derived Items",
+        "x": 2710,
+        "y": 200,
+        "wires": [
+            [
+                "0f8306d8913bb7d2"
+            ]
+        ]
+    },
+    {
+        "id": "0f8306d8913bb7d2",
+        "type": "subflow:67a3cd3b754e4fbd",
+        "z": "d886a3864a88d832",
+        "name": "11.0 Post Edit Status Fields",
+        "x": 3000,
+        "y": 200,
+        "wires": [
+            [
+                "a0acac50eaa1f639"
+            ]
+        ]
+    },
+    {
+        "id": "a0acac50eaa1f639",
+        "type": "debug",
+        "z": "d886a3864a88d832",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3280,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "3626fe7ffedf766a",
