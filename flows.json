@@ -1778,8 +1778,8 @@
         "topicType": "msg",
         "splitLayout": true,
         "className": "",
-        "x": 900,
-        "y": 280,
+        "x": 940,
+        "y": 320,
         "wires": [
             []
         ]
