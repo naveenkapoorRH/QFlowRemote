@@ -3393,7 +3393,7 @@
             {
                 "field": "SECTOR/TRADE",
                 "title": "SECTOR/TRADE",
-                "width": "",
+                "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -3403,7 +3403,7 @@
             {
                 "field": "NAICS",
                 "title": "NAICS",
-                "width": "",
+                "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -3413,17 +3413,7 @@
             {
                 "field": "ERROR CONDITION",
                 "title": "ERROR CONDITION",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Short Condition",
-                "title": "Short Condition",
-                "width": "",
+                "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -3433,7 +3423,7 @@
             {
                 "field": "CONDITION",
                 "title": "CONDITION",
-                "width": "",
+                "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -3443,7 +3433,7 @@
             {
                 "field": "ACTION",
                 "title": "ACTION",
-                "width": "",
+                "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -3463,7 +3453,7 @@
             {
                 "field": "BALANCING ERROR CONDITION",
                 "title": "",
-                "width": "",
+                "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -3473,7 +3463,7 @@
             {
                 "field": "UNIT TYPE",
                 "title": "UNIT TYPE",
-                "width": "",
+                "width": "10%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -3483,7 +3473,7 @@
             {
                 "field": "TOTAL",
                 "title": "TOTAL",
-                "width": "",
+                "width": "20%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
