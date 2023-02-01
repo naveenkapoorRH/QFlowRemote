@@ -1,5 +1,12 @@
 [
     {
+        "id": "67991373.45438c",
+        "type": "tab",
+        "label": "Read CSV File",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "d886a3864a88d832",
         "type": "tab",
         "label": "Processing Parameters",
@@ -53,13 +60,6 @@
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "67991373.45438c",
-        "type": "tab",
-        "label": "Read CSV File",
-        "disabled": false,
-        "info": ""
     },
     {
         "id": "642abfc93e7700ac",
@@ -465,7 +465,9 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1
+        "y": -1,
+        "w": 838,
+        "h": 208
     },
     {
         "id": "5a28e866a67c90ec",
@@ -490,7 +492,9 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279
+        "y": 279,
+        "w": 1152,
+        "h": 242
     },
     {
         "id": "d1e0f39ddacfeb20",
@@ -510,7 +514,9 @@
             "e5ca7c9975e3a6b5"
         ],
         "x": 474,
-        "y": 99
+        "y": 99,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "ea3e0b5d6b96f47a",
@@ -1230,6 +1236,261 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "4440c71e.f88f18",
+        "type": "ui_table",
+        "z": "67991373.45438c",
+        "group": "1f48566b.e8958a",
+        "name": "Parameters File Imported",
+        "order": 11,
+        "width": "14",
+        "height": "5",
+        "columns": [
+            {
+                "field": "SECTOR/TRADE",
+                "title": "SECTOR/TRADE",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "NAICS",
+                "title": "NAICS",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "ERROR CONDITION",
+                "title": "ERROR CONDITION",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "CONDITION",
+                "title": "CONDITION",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "ACTION",
+                "title": "ACTION",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DESCRIPTION",
+                "title": "DESCRIPTION",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "BALANCING ERROR CONDITION",
+                "title": "",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "UNIT TYPE",
+                "title": "UNIT TYPE",
+                "width": "10%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "TOTAL",
+                "title": "TOTAL",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DETAIL 1",
+                "title": "DETAIL 1",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DETAIL 2",
+                "title": "DETAIL 2",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 310,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "6681b08b.4a688",
+        "type": "file in",
+        "z": "67991373.45438c",
+        "name": "Read File",
+        "filename": "/Users/revealgc/Desktop/additive.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "e843fa29.885718"
+            ]
+        ]
+    },
+    {
+        "id": "9a7a7971.dbc4b8",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "6681b08b.4a688"
+            ]
+        ]
+    },
+    {
+        "id": "e843fa29.885718",
+        "type": "csv",
+        "z": "67991373.45438c",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 570,
+        "y": 160,
+        "wires": [
+            [
+                "f3f60523b163886c",
+                "4440c71e.f88f18",
+                "99680b80968eef8c"
+            ]
+        ]
+    },
+    {
+        "id": "f3f60523b163886c",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "99680b80968eef8c",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Convert Parameter File to Pre-Processed Rules",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => preRules.push({ \n    key: k, \n    conditionstring: r['Short Condition'] + ' and ' + r['CONDITION'] + ' and unit_type ='+r['UNIT TYPE'] ,\n    message: r['DESCRIPTION'], \n    action: r['TOTAL'] + ' = ' + r['DETAIL 1'] + r['DETAIL 2'] + r['DETAIL 3'] + r['DETAIL 4'] + r['DETAIL 5'] + r['DETAIL 6'] + r['DETAIL 7'] + r['DETAIL 8'] + r['DETAIL 9'] + r['DETAIL 10'] + r['DETAIL 11'] + r['DETAIL 12'] + r['DETAIL 13'] + r['DETAIL 14'] ,\n\n\n}))\nmsg.preRules = preRules\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 280,
+        "wires": [
+            [
+                "26b7e67cbaf07c0b"
+            ]
+        ]
+    },
+    {
+        "id": "26b7e67cbaf07c0b",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
@@ -3410,224 +3671,5 @@
                 "ee4d312b.cc342"
             ]
         ]
-    },
-    {
-        "id": "4440c71e.f88f18",
-        "type": "ui_table",
-        "z": "67991373.45438c",
-        "group": "1f48566b.e8958a",
-        "name": "Parameters File Imported",
-        "order": 11,
-        "width": "14",
-        "height": "5",
-        "columns": [
-            {
-                "field": "SECTOR/TRADE",
-                "title": "SECTOR/TRADE",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "NAICS",
-                "title": "NAICS",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "ERROR CONDITION",
-                "title": "ERROR CONDITION",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "CONDITION",
-                "title": "CONDITION",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "ACTION",
-                "title": "ACTION",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "DESCRIPTION",
-                "title": "DESCRIPTION",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "BALANCING ERROR CONDITION",
-                "title": "",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "UNIT TYPE",
-                "title": "UNIT TYPE",
-                "width": "10%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "TOTAL",
-                "title": "TOTAL",
-                "width": "20%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "DETAIL 1",
-                "title": "DETAIL 1",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "DETAIL 2",
-                "title": "DETAIL 2",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 310,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "6681b08b.4a688",
-        "type": "file in",
-        "z": "67991373.45438c",
-        "name": "Read File",
-        "filename": "/Users/revealgc/Desktop/additive.csv",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "allProps": false,
-        "x": 360,
-        "y": 160,
-        "wires": [
-            [
-                "e843fa29.885718"
-            ]
-        ]
-    },
-    {
-        "id": "9a7a7971.dbc4b8",
-        "type": "inject",
-        "z": "67991373.45438c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload",
-                "v": "",
-                "vt": "date"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 160,
-        "wires": [
-            [
-                "6681b08b.4a688"
-            ]
-        ]
-    },
-    {
-        "id": "e843fa29.885718",
-        "type": "csv",
-        "z": "67991373.45438c",
-        "name": "",
-        "sep": ",",
-        "hdrin": true,
-        "hdrout": "none",
-        "multi": "mult",
-        "ret": "\\r\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": false,
-        "include_null_values": false,
-        "x": 570,
-        "y": 160,
-        "wires": [
-            [
-                "f3f60523b163886c",
-                "4440c71e.f88f18"
-            ]
-        ]
-    },
-    {
-        "id": "f3f60523b163886c",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 14",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 260,
-        "wires": []
     }
 ]
