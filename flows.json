@@ -531,7 +531,7 @@
     {
         "id": "1f48566b.e8958a",
         "type": "ui_group",
-        "name": "Workflows",
+        "name": "Parameters File",
         "tab": "e7dc0c12a87bf783",
         "order": 2,
         "disp": true,
