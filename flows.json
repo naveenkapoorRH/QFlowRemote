@@ -1677,7 +1677,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
+        "x": 420,
         "y": 320,
         "wires": [
             [
