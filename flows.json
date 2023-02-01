@@ -2,7 +2,7 @@
     {
         "id": "d886a3864a88d832",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Processing Parameters",
         "disabled": false,
         "info": "",
         "env": []
@@ -60,6 +60,14 @@
         "label": "Read CSV File",
         "disabled": false,
         "info": ""
+    },
+    {
+        "id": "642abfc93e7700ac",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
     },
     {
         "id": "c5ce2d38887016b2",
@@ -654,6 +662,33 @@
         "x": 1340,
         "y": 120,
         "wires": []
+    },
+    {
+        "id": "f0bda8ccf069c334",
+        "type": "inject",
+        "z": "d886a3864a88d832",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 60,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "3626fe7ffedf766a",
