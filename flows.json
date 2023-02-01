@@ -1239,10 +1239,10 @@
         "name": "Parameters File Imported",
         "order": 11,
         "width": "14",
-        "height": "5",
+        "height": "7",
         "columns": [
             {
-                "field": "Key",
+                "field": "key",
                 "title": "Key",
                 "width": "20%",
                 "align": "left",
