@@ -55,6 +55,13 @@
         "env": []
     },
     {
+        "id": "67991373.45438c",
+        "type": "tab",
+        "label": "Read CSV File",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "c5ce2d38887016b2",
         "type": "subflow",
         "name": "Apply rules by level type",
@@ -386,6 +393,24 @@
         "width": "6",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "fe9b4de4.dcd72",
+        "type": "ui_group",
+        "name": "Name list",
+        "tab": "da612906.998368",
+        "order": 1,
+        "disp": true,
+        "width": "15",
+        "collapse": false
+    },
+    {
+        "id": "da612906.998368",
+        "type": "ui_tab",
+        "name": "Main-PC",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "9a0d32273f30aad5",
@@ -2551,6 +2576,125 @@
         "wires": [
             [
                 "ee4d312b.cc342"
+            ]
+        ]
+    },
+    {
+        "id": "4440c71e.f88f18",
+        "type": "ui_table",
+        "z": "67991373.45438c",
+        "group": "1f48566b.e8958a",
+        "name": "Parameters File Imported",
+        "order": 11,
+        "width": "0",
+        "height": "0",
+        "columns": [
+            {
+                "field": "Person ID",
+                "title": "Person ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Name",
+                "title": "Name",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Department",
+                "title": "Department",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 810,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6681b08b.4a688",
+        "type": "file in",
+        "z": "67991373.45438c",
+        "name": "Read File",
+        "filename": "C:\\Users\\user\\Documents\\Records_Report.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "e843fa29.885718"
+            ]
+        ]
+    },
+    {
+        "id": "9a7a7971.dbc4b8",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "6681b08b.4a688"
+            ]
+        ]
+    },
+    {
+        "id": "e843fa29.885718",
+        "type": "csv",
+        "z": "67991373.45438c",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "x": 570,
+        "y": 160,
+        "wires": [
+            [
+                "4440c71e.f88f18"
             ]
         ]
     }
