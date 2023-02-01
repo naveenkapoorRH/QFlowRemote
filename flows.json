@@ -1333,8 +1333,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
-        "y": 60,
+        "x": 670,
+        "y": 80,
         "wires": []
     },
     {
@@ -1795,8 +1795,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 120,
+        "x": 480,
+        "y": 100,
         "wires": [
             []
         ]
