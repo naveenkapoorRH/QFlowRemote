@@ -3391,8 +3391,8 @@
         "height": "0",
         "columns": [
             {
-                "field": "Person ID",
-                "title": "Person ID",
+                "field": "SECTOR/TRADE",
+                "title": "SECTOR/TRADE",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -3401,8 +3401,8 @@
                 }
             },
             {
-                "field": "Name",
-                "title": "Name",
+                "field": "NAICS",
+                "title": "NAICS",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -3411,8 +3411,98 @@
                 }
             },
             {
-                "field": "Department",
-                "title": "Department",
+                "field": "ERROR CONDITION",
+                "title": "ERROR CONDITION",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Short Condition",
+                "title": "Short Condition",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "CONDITION",
+                "title": "CONDITION",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "ACTION",
+                "title": "ACTION",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DESCRIPTION",
+                "title": "DESCRIPTION",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "BALANCING ERROR CONDITION",
+                "title": "",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "UNIT TYPE",
+                "title": "UNIT TYPE",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "TOTAL",
+                "title": "TOTAL",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DETAIL 1",
+                "title": "DETAIL 1",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DETAIL 2",
+                "title": "DETAIL 2",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -3423,8 +3513,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 810,
-        "y": 160,
+        "x": 310,
+        "y": 400,
         "wires": []
     },
     {
@@ -3498,7 +3588,8 @@
         "y": 160,
         "wires": [
             [
-                "f3f60523b163886c"
+                "f3f60523b163886c",
+                "4440c71e.f88f18"
             ]
         ]
     },
