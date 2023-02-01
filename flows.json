@@ -2690,6 +2690,8 @@
         "temp": "",
         "skip": "0",
         "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
         "x": 570,
         "y": 160,
         "wires": [
