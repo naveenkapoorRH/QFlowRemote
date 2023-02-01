@@ -3432,12 +3432,13 @@
         "type": "file in",
         "z": "67991373.45438c",
         "name": "Read File",
-        "filename": "C:\\Users\\user\\Documents\\Records_Report.csv",
+        "filename": "/Users/revealgc/Desktop/additive.csv",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
+        "allProps": false,
         "x": 360,
         "y": 160,
         "wires": [
@@ -3497,8 +3498,25 @@
         "y": 160,
         "wires": [
             [
-                "4440c71e.f88f18"
+                "4440c71e.f88f18",
+                "f3f60523b163886c"
             ]
         ]
+    },
+    {
+        "id": "f3f60523b163886c",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 260,
+        "wires": []
     }
 ]
