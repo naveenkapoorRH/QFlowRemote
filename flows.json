@@ -752,6 +752,37 @@
         "hidden": false
     },
     {
+        "id": "440f78388bf9306a",
+        "type": "ui_group",
+        "name": "Rules for Workflows",
+        "tab": "e7dc0c12a87bf783",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c76aaa5098c96374",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7a2f79c04ce56b81",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
         "id": "9a0d32273f30aad5",
         "type": "comment",
         "z": "c5ce2d38887016b2",
@@ -1535,7 +1566,7 @@
         "id": "39fd1017ceb52b5b",
         "type": "ui_table",
         "z": "ae7e9f579855357c",
-        "group": "1f48566b.e8958a",
+        "group": "440f78388bf9306a",
         "name": "Rules Repository",
         "order": 2,
         "width": "14",
