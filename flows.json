@@ -746,7 +746,7 @@
     {
         "id": "da612906.998368",
         "type": "ui_tab",
-        "name": "Main-PC",
+        "name": "Parameters",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
