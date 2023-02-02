@@ -1355,7 +1355,7 @@
                 "title": "Row",
                 "width": "80",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "rownum",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -1715,7 +1715,7 @@
                 "title": "Row",
                 "width": "80",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "rownum",
                 "formatterParams": {
                     "target": "_blank"
                 }
