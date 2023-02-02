@@ -1727,7 +1727,7 @@
                 }
             },
             {
-                "field": "result.conditionResult",
+                "field": "conditionResult",
                 "title": "Condition Result",
                 "width": "",
                 "align": "left",
@@ -1739,8 +1739,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 970,
-        "y": 540,
+        "x": 510,
+        "y": 600,
         "wires": []
     },
     {
