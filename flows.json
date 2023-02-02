@@ -1469,7 +1469,8 @@
         "wires": [
             [
                 "99680b80968eef8c",
-                "5cfa292979246c14"
+                "5cfa292979246c14",
+                "87b37711203eef04"
             ]
         ]
     },
@@ -1529,6 +1530,16 @@
         "width": 30,
         "height": 7,
         "columns": [
+            {
+                "field": "key",
+                "title": "Row",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
             {
                 "field": "SECTOR/TRADE",
                 "title": "SECTOR/TRADE",
@@ -1784,6 +1795,22 @@
                 "4440c71e.f88f18"
             ]
         ]
+    },
+    {
+        "id": "87b37711203eef04",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
