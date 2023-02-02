@@ -865,66 +865,6 @@
         "className": ""
     },
     {
-        "id": "af6c43ea90061698",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "2be1a158341e951b",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 4,
-        "width": 23,
-        "height": 1
-    },
-    {
-        "id": "41c623fbeff526fc",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 5,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "104e2b6650fd7422",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 6,
-        "width": 23,
-        "height": 1
-    },
-    {
-        "id": "9f263266ade12170",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 7,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "a4d29053c3854dfd",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 8,
-        "width": 23,
-        "height": 1
-    },
-    {
         "id": "134f09c88dd005fc",
         "type": "ui_group",
         "name": "4. Facts",
