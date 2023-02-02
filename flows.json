@@ -1707,7 +1707,17 @@
                 }
             },
             {
-                "field": "rule.event.params.action[0]",
+                "field": "conditionstring",
+                "title": "Condition",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "actiontring",
                 "title": "Action",
                 "width": "",
                 "align": "left",
@@ -1717,18 +1727,8 @@
                 }
             },
             {
-                "field": "rule.event.name",
-                "title": "Message",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
                 "field": "result.conditionResult.status",
-                "title": "Result",
+                "title": "Condition Result",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
