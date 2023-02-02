@@ -1711,8 +1711,8 @@
         "group": "18a5a593fcd64912",
         "name": "3. Processed Rules",
         "order": 1,
-        "width": 6,
-        "height": 7,
+        "width": "30",
+        "height": "9",
         "columns": [
             {
                 "field": "result.key",
@@ -1725,7 +1725,7 @@
                 }
             },
             {
-                "field": "JSON.stringify(rule.conditions)",
+                "field": "rule.conditions.all[0].params",
                 "title": "Condition",
                 "width": "",
                 "align": "left",
@@ -1737,7 +1737,7 @@
             {
                 "field": "rule.event.name",
                 "title": "Message",
-                "width": "30%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1747,7 +1747,7 @@
             {
                 "field": "result.conditionResult.status",
                 "title": "Result",
-                "width": "30%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
