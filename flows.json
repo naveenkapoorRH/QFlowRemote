@@ -1707,7 +1707,7 @@
                 }
             },
             {
-                "field": "JSON.stringify(rule)",
+                "field": "rule.conditions.all[0].params.conditionstring",
                 "title": "Condition",
                 "width": "",
                 "align": "left",
