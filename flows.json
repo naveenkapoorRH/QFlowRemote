@@ -1256,7 +1256,7 @@
                 "title": "Row",
                 "width": "80px",
                 "align": "left",
-                "formatter": "rownum",
+                "formatter": "plaintext",
                 "formatterParams": {
                     "target": "_blank"
                 }
