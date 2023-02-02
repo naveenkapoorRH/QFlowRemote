@@ -1466,7 +1466,7 @@
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
         "order": 1,
-        "width": "6",
+        "width": "14",
         "height": "1",
         "passthru": true,
         "mode": "text",
