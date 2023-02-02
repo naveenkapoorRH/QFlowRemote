@@ -1492,8 +1492,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 780,
-        "y": 60,
+        "x": 1000,
+        "y": 80,
         "wires": []
     },
     {
@@ -1517,8 +1517,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 80,
-        "y": 100,
+        "x": 120,
+        "y": 120,
         "wires": [
             [
                 "0c27c540f6e4bd44"
@@ -1546,8 +1546,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 160,
-        "y": 160,
+        "x": 360,
+        "y": 240,
         "wires": [
             [
                 "b5c53653a76681bf"
@@ -1560,39 +1560,23 @@
         "z": "67991373.45438c",
         "name": "Read CSV File amd create dynamic rules",
         "info": "",
-        "x": 600,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "a9b4f3abe77d039c",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 16",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 980,
-        "y": 140,
+        "x": 820,
+        "y": 580,
         "wires": []
     },
     {
         "id": "0c27c540f6e4bd44",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "Send a parameters file: ",
+        "name": "Upload 4testMOD.cvs",
         "func": "msg.payload = '/Users/revealgc/Desktop/4testMOD.csv'\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 170,
-        "y": 40,
+        "x": 380,
+        "y": 120,
         "wires": [
             [
                 "b5c53653a76681bf"
@@ -1672,7 +1656,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 770,
+        "x": 990,
         "y": 120,
         "wires": []
     },
@@ -1681,15 +1665,15 @@
         "type": "subflow:82cc831b154f3133",
         "z": "67991373.45438c",
         "name": "",
-        "x": 470,
-        "y": 140,
+        "x": 690,
+        "y": 160,
         "wires": [
             [
                 "4440c71e.f88f18"
             ],
             [
-                "a9b4f3abe77d039c",
-                "7deb55a4c358e093"
+                "7deb55a4c358e093",
+                "f123cf830d3837f6"
             ],
             [
                 "5cfa292979246c14"
@@ -1789,8 +1773,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 790,
-        "y": 200,
+        "x": 1010,
+        "y": 240,
         "wires": []
     },
     {
@@ -1811,8 +1795,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 310,
-        "y": 240,
+        "x": 490,
+        "y": 300,
         "wires": [
             [
                 "100234cf93c195b8"
@@ -1831,8 +1815,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 540,
-        "y": 320,
+        "x": 700,
+        "y": 340,
         "wires": [
             [
                 "c047c871d9c0e70d"
@@ -1854,8 +1838,8 @@
         "strings": true,
         "include_empty_strings": false,
         "include_null_values": false,
-        "x": 670,
-        "y": 320,
+        "x": 870,
+        "y": 340,
         "wires": [
             [
                 "c9c9ca415ab95910"
@@ -1873,30 +1857,14 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 850,
-        "y": 320,
+        "x": 1070,
+        "y": 340,
         "wires": [
             [
-                "b060d3963df8fcd7",
-                "16550455147cd747"
+                "16550455147cd747",
+                "f123cf830d3837f6"
             ]
         ]
-    },
-    {
-        "id": "b060d3963df8fcd7",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 17",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 320,
-        "wires": []
     },
     {
         "id": "16550455147cd747",
@@ -1941,8 +1909,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1020,
-        "y": 460,
+        "x": 1260,
+        "y": 480,
         "wires": []
     },
     {
@@ -1966,8 +1934,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 320,
+        "x": 140,
+        "y": 380,
         "wires": [
             [
                 "7c7b69f37a764c7e"
@@ -1988,13 +1956,48 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 420,
+        "x": 440,
+        "y": 380,
         "wires": [
             [
                 "100234cf93c195b8"
             ]
         ]
+    },
+    {
+        "id": "f123cf830d3837f6",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "5. Infer",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 160,
+        "wires": [
+            [
+                "39af0b4391456555"
+            ]
+        ]
+    },
+    {
+        "id": "39af0b4391456555",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 160,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
