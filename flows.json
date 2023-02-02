@@ -1941,9 +1941,58 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 860,
-        "y": 460,
+        "x": 1000,
+        "y": 440,
         "wires": []
+    },
+    {
+        "id": "211d46862546b6bf",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "7c7b69f37a764c7e"
+            ]
+        ],
+        "outputLabels": [
+            "Send Time"
+        ]
+    },
+    {
+        "id": "7c7b69f37a764c7e",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Send a parameters file: ",
+        "func": "msg.payload = '/Users/revealgc/Desktop/factsToTest.csv'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 420,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "f0bda8ccf069c334",
