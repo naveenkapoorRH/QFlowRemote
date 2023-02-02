@@ -1371,7 +1371,7 @@
         "y": 160,
         "wires": [
             [
-                "6681b08b.4a688"
+                "0c27c540f6e4bd44"
             ]
         ]
     },
@@ -1612,6 +1612,25 @@
         "x": 980,
         "y": 500,
         "wires": []
+    },
+    {
+        "id": "0c27c540f6e4bd44",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Send a parameters file: ",
+        "func": "msg.payload = '/Users/revealgc/Desktop/4testMOD.csv'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 60,
+        "wires": [
+            [
+                "6681b08b.4a688"
+            ]
+        ]
     },
     {
         "id": "f0bda8ccf069c334",
