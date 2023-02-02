@@ -536,7 +536,7 @@
         "order": 1,
         "disp": true,
         "width": "14",
-        "collapse": true,
+        "collapse": false,
         "className": ""
     },
     {
@@ -1283,8 +1283,8 @@
         "type": "file in",
         "z": "67991373.45438c",
         "name": "Read File",
-        "filename": "/Users/revealgc/Desktop/4testMOD.csv",
-        "filenameType": "str",
+        "filename": "payload",
+        "filenameType": "msg",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
@@ -1403,6 +1403,32 @@
         "x": 960,
         "y": 200,
         "wires": []
+    },
+    {
+        "id": "1e5beed02674863a",
+        "type": "ui_text_input",
+        "z": "67991373.45438c",
+        "name": "Input Parameter File Name",
+        "label": "File Name to upload",
+        "tooltip": "Enter the location of the parameters file",
+        "group": "1f48566b.e8958a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "6681b08b.4a688"
+            ]
+        ]
     },
     {
         "id": "f0bda8ccf069c334",
