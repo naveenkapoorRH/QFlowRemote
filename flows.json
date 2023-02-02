@@ -620,7 +620,7 @@
                 }
             },
             "angularTheme": {
-                "primary": "indigo",
+                "primary": "blue",
                 "accents": "blue",
                 "warn": "red",
                 "background": "grey",
@@ -629,7 +629,7 @@
         },
         "site": {
             "name": "QFlow",
-            "hideToolbar": "false",
+            "hideToolbar": "true",
             "allowSwipe": "false",
             "lockMenu": "true",
             "allowTempTheme": "none",
