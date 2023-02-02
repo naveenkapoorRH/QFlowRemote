@@ -1322,8 +1322,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 780,
-        "y": 420,
+        "x": 1040,
+        "y": 280,
         "wires": []
     },
     {
@@ -1415,7 +1415,8 @@
         "wires": [
             [
                 "26b7e67cbaf07c0b",
-                "4440c71e.f88f18"
+                "4440c71e.f88f18",
+                "fff3d06b988e5233"
             ]
         ]
     },
@@ -1560,26 +1561,57 @@
         "wires": []
     },
     {
-        "id": "5799ad13ca8280e6",
+        "id": "fff3d06b988e5233",
         "type": "http request",
         "z": "67991373.45438c",
-        "name": "",
+        "name": "API call to Analyse Parameters Rules File",
         "method": "POST",
-        "ret": "txt",
+        "ret": "obj",
         "paytoqs": "ignore",
-        "url": "",
+        "url": "http://localhost/rulesrepo/stringsToRules?DEBUG=true",
         "tls": "",
         "persist": false,
         "proxy": "",
         "insecureHTTPParser": false,
         "authType": "",
         "senderr": false,
-        "headers": [],
-        "x": 310,
-        "y": 460,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 600,
+        "y": 500,
         "wires": [
-            []
+            [
+                "a9b4f3abe77d039c"
+            ]
         ]
+    },
+    {
+        "id": "a9b4f3abe77d039c",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 500,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
