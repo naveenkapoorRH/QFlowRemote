@@ -779,26 +779,6 @@
         "height": 1
     },
     {
-        "id": "8d4ceb7f658db38f",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "5c07c02344a2bd3d",
-        "order": 1,
-        "width": 29,
-        "height": 1
-    },
-    {
-        "id": "85a570a6269a3ca4",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
         "id": "5c07c02344a2bd3d",
         "type": "ui_group",
         "name": "1. Parameters File",
@@ -819,6 +799,97 @@
         "width": "14",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "18a5a593fcd64912",
+        "type": "ui_group",
+        "name": "3. Dynamic Rules from Parameters File",
+        "tab": "da612906.998368",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "46ea37f6648532fd",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f86b2145e7e556a",
+        "order": 3,
+        "width": 13,
+        "height": 1
+    },
+    {
+        "id": "27e879714def0d0e",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "5c07c02344a2bd3d",
+        "order": 1,
+        "width": 30,
+        "height": 1
+    },
+    {
+        "id": "af6c43ea90061698",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2be1a158341e951b",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 4,
+        "width": 23,
+        "height": 1
+    },
+    {
+        "id": "41c623fbeff526fc",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "104e2b6650fd7422",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 6,
+        "width": 23,
+        "height": 1
+    },
+    {
+        "id": "9f263266ade12170",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a4d29053c3854dfd",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 8,
+        "width": 23,
+        "height": 1
     },
     {
         "id": "9a0d32273f30aad5",
@@ -1446,8 +1517,8 @@
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
         "order": 1,
-        "width": "14",
-        "height": "1",
+        "width": 14,
+        "height": 1,
         "passthru": true,
         "mode": "text",
         "delay": "0",
@@ -1469,7 +1540,7 @@
         "z": "67991373.45438c",
         "group": "5c07c02344a2bd3d",
         "name": "CSV Import Parameters File",
-        "order": 1,
+        "order": 2,
         "width": 30,
         "height": 7,
         "columns": [
@@ -1593,7 +1664,8 @@
         "y": 500,
         "wires": [
             [
-                "a9b4f3abe77d039c"
+                "a9b4f3abe77d039c",
+                "7deb55a4c358e093"
             ]
         ]
     },
@@ -1609,8 +1681,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
-        "y": 500,
+        "x": 880,
+        "y": 460,
         "wires": []
     },
     {
@@ -1631,6 +1703,63 @@
                 "6681b08b.4a688"
             ]
         ]
+    },
+    {
+        "id": "7deb55a4c358e093",
+        "type": "ui_table",
+        "z": "67991373.45438c",
+        "group": "18a5a593fcd64912",
+        "name": "3. Processed Rules",
+        "order": 1,
+        "width": 6,
+        "height": 7,
+        "columns": [
+            {
+                "field": "result.key",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "rule.conditions.all[0].params.conditionstring",
+                "title": "Condition",
+                "width": "40%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "rule.event.name",
+                "title": "Message",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "result.conditionResult.status",
+                "title": "Result",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 970,
+        "y": 540,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
@@ -3303,7 +3432,7 @@
         "z": "c702b495.9cc2f8",
         "d": true,
         "group": "1f48566b.e8958a",
-        "order": 4,
+        "order": 9,
         "width": 30,
         "height": 9,
         "name": "",
