@@ -1725,9 +1725,9 @@
                 }
             },
             {
-                "field": "rule.conditions.all[0].params.conditionstring",
+                "field": "JSON.stringify(rule.conditions)",
                 "title": "Condition",
-                "width": "40%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
