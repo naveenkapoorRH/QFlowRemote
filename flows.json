@@ -480,6 +480,16 @@
                         "port": 0
                     }
                 ]
+            },
+            {
+                "x": 820,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "e843fa29.885718",
+                        "port": 0
+                    }
+                ]
             }
         ],
         "env": [],
@@ -1422,107 +1432,9 @@
         "y": 140,
         "wires": [
             [
-                "99680b80968eef8c",
-                "5cfa292979246c14"
+                "99680b80968eef8c"
             ]
         ]
-    },
-    {
-        "id": "5cfa292979246c14",
-        "type": "ui_table",
-        "z": "82cc831b154f3133",
-        "group": "5c07c02344a2bd3d",
-        "name": "CSV Import Parameters File",
-        "order": 2,
-        "width": 30,
-        "height": 7,
-        "columns": [
-            {
-                "field": "key",
-                "title": "Row",
-                "width": "80",
-                "align": "left",
-                "formatter": "rownum",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "SECTOR/TRADE",
-                "title": "SECTOR/TRADE",
-                "width": "80",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "NAICS",
-                "title": "NAICS",
-                "width": "40%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Short Condition",
-                "title": "Message",
-                "width": "30%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "CONDITION",
-                "title": "CONDITION",
-                "width": "30%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "DESCRIPTION",
-                "title": "DESCRIPTION",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "UNIT TYPE",
-                "title": "UNIT TYPE",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "TOTAL",
-                "title": "",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 560,
-        "y": 80,
-        "wires": []
     },
     {
         "id": "99680b80968eef8c",
@@ -1830,7 +1742,7 @@
         "outputs": 0,
         "cts": false,
         "x": 770,
-        "y": 200,
+        "y": 120,
         "wires": []
     },
     {
@@ -1847,8 +1759,108 @@
             [
                 "a9b4f3abe77d039c",
                 "7deb55a4c358e093"
+            ],
+            [
+                "5cfa292979246c14"
             ]
         ]
+    },
+    {
+        "id": "5cfa292979246c14",
+        "type": "ui_table",
+        "z": "67991373.45438c",
+        "group": "5c07c02344a2bd3d",
+        "name": "1.0 CSV Import Parameters File",
+        "order": 2,
+        "width": 30,
+        "height": 7,
+        "columns": [
+            {
+                "field": "key",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "SECTOR/TRADE",
+                "title": "SECTOR/TRADE",
+                "width": "80",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "NAICS",
+                "title": "NAICS",
+                "width": "40%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Short Condition",
+                "title": "Message",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "CONDITION",
+                "title": "CONDITION",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DESCRIPTION",
+                "title": "DESCRIPTION",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "UNIT TYPE",
+                "title": "UNIT TYPE",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "TOTAL",
+                "title": "",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 790,
+        "y": 200,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
