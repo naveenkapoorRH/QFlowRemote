@@ -865,16 +865,6 @@
         "className": ""
     },
     {
-        "id": "27e879714def0d0e",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "5c07c02344a2bd3d",
-        "order": 1,
-        "width": 30,
-        "height": 1
-    },
-    {
         "id": "af6c43ea90061698",
         "type": "ui_spacer",
         "z": "67991373.45438c",
