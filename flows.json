@@ -1727,8 +1727,28 @@
                 }
             },
             {
-                "field": "conditionResult",
-                "title": "Condition Result",
+                "field": "output.error",
+                "title": "Error",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "output.message",
+                "title": "Error Message",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "output.value",
+                "title": "Condition Value",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
