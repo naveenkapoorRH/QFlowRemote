@@ -1429,7 +1429,7 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "preRules",
+        "complete": "payload",
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
