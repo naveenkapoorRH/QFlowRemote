@@ -1253,10 +1253,10 @@
         "columns": [
             {
                 "field": "key",
-                "title": "Key",
-                "width": "",
+                "title": "Row",
+                "width": "80px",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "rownum",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -1264,7 +1264,7 @@
             {
                 "field": "conditionstring",
                 "title": "Condition",
-                "width": "",
+                "width": "40%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1274,7 +1274,7 @@
             {
                 "field": "message",
                 "title": "Message",
-                "width": "",
+                "width": "30%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1284,7 +1284,7 @@
             {
                 "field": "action",
                 "title": "Action",
-                "width": "",
+                "width": "30%",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
