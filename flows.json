@@ -536,7 +536,7 @@
         "order": 2,
         "disp": true,
         "width": "30",
-        "collapse": false,
+        "collapse": true,
         "className": ""
     },
     {
@@ -800,7 +800,7 @@
         "order": 1,
         "disp": true,
         "width": "30",
-        "collapse": false,
+        "collapse": true,
         "className": ""
     },
     {
