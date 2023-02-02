@@ -1533,9 +1533,9 @@
             {
                 "field": "key",
                 "title": "Row",
-                "width": "",
+                "width": "80",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "rownum",
                 "formatterParams": {
                     "target": "_blank"
                 }
