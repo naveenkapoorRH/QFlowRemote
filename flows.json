@@ -1385,7 +1385,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let action = ''\n    \n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    action += r['DETAIL '+i] +' +'\n\n    }\n    if (action.length > 0) action = r['TOTAL'] + ' = ' +action.substring(0, action.length - 1);\n\n    preRules.push({ \n    key: k, \n    conditionstring: r['Short Condition'] + ' and ' + r['CONDITION'] + ' and unit_type ='+r['UNIT TYPE'] ,\n    message: r['DESCRIPTION'], \n    action \n    })\n\n})\nmsg.preRules = preRules\nmsg.payload = preRules\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let action = ''\n    \n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    action += r['DETAIL '+i] +' +'\n\n    }\n    if (action.length > 0) action = r['TOTAL'] + ' = ' +action.substring(0, action.length - 1);\n\n    preRules.push({ \n    key: k, \n    conditionstring: r['Short Condition'] + ' and ' + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action \n    })\n\n})\nmsg.preRules = preRules\nmsg.payload = preRules\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
