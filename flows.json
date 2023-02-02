@@ -1234,7 +1234,7 @@
             {
                 "field": "key",
                 "title": "Key",
-                "width": "20%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1244,7 +1244,7 @@
             {
                 "field": "conditionstring",
                 "title": "Condition",
-                "width": "20%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1254,7 +1254,7 @@
             {
                 "field": "message",
                 "title": "Message",
-                "width": "20%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
@@ -1264,7 +1264,7 @@
             {
                 "field": "action",
                 "title": "Action",
-                "width": "20%",
+                "width": "",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
