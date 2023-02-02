@@ -1482,31 +1482,13 @@
         "finalize": "",
         "libs": [],
         "x": 640,
-        "y": 300,
+        "y": 340,
         "wires": [
             [
-                "26b7e67cbaf07c0b",
                 "fff3d06b988e5233",
                 "5ab2c885ede5e880"
             ]
         ]
-    },
-    {
-        "id": "26b7e67cbaf07c0b",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 15",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 180,
-        "wires": []
     },
     {
         "id": "1e5beed02674863a",
@@ -1725,7 +1707,7 @@
                 }
             },
             {
-                "field": "rule.conditions.all[0].params",
+                "field": "JSON.stringify(rule)",
                 "title": "Condition",
                 "width": "",
                 "align": "left",
@@ -1772,8 +1754,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 180,
+        "x": 810,
+        "y": 200,
         "wires": [
             [
                 "4440c71e.f88f18"
