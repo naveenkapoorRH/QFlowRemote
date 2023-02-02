@@ -1947,7 +1947,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Get Facts From File",
-        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\nmsg.payload = facts\nreturn msg;",
+        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\nmsg.facts = facts\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1994,6 +1994,26 @@
                 "width": "80",
                 "align": "left",
                 "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "name",
+                "title": "Name",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "value",
+                "title": "Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
                 "formatterParams": {
                     "target": "_blank"
                 }
