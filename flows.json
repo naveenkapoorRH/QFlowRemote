@@ -1475,7 +1475,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n    \n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n        action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1)};\n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\n//msg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n    \n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n        action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1)};\n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1486,8 +1486,8 @@
         "wires": [
             [
                 "26b7e67cbaf07c0b",
-                "4440c71e.f88f18",
-                "fff3d06b988e5233"
+                "fff3d06b988e5233",
+                "5ab2c885ede5e880"
             ]
         ]
     },
@@ -1760,6 +1760,25 @@
         "x": 970,
         "y": 540,
         "wires": []
+    },
+    {
+        "id": "5ab2c885ede5e880",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Load the pre-rules table",
+        "func": "msg.payload = msg.params\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 180,
+        "wires": [
+            [
+                "4440c71e.f88f18"
+            ]
+        ]
     },
     {
         "id": "f0bda8ccf069c334",
