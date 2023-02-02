@@ -1304,7 +1304,7 @@
                 }
             },
             {
-                "field": "action",
+                "field": "JSON.stringify(action)",
                 "title": "Action",
                 "width": "30%",
                 "align": "left",
