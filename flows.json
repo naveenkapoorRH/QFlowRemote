@@ -1254,7 +1254,7 @@
             {
                 "field": "key",
                 "title": "Row",
-                "width": "80px",
+                "width": "80",
                 "align": "left",
                 "formatter": "plaintext",
                 "formatterParams": {
