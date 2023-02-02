@@ -1883,8 +1883,88 @@
         "x": 150,
         "y": 280,
         "wires": [
-            []
+            [
+                "100234cf93c195b8"
+            ]
         ]
+    },
+    {
+        "id": "100234cf93c195b8",
+        "type": "file in",
+        "z": "67991373.45438c",
+        "name": "Read File",
+        "filename": "payload",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 460,
+        "y": 320,
+        "wires": [
+            [
+                "c047c871d9c0e70d"
+            ]
+        ]
+    },
+    {
+        "id": "c047c871d9c0e70d",
+        "type": "csv",
+        "z": "67991373.45438c",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 610,
+        "y": 320,
+        "wires": [
+            [
+                "c9c9ca415ab95910"
+            ]
+        ]
+    },
+    {
+        "id": "c9c9ca415ab95910",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Get Facts From File",
+        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\nmsg.payload = facts\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 320,
+        "wires": [
+            [
+                "b060d3963df8fcd7"
+            ]
+        ]
+    },
+    {
+        "id": "b060d3963df8fcd7",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
