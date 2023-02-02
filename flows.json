@@ -1707,7 +1707,7 @@
                 }
             },
             {
-                "field": "payload[0].rule.event.params.action[0]",
+                "field": "rule.event.params.action[0]",
                 "title": "Action",
                 "width": "",
                 "align": "left",
