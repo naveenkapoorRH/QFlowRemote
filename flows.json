@@ -444,6 +444,49 @@
         ]
     },
     {
+        "id": "82cc831b154f3133",
+        "type": "subflow",
+        "name": "Dynamic Rules from Parameter Files",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "6681b08b.4a688"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1180,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "5ab2c885ede5e880",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1280,
+                "y": 260,
+                "wires": [
+                    {
+                        "id": "fff3d06b988e5233",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "7dc18555ca029842",
         "type": "group",
         "z": "d103860e993c1512",
@@ -1341,66 +1384,9 @@
         ]
     },
     {
-        "id": "4440c71e.f88f18",
-        "type": "ui_table",
-        "z": "67991373.45438c",
-        "group": "1f48566b.e8958a",
-        "name": "2. Processed Pre-Rule",
-        "order": 1,
-        "width": 30,
-        "height": 7,
-        "columns": [
-            {
-                "field": "key",
-                "title": "Row",
-                "width": "80",
-                "align": "left",
-                "formatter": "rownum",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "conditionstring",
-                "title": "Condition",
-                "width": "40%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "message",
-                "title": "Message",
-                "width": "30%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "actionString",
-                "title": "Action",
-                "width": "30%",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 1460,
-        "y": 160,
-        "wires": []
-    },
-    {
         "id": "6681b08b.4a688",
         "type": "file in",
-        "z": "67991373.45438c",
+        "z": "82cc831b154f3133",
         "name": "Read File",
         "filename": "payload",
         "filenameType": "msg",
@@ -1409,8 +1395,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 400,
-        "y": 120,
+        "x": 200,
+        "y": 140,
         "wires": [
             [
                 "e843fa29.885718"
@@ -1418,41 +1404,9 @@
         ]
     },
     {
-        "id": "9a7a7971.dbc4b8",
-        "type": "inject",
-        "z": "67991373.45438c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 20,
-        "wires": [
-            [
-                "0c27c540f6e4bd44"
-            ]
-        ],
-        "outputLabels": [
-            "Send Time"
-        ]
-    },
-    {
         "id": "e843fa29.885718",
         "type": "csv",
-        "z": "67991373.45438c",
+        "z": "82cc831b154f3133",
         "name": "",
         "sep": ",",
         "hdrin": true,
@@ -1464,8 +1418,8 @@
         "strings": true,
         "include_empty_strings": false,
         "include_null_values": false,
-        "x": 550,
-        "y": 120,
+        "x": 350,
+        "y": 140,
         "wires": [
             [
                 "99680b80968eef8c",
@@ -1474,55 +1428,9 @@
         ]
     },
     {
-        "id": "99680b80968eef8c",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n    \n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n        action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1)};\n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 160,
-        "wires": [
-            [
-                "fff3d06b988e5233",
-                "5ab2c885ede5e880"
-            ]
-        ]
-    },
-    {
-        "id": "1e5beed02674863a",
-        "type": "ui_text_input",
-        "z": "67991373.45438c",
-        "name": "Input Parameter File Name",
-        "label": "File Name to upload",
-        "tooltip": "Enter the location of the parameters file",
-        "group": "1f86b2145e7e556a",
-        "order": 1,
-        "width": 14,
-        "height": 1,
-        "passthru": true,
-        "mode": "text",
-        "delay": "0",
-        "topic": "topic",
-        "sendOnBlur": true,
-        "className": "",
-        "topicType": "msg",
-        "x": 160,
-        "y": 160,
-        "wires": [
-            [
-                "6681b08b.4a688"
-            ]
-        ]
-    },
-    {
         "id": "5cfa292979246c14",
         "type": "ui_table",
-        "z": "67991373.45438c",
+        "z": "82cc831b154f3133",
         "group": "5c07c02344a2bd3d",
         "name": "CSV Import Parameters File",
         "order": 2,
@@ -1612,24 +1520,51 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 760,
-        "y": 60,
+        "x": 560,
+        "y": 80,
         "wires": []
     },
     {
-        "id": "97cb22c43553888b",
-        "type": "comment",
-        "z": "67991373.45438c",
-        "name": "Read CSV File amd create dynamic rules",
-        "info": "",
-        "x": 260,
-        "y": 400,
-        "wires": []
+        "id": "99680b80968eef8c",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Convert Parameter File to Pre-Processed Rules",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n    \n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n        action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1)};\n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 180,
+        "wires": [
+            [
+                "fff3d06b988e5233",
+                "5ab2c885ede5e880"
+            ]
+        ]
+    },
+    {
+        "id": "5ab2c885ede5e880",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Load the pre-rules table",
+        "func": "msg.payload = msg.params\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 180,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "fff3d06b988e5233",
         "type": "http request",
-        "z": "67991373.45438c",
+        "z": "82cc831b154f3133",
         "name": "API call to Analyse Parameters Rules File",
         "method": "POST",
         "ret": "obj",
@@ -1655,14 +1590,136 @@
                 "valueValue": "x5nDCpvGTkvHniq8wJ9m"
             }
         ],
-        "x": 1240,
-        "y": 240,
+        "x": 1040,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4440c71e.f88f18",
+        "type": "ui_table",
+        "z": "67991373.45438c",
+        "group": "1f48566b.e8958a",
+        "name": "2. Processed Pre-Rule",
+        "order": 1,
+        "width": 30,
+        "height": 7,
+        "columns": [
+            {
+                "field": "key",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "conditionstring",
+                "title": "Condition",
+                "width": "40%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "message",
+                "title": "Message",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "actionString",
+                "title": "Action",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 780,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "9a7a7971.dbc4b8",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 20,
         "wires": [
             [
-                "a9b4f3abe77d039c",
-                "7deb55a4c358e093"
+                "0c27c540f6e4bd44"
+            ]
+        ],
+        "outputLabels": [
+            "Send Time"
+        ]
+    },
+    {
+        "id": "1e5beed02674863a",
+        "type": "ui_text_input",
+        "z": "67991373.45438c",
+        "name": "Input Parameter File Name",
+        "label": "File Name to upload",
+        "tooltip": "Enter the location of the parameters file",
+        "group": "1f86b2145e7e556a",
+        "order": 1,
+        "width": 14,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "b5c53653a76681bf"
             ]
         ]
+    },
+    {
+        "id": "97cb22c43553888b",
+        "type": "comment",
+        "z": "67991373.45438c",
+        "name": "Read CSV File amd create dynamic rules",
+        "info": "",
+        "x": 180,
+        "y": 460,
+        "wires": []
     },
     {
         "id": "a9b4f3abe77d039c",
@@ -1676,8 +1733,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1540,
-        "y": 240,
+        "x": 980,
+        "y": 140,
         "wires": []
     },
     {
@@ -1695,7 +1752,7 @@
         "y": 100,
         "wires": [
             [
-                "6681b08b.4a688"
+                "b5c53653a76681bf"
             ]
         ]
     },
@@ -1772,26 +1829,24 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1570,
-        "y": 300,
+        "x": 770,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "5ab2c885ede5e880",
-        "type": "function",
+        "id": "b5c53653a76681bf",
+        "type": "subflow:82cc831b154f3133",
         "z": "67991373.45438c",
-        "name": "Load the pre-rules table",
-        "func": "msg.payload = msg.params\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1190,
-        "y": 160,
+        "name": "",
+        "x": 470,
+        "y": 140,
         "wires": [
             [
                 "4440c71e.f88f18"
+            ],
+            [
+                "a9b4f3abe77d039c",
+                "7deb55a4c358e093"
             ]
         ]
     },
