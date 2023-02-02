@@ -1293,7 +1293,7 @@
         "type": "file in",
         "z": "67991373.45438c",
         "name": "Read File",
-        "filename": "/Users/revealgc/Desktop/additive.csv",
+        "filename": "/Users/revealgc/Desktop/'additive relationships_4testMOD'.csv",
         "filenameType": "str",
         "format": "utf8",
         "chunk": false,
@@ -1315,13 +1315,10 @@
         "name": "",
         "props": [
             {
-                "p": "payload",
-                "v": "",
-                "vt": "date"
+                "p": "payload"
             },
             {
                 "p": "topic",
-                "v": "",
                 "vt": "str"
             }
         ],
