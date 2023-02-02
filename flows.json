@@ -860,7 +860,7 @@
         "tab": "da612906.998368",
         "order": 4,
         "disp": true,
-        "width": "30",
+        "width": "24",
         "collapse": true,
         "className": ""
     },
@@ -951,7 +951,7 @@
         "tab": "da612906.998368",
         "order": 5,
         "disp": true,
-        "width": "6",
+        "width": "24",
         "collapse": true,
         "className": ""
     },
@@ -1526,7 +1526,7 @@
         "group": "1f48566b.e8958a",
         "name": "2. Processed Pre-Rule",
         "order": 1,
-        "width": 30,
+        "width": "24",
         "height": 7,
         "columns": [
             {
@@ -1686,7 +1686,7 @@
         "group": "18a5a593fcd64912",
         "name": "3. Processed Rules",
         "order": 1,
-        "width": "30",
+        "width": "24",
         "height": "9",
         "columns": [
             {
@@ -1783,8 +1783,8 @@
         "group": "5c07c02344a2bd3d",
         "name": "1.0 CSV Import Parameters File",
         "order": 2,
-        "width": 30,
-        "height": 7,
+        "width": "24",
+        "height": "5",
         "columns": [
             {
                 "field": "key",
@@ -1985,8 +1985,8 @@
         "group": "134f09c88dd005fc",
         "name": "4. Facts",
         "order": 1,
-        "width": "30",
-        "height": "9",
+        "width": "24",
+        "height": "7",
         "columns": [
             {
                 "field": "rule.event.ruleId",
