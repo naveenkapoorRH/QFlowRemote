@@ -1863,6 +1863,30 @@
         "wires": []
     },
     {
+        "id": "04f3b0fb456d2117",
+        "type": "ui_text_input",
+        "z": "67991373.45438c",
+        "name": "Input Dataset File Name",
+        "label": "Load Dataset File",
+        "tooltip": "Enter the location of the parameters file",
+        "group": "1f86b2145e7e556a",
+        "order": 1,
+        "width": 14,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "f0bda8ccf069c334",
         "type": "inject",
         "z": "d886a3864a88d832",
