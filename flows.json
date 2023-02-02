@@ -1707,8 +1707,8 @@
                 }
             },
             {
-                "field": "rule.conditions.all[0].params.conditionstring",
-                "title": "Condition",
+                "field": "payload[0].rule.event.params.action[0]",
+                "title": "Action",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
