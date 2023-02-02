@@ -1697,7 +1697,7 @@
         "height": "9",
         "columns": [
             {
-                "field": "result.key",
+                "field": "rule.event.ruleId",
                 "title": "Row",
                 "width": "80",
                 "align": "left",
@@ -1727,7 +1727,7 @@
                 }
             },
             {
-                "field": "result.conditionResult.status",
+                "field": "result.conditionResult",
                 "title": "Condition Result",
                 "width": "",
                 "align": "left",
