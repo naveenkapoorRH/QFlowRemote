@@ -3560,35 +3560,6 @@
         "wires": []
     },
     {
-        "id": "1b2fb300.c26e5d",
-        "type": "ui_button",
-        "z": "c702b495.9cc2f8",
-        "d": true,
-        "name": "",
-        "group": "1f86b2145e7e556a",
-        "order": 2,
-        "width": 1,
-        "height": 1,
-        "passthru": false,
-        "label": "Submit",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "",
-        "topicType": "str",
-        "x": 120,
-        "y": 360,
-        "wires": [
-            [
-                "49d75074.37303"
-            ]
-        ]
-    },
-    {
         "id": "49d75074.37303",
         "type": "function",
         "z": "c702b495.9cc2f8",
