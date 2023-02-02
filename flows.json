@@ -815,6 +815,16 @@
         "className": ""
     },
     {
+        "id": "e347d11f16eda5d8",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "1f86b2145e7e556a",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
         "id": "9a0d32273f30aad5",
         "type": "comment",
         "z": "c5ce2d38887016b2",
@@ -1456,8 +1466,8 @@
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": "6",
+        "height": "1",
         "passthru": true,
         "mode": "text",
         "delay": "0",
