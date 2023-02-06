@@ -1,8 +1,15 @@
 [
     {
+        "id": "67991373.45438c",
+        "type": "tab",
+        "label": "Dynamic Rules From Parameters Files",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "d886a3864a88d832",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Processing Parameters",
         "disabled": false,
         "info": "",
         "env": []
@@ -55,11 +62,12 @@
         "env": []
     },
     {
-        "id": "67991373.45438c",
+        "id": "642abfc93e7700ac",
         "type": "tab",
-        "label": "Read CSV File",
+        "label": "Flow 2",
         "disabled": false,
-        "info": ""
+        "info": "",
+        "env": []
     },
     {
         "id": "c5ce2d38887016b2",
@@ -95,6 +103,370 @@
                 "wires": [
                     {
                         "id": "1ef95ce134a911b9",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "0111e67f54e25c8c",
+        "type": "subflow",
+        "name": "1.1 Classification",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "bcea1437bb5bb1a3"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 500,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "bcea1437bb5bb1a3",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "831dceaabaf975f9",
+        "type": "subflow",
+        "name": "2.1 Geogrpahy",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "f710ad2a1b56dbec"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 620,
+                "y": 160,
+                "wires": [
+                    {
+                        "id": "f710ad2a1b56dbec",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "10e53f47b43ab89e",
+        "type": "subflow",
+        "name": "4.0 Subflow Completeness Check",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "0fc84963f887090f"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 500,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "0fc84963f887090f",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "b99b7893add8c369",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "bcba475dfd370f23"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 420,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "bcba475dfd370f23",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "27fccef587c0b218",
+        "type": "subflow",
+        "name": "Subflow 2",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "89b27031e68b3415"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 520,
+                "y": 60,
+                "wires": [
+                    {
+                        "id": "89b27031e68b3415",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "3fa869ffe40596e5",
+        "type": "subflow",
+        "name": "Subflow 3",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "6ed3a94bca74bb19"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "6ed3a94bca74bb19",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "98b684914b5fce08",
+        "type": "subflow",
+        "name": "Subflow 4",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "ac1127915ee1fd4b"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "ac1127915ee1fd4b",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2e55e3e8510e62d0",
+        "type": "subflow",
+        "name": "Subflow 5",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "f40a55ca93f943db"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 440,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "f40a55ca93f943db",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2ad5fa373c21d0a3",
+        "type": "subflow",
+        "name": "Subflow 6",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "42dbbd9f093bf42e"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "42dbbd9f093bf42e",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "67a3cd3b754e4fbd",
+        "type": "subflow",
+        "name": "Subflow 7",
+        "info": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "0f9ffc3cef064808"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 160,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "0f9ffc3cef064808",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "045ba1012eb08b50",
+        "type": "subflow",
+        "name": "Subflow 8",
+        "info": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "57bc9e5538773197"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 340,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "57bc9e5538773197",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "82cc831b154f3133",
+        "type": "subflow",
+        "name": "Dynamic Rules from Parameter Files",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "6681b08b.4a688"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1320,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "fff3d06b988e5233",
                         "port": 0
                     }
                 ]
@@ -192,11 +564,11 @@
     {
         "id": "1f48566b.e8958a",
         "type": "ui_group",
-        "name": "Workflows",
-        "tab": "e7dc0c12a87bf783",
-        "order": 2,
+        "name": "2. Processed PreRules",
+        "tab": "da612906.998368",
+        "order": 3,
         "disp": true,
-        "width": "14",
+        "width": "30",
         "collapse": true,
         "className": ""
     },
@@ -281,7 +653,7 @@
                 }
             },
             "angularTheme": {
-                "primary": "indigo",
+                "primary": "blue",
                 "accents": "blue",
                 "warn": "red",
                 "background": "grey",
@@ -290,7 +662,7 @@
         },
         "site": {
             "name": "QFlow",
-            "hideToolbar": "false",
+            "hideToolbar": "true",
             "allowSwipe": "false",
             "lockMenu": "true",
             "allowTempTheme": "none",
@@ -388,7 +760,7 @@
         "type": "ui_group",
         "name": "Enter Workflows",
         "tab": "e7dc0c12a87bf783",
-        "order": 1,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -398,7 +770,7 @@
         "id": "fe9b4de4.dcd72",
         "type": "ui_group",
         "name": "Name list",
-        "tab": "da612906.998368",
+        "tab": "e7dc0c12a87bf783",
         "order": 1,
         "disp": true,
         "width": "15",
@@ -407,10 +779,169 @@
     {
         "id": "da612906.998368",
         "type": "ui_tab",
-        "name": "Main-PC",
+        "name": "Parameters",
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "440f78388bf9306a",
+        "type": "ui_group",
+        "name": "Rules for Workflows",
+        "tab": "e7dc0c12a87bf783",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c76aaa5098c96374",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5c07c02344a2bd3d",
+        "type": "ui_group",
+        "name": "1. Parameters File",
+        "tab": "da612906.998368",
+        "order": 2,
+        "disp": true,
+        "width": "30",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "1f86b2145e7e556a",
+        "type": "ui_group",
+        "name": "Input File",
+        "tab": "da612906.998368",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "18a5a593fcd64912",
+        "type": "ui_group",
+        "name": "3. Dynamic Rules from Parameters File",
+        "tab": "da612906.998368",
+        "order": 4,
+        "disp": true,
+        "width": "24",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "134f09c88dd005fc",
+        "type": "ui_group",
+        "name": "4. Facts",
+        "tab": "da612906.998368",
+        "order": 5,
+        "disp": true,
+        "width": "24",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "160e81fb.f1c86e",
+        "type": "ui_group",
+        "name": "File Browser",
+        "tab": "b63d1f91.68095",
+        "order": 1,
+        "disp": true,
+        "width": "18",
+        "collapse": false
+    },
+    {
+        "id": "b63d1f91.68095",
+        "type": "ui_tab",
+        "name": "Files",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c33a1024a72aa169",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "cc6c4310cf7b61cc",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "cc6c4310cf7b61cc",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8b3784e33ba42593",
+        "type": "ui_group",
+        "name": "JSON2tree",
+        "tab": "422e1ae50d899723",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "422e1ae50d899723",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "0e2eb66497dfe7df",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "18a5a593fcd64912",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0e407c0d41ec50ac",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7fcf5f2431271efd",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "5c07c02344a2bd3d",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4a865b53ddde60de",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "134f09c88dd005fc",
+        "order": 5,
+        "width": 1,
+        "height": 1
     },
     {
         "id": "9a0d32273f30aad5",
@@ -656,6 +1187,1358 @@
         "wires": []
     },
     {
+        "id": "bcea1437bb5bb1a3",
+        "type": "function",
+        "z": "0111e67f54e25c8c",
+        "name": "1.1.1 Classification",
+        "func": "msg.actions.classificationCompleted = true\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 140,
+        "wires": [
+            [
+                "2e40abf0ac9d09f7"
+            ]
+        ]
+    },
+    {
+        "id": "2e40abf0ac9d09f7",
+        "type": "debug",
+        "z": "0111e67f54e25c8c",
+        "name": "Classified Facts",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "facts",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f710ad2a1b56dbec",
+        "type": "function",
+        "z": "831dceaabaf975f9",
+        "name": "Validate GEO",
+        "func": "\nif(msg.facts.GEO) msg.facts.GEOLELVEL = 'valid'\nelse msg.facts.GEOLELVEL = 'invalid'\nmsg.actions.geogrpahyCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0fc84963f887090f",
+        "type": "function",
+        "z": "10e53f47b43ab89e",
+        "name": "4.0 Completeness Check",
+        "func": "\nmsg.actions.completenessCheckCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bcba475dfd370f23",
+        "type": "function",
+        "z": "b99b7893add8c369",
+        "name": "5.0 Logical Check",
+        "func": "msg.action = 'Logical Check'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89b27031e68b3415",
+        "type": "function",
+        "z": "27fccef587c0b218",
+        "name": "6.0 Ratio/Range Testing",
+        "func": "msg.actions.ratioRangeTestingCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ed3a94bca74bb19",
+        "type": "function",
+        "z": "3fa869ffe40596e5",
+        "name": "7.0 Post Ratio/Range",
+        "func": "msg.actions.postRatioRangeCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac1127915ee1fd4b",
+        "type": "function",
+        "z": "98b684914b5fce08",
+        "name": "8.0 Unit Balance",
+        "func": "msg.actions.unitBalanceCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f40a55ca93f943db",
+        "type": "function",
+        "z": "2e55e3e8510e62d0",
+        "name": "9.0 Company Additivity Check",
+        "func": "msg.actions.companyAdditivityCheckCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "42dbbd9f093bf42e",
+        "type": "function",
+        "z": "2ad5fa373c21d0a3",
+        "name": "10.0 Derived Items",
+        "func": "msg.actions.derivedItemsCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f9ffc3cef064808",
+        "type": "function",
+        "z": "67a3cd3b754e4fbd",
+        "name": "11.0 Post Edit Status Fields",
+        "func": "msg.actions.postEditStatusFieldsCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "57bc9e5538773197",
+        "type": "function",
+        "z": "045ba1012eb08b50",
+        "name": "3.0 All Units",
+        "func": "msg.actions.allUnitsCompleted = true\nmsg.actions.determineStatusCompleted = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6681b08b.4a688",
+        "type": "file in",
+        "z": "82cc831b154f3133",
+        "name": "Read File",
+        "filename": "payload",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "e843fa29.885718"
+            ]
+        ]
+    },
+    {
+        "id": "e843fa29.885718",
+        "type": "csv",
+        "z": "82cc831b154f3133",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "99680b80968eef8c",
+                "a2cbb8c5837a6f57"
+            ]
+        ]
+    },
+    {
+        "id": "99680b80968eef8c",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Convert Parameter File to Pre-Processed Rules",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n  \n\n\n\n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n       {\n//         // A = B + C + 20 to an array[{A:\"B+C+20\"}]. However if The other option is 100 = a + b + c => needs to be converted to an array \n//         // [{a:100}, {b:100},..]  \n\n        \n\n        let rhs = actionStringRHS.substring(0, actionStringRHS.length - 1).trim()\n        let lhs = r['TOTAL']\n        // lhs = lhs.trim()\n        \n     \n// // Turns out to be a number ie 100 = A + B +c\n        if (!isNaN(lhs)) {\n            // Split the rhs on the \"+\" sign\n            let variables = rhs.split(\"+\");\n            // Trim any whitespace from each variable\n             variables = variables.map(variable => variable.trim());\n            // Create an array of assignment objects\n            action = variables.map(variable => ({ [variable]: lhs }));\n            console.log(\"LINE 37 index and action is \",k, action, lhs, rhs)\n            \n        } else \n        \n        \n         action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1) };\n       } \n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "fff3d06b988e5233",
+                "5ab2c885ede5e880"
+            ]
+        ]
+    },
+    {
+        "id": "5ab2c885ede5e880",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Load the pre-rules table",
+        "func": "msg.payload = msg.params\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 180,
+        "wires": [
+            [
+                "4440c71e.f88f18"
+            ]
+        ]
+    },
+    {
+        "id": "fff3d06b988e5233",
+        "type": "http request",
+        "z": "82cc831b154f3133",
+        "name": "API call to Analyse Parameters Rules File",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/rulesrepo/stringsToRules?DEBUG=true",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 1040,
+        "y": 420,
+        "wires": [
+            [
+                "8302074bca046e52",
+                "a53fbc532450d88c",
+                "c370fdc0adea4b18",
+                "8293ad496140e639",
+                "5511248c69b06213",
+                "03de92d56c236b99"
+            ]
+        ]
+    },
+    {
+        "id": "5cfa292979246c14",
+        "type": "ui_table",
+        "z": "82cc831b154f3133",
+        "group": "5c07c02344a2bd3d",
+        "name": "1.0 CSV Import Parameters File",
+        "order": 1,
+        "width": "24",
+        "height": "5",
+        "columns": [
+            {
+                "field": "key",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "SECTOR/TRADE",
+                "title": "SECTOR/TRADE",
+                "width": "80",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "NAICS",
+                "title": "NAICS",
+                "width": "40%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Short Condition",
+                "title": "Message",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "CONDITION",
+                "title": "CONDITION",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "DESCRIPTION",
+                "title": "DESCRIPTION",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "UNIT TYPE",
+                "title": "UNIT TYPE",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "TOTAL",
+                "title": "",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 990,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4440c71e.f88f18",
+        "type": "ui_table",
+        "z": "82cc831b154f3133",
+        "group": "1f48566b.e8958a",
+        "name": "2. Processed Pre-Rule",
+        "order": 1,
+        "width": "24",
+        "height": "5",
+        "columns": [
+            {
+                "field": "key",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "conditionstring",
+                "title": "Condition",
+                "width": "40%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "message",
+                "title": "Message",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "actionString",
+                "title": "Action",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1300,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "7deb55a4c358e093",
+        "type": "ui_table",
+        "z": "82cc831b154f3133",
+        "group": "18a5a593fcd64912",
+        "name": "3. Processed Rules",
+        "order": 1,
+        "width": "24",
+        "height": "9",
+        "columns": [
+            {
+                "field": "rule.event.ruleId",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "conditionstring",
+                "title": "Condition",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "actiontring",
+                "title": "Action",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "output.error",
+                "title": "Error",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "output.message",
+                "title": "Error Message",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "output.value",
+                "title": "Condition Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1710,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "8302074bca046e52",
+        "type": "change",
+        "z": "82cc831b154f3133",
+        "name": "Results from rules compilation",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.results",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1430,
+        "y": 500,
+        "wires": [
+            [
+                "7deb55a4c358e093"
+            ]
+        ]
+    },
+    {
+        "id": "a53fbc532450d88c",
+        "type": "change",
+        "z": "82cc831b154f3133",
+        "name": "Errors in condition from compilation",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.conditionError",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1440,
+        "y": 560,
+        "wires": [
+            [
+                "10cad444a2f23d2e"
+            ]
+        ]
+    },
+    {
+        "id": "10cad444a2f23d2e",
+        "type": "ui_table",
+        "z": "82cc831b154f3133",
+        "group": "18a5a593fcd64912",
+        "name": "3.1. Condition Errors",
+        "order": 1,
+        "width": "24",
+        "height": "7",
+        "columns": [
+            {
+                "field": "ruleId",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "message",
+                "title": "Error Message",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "expression",
+                "title": "Condition",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1720,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "c370fdc0adea4b18",
+        "type": "change",
+        "z": "82cc831b154f3133",
+        "name": "Facts Needed from compilation",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.factsNeededNameValue",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1430,
+        "y": 620,
+        "wires": [
+            [
+                "2451d69dcbe26c12"
+            ]
+        ]
+    },
+    {
+        "id": "2451d69dcbe26c12",
+        "type": "ui_table",
+        "z": "82cc831b154f3133",
+        "group": "18a5a593fcd64912",
+        "name": "3.2. Facts Needed",
+        "order": 1,
+        "width": "24",
+        "height": "9",
+        "columns": [
+            {
+                "field": "name",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "name",
+                "title": "Name",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "value",
+                "title": "Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1710,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "a2cbb8c5837a6f57",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Add Key to the csv rows",
+        "func": "\n\nmsg.payload = msg.payload.map((p, k) => { return { ...p, ...{ key: k+2 } } })\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 80,
+        "wires": [
+            [
+                "5cfa292979246c14"
+            ]
+        ]
+    },
+    {
+        "id": "8293ad496140e639",
+        "type": "ui_text",
+        "z": "82cc831b154f3133",
+        "group": "1f86b2145e7e556a",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "name": "Count of Errors",
+        "label": "Error(s)",
+        "format": "{{msg.payload.outputErrorCount}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1380,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5511248c69b06213",
+        "type": "ui_text",
+        "z": "82cc831b154f3133",
+        "group": "1f86b2145e7e556a",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "name": "Count of Rules",
+        "label": "Rules",
+        "format": "{{msg.payload.results.length}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1380,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "03de92d56c236b99",
+        "type": "ui_text",
+        "z": "82cc831b154f3133",
+        "group": "1f86b2145e7e556a",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "name": "Count of Facts Needed",
+        "label": "Facts",
+        "format": "{{msg.payload.factsNeededNameValue.length}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1410,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "9a7a7971.dbc4b8",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "Upload 4testMOD.cvs",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "/Users/revealgc/Desktop/4testMOD.csv",
+        "payloadType": "str",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "1e5beed02674863a",
+                "b5c53653a76681bf"
+            ]
+        ],
+        "outputLabels": [
+            "Send Time"
+        ]
+    },
+    {
+        "id": "1e5beed02674863a",
+        "type": "ui_text_input",
+        "z": "67991373.45438c",
+        "name": "Input Parameter File Name",
+        "label": "Params file...",
+        "tooltip": "Enter the location of the parameters file",
+        "group": "1f86b2145e7e556a",
+        "order": 1,
+        "width": "8",
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "b5c53653a76681bf"
+            ]
+        ]
+    },
+    {
+        "id": "97cb22c43553888b",
+        "type": "comment",
+        "z": "67991373.45438c",
+        "name": "Read CSV File amd create dynamic rules",
+        "info": "",
+        "x": 960,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "b5c53653a76681bf",
+        "type": "subflow:82cc831b154f3133",
+        "z": "67991373.45438c",
+        "name": "",
+        "x": 750,
+        "y": 120,
+        "wires": [
+            [
+                "f123cf830d3837f6",
+                "3af468cd9306ec3e"
+            ]
+        ]
+    },
+    {
+        "id": "04f3b0fb456d2117",
+        "type": "ui_text_input",
+        "z": "67991373.45438c",
+        "name": "Input Dataset File Name",
+        "label": "Facts",
+        "tooltip": "Enter the location of the parameters file",
+        "group": "1f86b2145e7e556a",
+        "order": 5,
+        "width": 14,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "100234cf93c195b8"
+            ]
+        ]
+    },
+    {
+        "id": "100234cf93c195b8",
+        "type": "file in",
+        "z": "67991373.45438c",
+        "name": "Read File",
+        "filename": "payload",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 780,
+        "y": 520,
+        "wires": [
+            [
+                "c047c871d9c0e70d"
+            ]
+        ]
+    },
+    {
+        "id": "c047c871d9c0e70d",
+        "type": "csv",
+        "z": "67991373.45438c",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "mult",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": false,
+        "include_null_values": false,
+        "x": 930,
+        "y": 520,
+        "wires": [
+            [
+                "c9c9ca415ab95910"
+            ]
+        ]
+    },
+    {
+        "id": "c9c9ca415ab95910",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Get Facts From File",
+        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\nmsg.facts = facts\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 520,
+        "wires": [
+            [
+                "16550455147cd747",
+                "f123cf830d3837f6"
+            ]
+        ]
+    },
+    {
+        "id": "16550455147cd747",
+        "type": "ui_table",
+        "z": "67991373.45438c",
+        "group": "134f09c88dd005fc",
+        "name": "4. Facts",
+        "order": 1,
+        "width": "24",
+        "height": "7",
+        "columns": [
+            {
+                "field": "rule.event.ruleId",
+                "title": "Row",
+                "width": "80",
+                "align": "left",
+                "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "name",
+                "title": "Name",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "value",
+                "title": "Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1320,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "211d46862546b6bf",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "Submit '/Users/revealgc/Desktop/factsToTest.csv'",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "/Users/revealgc/Desktop/factsToTest.csv",
+        "payloadType": "str",
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "100234cf93c195b8",
+                "04f3b0fb456d2117"
+            ]
+        ],
+        "outputLabels": [
+            "Send Time"
+        ]
+    },
+    {
+        "id": "f123cf830d3837f6",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "5. Collect Rules and Facts",
+        "func": "let rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\n\nmsg.payload = rules\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3af468cd9306ec3e",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "f0bda8ccf069c334",
+        "type": "inject",
+        "z": "d886a3864a88d832",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "508c4d88817d96f3",
+        "type": "switch",
+        "z": "d886a3864a88d832",
+        "name": "1.0 Estab or KAU Switch",
+        "property": "facts.level_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "d",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "e",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 310,
+        "y": 60,
+        "wires": [
+            [
+                "d45b30e5c09c6653"
+            ],
+            [
+                "d45b30e5c09c6653"
+            ],
+            [
+                "d457c366c48ae1e9"
+            ]
+        ]
+    },
+    {
+        "id": "d45b30e5c09c6653",
+        "type": "subflow:0111e67f54e25c8c",
+        "z": "d886a3864a88d832",
+        "name": "",
+        "x": 580,
+        "y": 40,
+        "wires": [
+            [
+                "d457c366c48ae1e9"
+            ]
+        ]
+    },
+    {
+        "id": "d457c366c48ae1e9",
+        "type": "switch",
+        "z": "d886a3864a88d832",
+        "name": "2.0 Estab",
+        "property": "facts.level_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "e",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "5a284359f94c5f07"
+            ],
+            [
+                "48c251e7e1851bb1"
+            ]
+        ]
+    },
+    {
+        "id": "5a284359f94c5f07",
+        "type": "subflow:831dceaabaf975f9",
+        "z": "d886a3864a88d832",
+        "name": "",
+        "x": 840,
+        "y": 40,
+        "wires": [
+            [
+                "48c251e7e1851bb1"
+            ]
+        ]
+    },
+    {
+        "id": "4e38bfa9e516a9d7",
+        "type": "subflow:10e53f47b43ab89e",
+        "z": "d886a3864a88d832",
+        "name": "4.0 Subflow Completeness",
+        "x": 1110,
+        "y": 200,
+        "wires": [
+            [
+                "1393263d0d520dfd"
+            ]
+        ]
+    },
+    {
+        "id": "1393263d0d520dfd",
+        "type": "subflow:b99b7893add8c369",
+        "z": "d886a3864a88d832",
+        "name": "5.0 Logical Checks",
+        "x": 1370,
+        "y": 200,
+        "wires": [
+            [
+                "22a7836fd0ee4876"
+            ]
+        ]
+    },
+    {
+        "id": "22a7836fd0ee4876",
+        "type": "subflow:27fccef587c0b218",
+        "z": "d886a3864a88d832",
+        "name": "6.0 Ratio/Range Testing",
+        "x": 1620,
+        "y": 200,
+        "wires": [
+            [
+                "4242881485341267"
+            ]
+        ]
+    },
+    {
+        "id": "4242881485341267",
+        "type": "subflow:3fa869ffe40596e5",
+        "z": "d886a3864a88d832",
+        "name": "7.0 Post Ratio/Range",
+        "x": 1900,
+        "y": 200,
+        "wires": [
+            [
+                "69135525ff74076e"
+            ]
+        ]
+    },
+    {
+        "id": "69135525ff74076e",
+        "type": "subflow:98b684914b5fce08",
+        "z": "d886a3864a88d832",
+        "name": "8.0 Unit Balance",
+        "x": 2140,
+        "y": 200,
+        "wires": [
+            [
+                "f57362671b31528b"
+            ]
+        ]
+    },
+    {
+        "id": "f57362671b31528b",
+        "type": "subflow:2e55e3e8510e62d0",
+        "z": "d886a3864a88d832",
+        "name": "9.0 Company Additivity Check",
+        "x": 2400,
+        "y": 200,
+        "wires": [
+            [
+                "66f76ef1f55de5b8"
+            ]
+        ]
+    },
+    {
+        "id": "66f76ef1f55de5b8",
+        "type": "subflow:2ad5fa373c21d0a3",
+        "z": "d886a3864a88d832",
+        "name": "10.0 Derived Items",
+        "x": 2710,
+        "y": 200,
+        "wires": [
+            [
+                "0f8306d8913bb7d2"
+            ]
+        ]
+    },
+    {
+        "id": "0f8306d8913bb7d2",
+        "type": "subflow:67a3cd3b754e4fbd",
+        "z": "d886a3864a88d832",
+        "name": "11.0 Post Edit Status Fields",
+        "x": 3000,
+        "y": 200,
+        "wires": [
+            [
+                "a0acac50eaa1f639"
+            ]
+        ]
+    },
+    {
+        "id": "a0acac50eaa1f639",
+        "type": "debug",
+        "z": "d886a3864a88d832",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3280,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "48c251e7e1851bb1",
+        "type": "subflow:045ba1012eb08b50",
+        "z": "d886a3864a88d832",
+        "name": "3.0 Determine Status",
+        "x": 860,
+        "y": 200,
+        "wires": [
+            [
+                "4e38bfa9e516a9d7"
+            ]
+        ]
+    },
+    {
         "id": "3626fe7ffedf766a",
         "type": "inject",
         "z": "ae7e9f579855357c",
@@ -674,7 +2557,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "SPAD",
-        "payload": "29038",
+        "payload": "29028",
         "payloadType": "num",
         "x": 130,
         "y": 40,
@@ -734,7 +2617,7 @@
         "id": "39fd1017ceb52b5b",
         "type": "ui_table",
         "z": "ae7e9f579855357c",
-        "group": "1f48566b.e8958a",
+        "group": "440f78388bf9306a",
         "name": "Rules Repository",
         "order": 2,
         "width": "14",
@@ -831,8 +2714,8 @@
                 "3d9d45286705cfca"
             ],
             [
-                "39fd1017ceb52b5b",
-                "9bce07e0bcd382ef"
+                "9bce07e0bcd382ef",
+                "39fd1017ceb52b5b"
             ]
         ]
     },
@@ -967,7 +2850,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 940,
+        "x": 1160,
         "y": 200,
         "wires": [
             []
@@ -1333,8 +3216,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
-        "y": 60,
+        "x": 670,
+        "y": 80,
         "wires": []
     },
     {
@@ -1778,8 +3661,8 @@
         "topicType": "msg",
         "splitLayout": true,
         "className": "",
-        "x": 900,
-        "y": 280,
+        "x": 720,
+        "y": 380,
         "wires": [
             []
         ]
@@ -1795,8 +3678,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 580,
-        "y": 120,
+        "x": 480,
+        "y": 100,
         "wires": [
             []
         ]
@@ -1944,35 +3827,6 @@
         "wires": []
     },
     {
-        "id": "1b2fb300.c26e5d",
-        "type": "ui_button",
-        "z": "c702b495.9cc2f8",
-        "d": true,
-        "name": "",
-        "group": "1f48566b.e8958a",
-        "order": 3,
-        "width": "1",
-        "height": "1",
-        "passthru": false,
-        "label": "Submit",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "",
-        "payloadType": "date",
-        "topic": "",
-        "topicType": "str",
-        "x": 120,
-        "y": 360,
-        "wires": [
-            [
-                "49d75074.37303"
-            ]
-        ]
-    },
-    {
         "id": "49d75074.37303",
         "type": "function",
         "z": "c702b495.9cc2f8",
@@ -2029,9 +3883,9 @@
         "label": "Enter Reporting ID",
         "tooltip": "3449842849",
         "group": "1f48566b.e8958a",
-        "order": 1,
-        "width": "6",
-        "height": "3",
+        "order": 2,
+        "width": 6,
+        "height": 3,
         "passthru": true,
         "mode": "number",
         "delay": "0",
@@ -2070,9 +3924,9 @@
         "z": "c702b495.9cc2f8",
         "d": true,
         "group": "1f48566b.e8958a",
-        "order": 4,
-        "width": "13",
-        "height": "9",
+        "order": 3,
+        "width": 30,
+        "height": 9,
         "name": "",
         "label": "Result",
         "format": "{{msg.payload}} ",
@@ -2580,86 +4434,53 @@
         ]
     },
     {
-        "id": "4440c71e.f88f18",
-        "type": "ui_table",
-        "z": "67991373.45438c",
-        "group": "1f48566b.e8958a",
-        "name": "Parameters File Imported",
-        "order": 11,
-        "width": "0",
-        "height": "0",
-        "columns": [
-            {
-                "field": "Person ID",
-                "title": "Person ID",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Name",
-                "title": "Name",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "Department",
-                "title": "Department",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            }
-        ],
-        "outputs": 0,
-        "cts": false,
-        "x": 810,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "6681b08b.4a688",
-        "type": "file in",
-        "z": "67991373.45438c",
-        "name": "Read File",
-        "filename": "C:\\Users\\user\\Documents\\Records_Report.csv",
-        "filenameType": "str",
-        "format": "utf8",
-        "chunk": false,
-        "sendError": false,
-        "encoding": "none",
-        "x": 360,
-        "y": 160,
+        "id": "c77f44f94f19fb09",
+        "type": "ui_template",
+        "z": "642abfc93e7700ac",
+        "group": "8b3784e33ba42593",
+        "name": "JSON2tree",
+        "order": 3,
+        "width": "6",
+        "height": "6",
+        "format": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css\" />\n</head>\n<body>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js\"></script>\n  <div id=\"tree\"><div id=\"jstree\"></div></div>\n  <script>\n  \n  function jsonToJsTreeObject( json_data_object, final_array = new Array() )\n    {\n        Object.keys(json_data_object).forEach( function( data ) {\n            // console.log(\"Key:\" + data);\n            if( Array.isArray(json_data_object[data]) || json_data_object[data] instanceof Object )\n            {\n                final_array.push( { text: `${data}`, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n                // using state attribute \n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n            }\n            else\n            {\n                final_array.push( { text: `${data}`, children: [{ text: `${json_data_object[data]}` }] } );\n                // using state attribute\n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: [{ text: `${json_data_object[data]}` }] } );\n            }\n        });\n\n        return final_array;\n    }\n  \n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n        $('#jstree').remove()\n        let myjsonObject = msg.payload\n        let div = document.createElement('div')\n        div.setAttribute(\"id\", \"jstree\")\n        let treediv = document.getElementById(\"tree\")\n        treediv.appendChild(div)\n        $('#jstree').jstree({ 'core' : {\n                    'data' : jsonToJsTreeObject( myjsonObject )\n        } });\n        $('#jstree').on(\"changed.jstree\", function (e, data) {\n            let path = $('#jstree').jstree(true).get_path(data.node,\"/\");\n            console.log(path);\n            msg.output = path\n            scope.send(msg)\n        });\n    }\n  });\n})(scope);\n\n</script>\n</body>\n</html>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 530,
+        "y": 220,
         "wires": [
             [
-                "e843fa29.885718"
+                "8d8c29c9e4047092"
             ]
         ]
     },
     {
-        "id": "9a7a7971.dbc4b8",
-        "type": "inject",
-        "z": "67991373.45438c",
+        "id": "8d8c29c9e4047092",
+        "type": "debug",
+        "z": "642abfc93e7700ac",
         "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "5311e09880914790",
+        "type": "inject",
+        "z": "642abfc93e7700ac",
+        "name": "JSON",
         "props": [
             {
-                "p": "payload",
-                "v": "",
-                "vt": "date"
-            },
-            {
-                "p": "topic",
-                "v": "",
-                "vt": "str"
+                "p": "payload"
             }
         ],
         "repeat": "",
@@ -2667,36 +4488,38 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 160,
+        "payload": "{     \"glossary\": {         \"title\": \"example glossary\", \t\t\"GlossDiv\": {             \"title\": \"S\", \t\t\t\"GlossList\": {                 \"GlossEntry\": {                     \"ID\": \"SGML\", \t\t\t\t\t\"SortAs\": \"SGML\", \t\t\t\t\t\"GlossTerm\": \"Standard Generalized Markup Language\", \t\t\t\t\t\"Acronym\": \"SGML\", \t\t\t\t\t\"Abbrev\": \"ISO 8879:1986\", \t\t\t\t\t\"GlossDef\": {                         \"para\": \"A meta-markup language, used to create markup languages such as DocBook.\", \t\t\t\t\t\t\"GlossSeeAlso\": [\"GML\", \"XML\"]                     }, \t\t\t\t\t\"GlossSee\": \"markup\"                 }             }         }     } }",
+        "payloadType": "json",
+        "x": 350,
+        "y": 220,
         "wires": [
             [
-                "6681b08b.4a688"
+                "c77f44f94f19fb09"
             ]
         ]
     },
     {
-        "id": "e843fa29.885718",
-        "type": "csv",
-        "z": "67991373.45438c",
-        "name": "",
-        "sep": ",",
-        "hdrin": true,
-        "hdrout": "none",
-        "multi": "mult",
-        "ret": "\\r\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": false,
-        "include_null_values": false,
-        "x": 570,
-        "y": 160,
+        "id": "49c7befd02b97aaa",
+        "type": "inject",
+        "z": "642abfc93e7700ac",
+        "name": "JSON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"name\":\"John\",\"age\":30,\"car\":null}",
+        "payloadType": "json",
+        "x": 350,
+        "y": 260,
         "wires": [
             [
-                "4440c71e.f88f18"
+                "c77f44f94f19fb09"
             ]
         ]
     }
