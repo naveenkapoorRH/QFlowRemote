@@ -462,7 +462,7 @@
         ],
         "out": [
             {
-                "x": 1280,
+                "x": 1320,
                 "y": 240,
                 "wires": [
                     {
@@ -1432,7 +1432,7 @@
         "wires": [
             [
                 "99680b80968eef8c",
-                "5cfa292979246c14"
+                "a2cbb8c5837a6f57"
             ]
         ]
     },
@@ -1441,7 +1441,7 @@
         "type": "function",
         "z": "82cc831b154f3133",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n  \n\n\n\n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n       {\n//         // A = B + C + 20 to an array[{A:\"B+C+20\"}]. However if The other option is 100 = a + b + c => needs to be converted to an array \n//         // [{a:100}, {b:100},..]  \n\n        \n\n        let rhs = actionStringRHS.substring(0, actionStringRHS.length - 1).trim()\n        let lhs = r['TOTAL']\n        // lhs = lhs.trim()\n        \n     \n// // Turns out to be a number ie 100 = A + B +c\n        if (!isNaN(lhs)) {\n            // Split the rhs on the \"+\" sign\n            let variables = rhs.split(\"+\");\n            // Trim any whitespace from each variable\n             variables = variables.map(variable => variable.trim());\n            // Create an array of assignment objects\n            action = variables.map(variable => ({ [variable]: lhs }));\n            console.log(\"LINE 37 index and action is \",k, action, lhs, rhs)\n            \n        } else \n        \n        \n         action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1) };\n       } \n\n    preRules.push({ \n    key: k+1, \n    ruleId: k+1,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n  \n\n\n\n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n       {\n//         // A = B + C + 20 to an array[{A:\"B+C+20\"}]. However if The other option is 100 = a + b + c => needs to be converted to an array \n//         // [{a:100}, {b:100},..]  \n\n        \n\n        let rhs = actionStringRHS.substring(0, actionStringRHS.length - 1).trim()\n        let lhs = r['TOTAL']\n        // lhs = lhs.trim()\n        \n     \n// // Turns out to be a number ie 100 = A + B +c\n        if (!isNaN(lhs)) {\n            // Split the rhs on the \"+\" sign\n            let variables = rhs.split(\"+\");\n            // Trim any whitespace from each variable\n             variables = variables.map(variable => variable.trim());\n            // Create an array of assignment objects\n            action = variables.map(variable => ({ [variable]: lhs }));\n            console.log(\"LINE 37 index and action is \",k, action, lhs, rhs)\n            \n        } else \n        \n        \n         action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1) };\n       } \n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1504,13 +1504,16 @@
                 "valueValue": "x5nDCpvGTkvHniq8wJ9m"
             }
         ],
-        "x": 1020,
-        "y": 240,
+        "x": 1040,
+        "y": 420,
         "wires": [
             [
                 "8302074bca046e52",
                 "a53fbc532450d88c",
-                "c370fdc0adea4b18"
+                "c370fdc0adea4b18",
+                "8293ad496140e639",
+                "5511248c69b06213",
+                "03de92d56c236b99"
             ]
         ]
     },
@@ -1529,7 +1532,7 @@
                 "title": "Row",
                 "width": "80",
                 "align": "left",
-                "formatter": "rownum",
+                "formatter": "plaintext",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -1607,7 +1610,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 570,
+        "x": 990,
         "y": 80,
         "wires": []
     },
@@ -1626,7 +1629,7 @@
                 "title": "Row",
                 "width": "80",
                 "align": "left",
-                "formatter": "rownum",
+                "formatter": "plaintext",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -1683,7 +1686,7 @@
                 "title": "Row",
                 "width": "80",
                 "align": "left",
-                "formatter": "rownum",
+                "formatter": "plaintext",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -1741,8 +1744,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1690,
-        "y": 320,
+        "x": 1710,
+        "y": 500,
         "wires": []
     },
     {
@@ -1765,8 +1768,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1410,
-        "y": 320,
+        "x": 1430,
+        "y": 500,
         "wires": [
             [
                 "7deb55a4c358e093"
@@ -1793,8 +1796,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1420,
-        "y": 380,
+        "x": 1440,
+        "y": 560,
         "wires": [
             [
                 "10cad444a2f23d2e"
@@ -1844,8 +1847,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1700,
-        "y": 380,
+        "x": 1720,
+        "y": 560,
         "wires": []
     },
     {
@@ -1868,8 +1871,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1410,
-        "y": 440,
+        "x": 1430,
+        "y": 620,
         "wires": [
             [
                 "2451d69dcbe26c12"
@@ -1919,15 +1922,85 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1690,
-        "y": 440,
+        "x": 1710,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "a2cbb8c5837a6f57",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Add Key to the csv rows",
+        "func": "\n\nmsg.payload = msg.payload.map((p, k) => { return { ...p, ...{ key: k+2 } } })\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 80,
+        "wires": [
+            [
+                "5cfa292979246c14"
+            ]
+        ]
+    },
+    {
+        "id": "8293ad496140e639",
+        "type": "ui_text",
+        "z": "82cc831b154f3133",
+        "group": "1f86b2145e7e556a",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "name": "Count of Errors",
+        "label": "Error(s)",
+        "format": "{{msg.payload.outputErrorCount}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1380,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "5511248c69b06213",
+        "type": "ui_text",
+        "z": "82cc831b154f3133",
+        "group": "1f86b2145e7e556a",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "name": "Count of Rules",
+        "label": "Rules",
+        "format": "{{msg.payload.results.length}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1380,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "03de92d56c236b99",
+        "type": "ui_text",
+        "z": "82cc831b154f3133",
+        "group": "1f86b2145e7e556a",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "name": "Count of Facts Needed",
+        "label": "Facts",
+        "format": "{{msg.payload.factsNeededNameValue.length}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1410,
+        "y": 360,
         "wires": []
     },
     {
         "id": "9a7a7971.dbc4b8",
         "type": "inject",
         "z": "67991373.45438c",
-        "name": "",
+        "name": "Upload 4testMOD.cvs",
         "props": [
             {
                 "p": "payload"
@@ -1942,13 +2015,14 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 80,
+        "payload": "/Users/revealgc/Desktop/4testMOD.csv",
+        "payloadType": "str",
+        "x": 140,
         "y": 120,
         "wires": [
             [
-                "0c27c540f6e4bd44"
+                "1e5beed02674863a",
+                "b5c53653a76681bf"
             ]
         ],
         "outputLabels": [
@@ -1964,7 +2038,7 @@
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
         "order": 1,
-        "width": 14,
+        "width": "8",
         "height": 1,
         "passthru": true,
         "mode": "text",
@@ -1973,7 +2047,7 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 360,
+        "x": 420,
         "y": 240,
         "wires": [
             [
@@ -1992,34 +2066,16 @@
         "wires": []
     },
     {
-        "id": "0c27c540f6e4bd44",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "Upload 4testMOD.cvs",
-        "func": "msg.payload = '/Users/revealgc/Desktop/4testMOD.csv'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 380,
-        "y": 120,
-        "wires": [
-            [
-                "b5c53653a76681bf"
-            ]
-        ]
-    },
-    {
         "id": "b5c53653a76681bf",
         "type": "subflow:82cc831b154f3133",
         "z": "67991373.45438c",
         "name": "",
-        "x": 710,
-        "y": 180,
+        "x": 750,
+        "y": 120,
         "wires": [
             [
-                "f123cf830d3837f6"
+                "f123cf830d3837f6",
+                "3af468cd9306ec3e"
             ]
         ]
     },
@@ -2031,7 +2087,7 @@
         "label": "Facts",
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
-        "order": 1,
+        "order": 5,
         "width": 14,
         "height": 1,
         "passthru": true,
@@ -2041,8 +2097,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 530,
-        "y": 480,
+        "x": 550,
+        "y": 620,
         "wires": [
             [
                 "100234cf93c195b8"
@@ -2061,7 +2117,7 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 740,
+        "x": 780,
         "y": 520,
         "wires": [
             [
@@ -2084,7 +2140,7 @@
         "strings": true,
         "include_empty_strings": false,
         "include_null_values": false,
-        "x": 910,
+        "x": 930,
         "y": 520,
         "wires": [
             [
@@ -2103,7 +2159,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1090,
+        "x": 1110,
         "y": 520,
         "wires": [
             [
@@ -2163,7 +2219,7 @@
         "id": "211d46862546b6bf",
         "type": "inject",
         "z": "67991373.45438c",
-        "name": "",
+        "name": "Submit '/Users/revealgc/Desktop/factsToTest.csv'",
         "props": [
             {
                 "p": "payload"
@@ -2178,13 +2234,14 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 180,
-        "y": 560,
+        "payload": "/Users/revealgc/Desktop/factsToTest.csv",
+        "payloadType": "str",
+        "x": 210,
+        "y": 520,
         "wires": [
             [
-                "7c7b69f37a764c7e"
+                "100234cf93c195b8",
+                "04f3b0fb456d2117"
             ]
         ],
         "outputLabels": [
@@ -2192,41 +2249,20 @@
         ]
     },
     {
-        "id": "7c7b69f37a764c7e",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "Submit a facts csv name/value pair file: ",
-        "func": "msg.payload = '/Users/revealgc/Desktop/factsToTest.csv'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 480,
-        "y": 560,
-        "wires": [
-            [
-                "100234cf93c195b8"
-            ]
-        ]
-    },
-    {
         "id": "f123cf830d3837f6",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "5. Infer",
+        "name": "5. Collect Rules and Facts",
         "func": "let rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\n\nmsg.payload = rules\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1270,
-        "y": 180,
+        "x": 1340,
+        "y": 120,
         "wires": [
-            [
-                "3af468cd9306ec3e"
-            ]
+            []
         ]
     },
     {
@@ -2238,11 +2274,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1420,
-        "y": 180,
+        "x": 960,
+        "y": 320,
         "wires": []
     },
     {
