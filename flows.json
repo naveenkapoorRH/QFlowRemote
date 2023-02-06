@@ -841,7 +841,7 @@
     {
         "id": "134f09c88dd005fc",
         "type": "ui_group",
-        "name": "5. Facts",
+        "name": "4. Facts",
         "tab": "da612906.998368",
         "order": 5,
         "disp": true,
@@ -902,6 +902,46 @@
         "icon": "dashboard",
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "0e2eb66497dfe7df",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "18a5a593fcd64912",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0e407c0d41ec50ac",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7fcf5f2431271efd",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "5c07c02344a2bd3d",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4a865b53ddde60de",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "134f09c88dd005fc",
+        "order": 5,
+        "width": 1,
+        "height": 1
     },
     {
         "id": "9a0d32273f30aad5",
@@ -1480,7 +1520,7 @@
         "z": "82cc831b154f3133",
         "group": "5c07c02344a2bd3d",
         "name": "1.0 CSV Import Parameters File",
-        "order": 2,
+        "order": 1,
         "width": "24",
         "height": "5",
         "columns": [
@@ -1579,7 +1619,7 @@
         "name": "2. Processed Pre-Rule",
         "order": 1,
         "width": "24",
-        "height": 7,
+        "height": "5",
         "columns": [
             {
                 "field": "key",
@@ -1766,10 +1806,10 @@
         "type": "ui_table",
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
-        "name": "4.1. Condition Errors",
+        "name": "3.1. Condition Errors",
         "order": 1,
         "width": "24",
-        "height": "9",
+        "height": "7",
         "columns": [
             {
                 "field": "ruleId",
@@ -1841,7 +1881,7 @@
         "type": "ui_table",
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
-        "name": "4.2. Facts Needed",
+        "name": "3.2. Facts Needed",
         "order": 1,
         "width": "24",
         "height": "9",
@@ -1975,8 +2015,8 @@
         "type": "subflow:82cc831b154f3133",
         "z": "67991373.45438c",
         "name": "",
-        "x": 690,
-        "y": 160,
+        "x": 710,
+        "y": 180,
         "wires": [
             [
                 "f123cf830d3837f6"
@@ -2077,7 +2117,7 @@
         "type": "ui_table",
         "z": "67991373.45438c",
         "group": "134f09c88dd005fc",
-        "name": "5. Facts",
+        "name": "4. Facts",
         "order": 1,
         "width": "24",
         "height": "7",
@@ -2182,11 +2222,10 @@
         "finalize": "",
         "libs": [],
         "x": 1270,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
-                "3af468cd9306ec3e",
-                "f6ef2f3b9a53d417"
+                "3af468cd9306ec3e"
             ]
         ]
     },
@@ -2203,29 +2242,8 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1420,
-        "y": 160,
+        "y": 180,
         "wires": []
-    },
-    {
-        "id": "f6ef2f3b9a53d417",
-        "type": "ui_template",
-        "z": "67991373.45438c",
-        "group": "1f86b2145e7e556a",
-        "name": "JSON2tree",
-        "order": 3,
-        "width": "6",
-        "height": "6",
-        "format": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css\" />\n</head>\n<body>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js\"></script>\n  <div id=\"tree\"><div id=\"jstree\"></div></div>\n  <script>\n  \n  function jsonToJsTreeObject( json_data_object, final_array = new Array() )\n    {\n        Object.keys(json_data_object).forEach( function( data ) {\n            // console.log(\"Key:\" + data);\n            if( Array.isArray(json_data_object[data]) || json_data_object[data] instanceof Object )\n            {\n                final_array.push( { text: `${data}`, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n                // using state attribute \n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n            }\n            else\n            {\n                final_array.push( { text: `${data}`, children: [{ text: `${json_data_object[data]}` }] } );\n                // using state attribute\n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: [{ text: `${json_data_object[data]}` }] } );\n            }\n        });\n\n        return final_array;\n    }\n  \n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n        $('#jstree').remove()\n        let myjsonObject = msg.payload\n        let div = document.createElement('div')\n        div.setAttribute(\"id\", \"jstree\")\n        let treediv = document.getElementById(\"tree\")\n        treediv.appendChild(div)\n        $('#jstree').jstree({ 'core' : {\n                    'data' : jsonToJsTreeObject( myjsonObject )\n        } });\n        $('#jstree').on(\"changed.jstree\", function (e, data) {\n            let path = $('#jstree').jstree(true).get_path(data.node,\"/\");\n            console.log(path);\n            msg.output = path\n            scope.send(msg)\n        });\n    }\n  });\n})(scope);\n\n</script>\n</body>\n</html>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 1470,
-        "y": 280,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "f0bda8ccf069c334",
@@ -3828,7 +3846,7 @@
         "label": "Enter Reporting ID",
         "tooltip": "3449842849",
         "group": "1f48566b.e8958a",
-        "order": 3,
+        "order": 2,
         "width": 6,
         "height": 3,
         "passthru": true,
@@ -3869,7 +3887,7 @@
         "z": "c702b495.9cc2f8",
         "d": true,
         "group": "1f48566b.e8958a",
-        "order": 9,
+        "order": 3,
         "width": 30,
         "height": 9,
         "name": "",
