@@ -498,7 +498,9 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1
+        "y": -1,
+        "w": 838,
+        "h": 208
     },
     {
         "id": "5a28e866a67c90ec",
@@ -523,7 +525,9 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279
+        "y": 279,
+        "w": 1152,
+        "h": 242
     },
     {
         "id": "d1e0f39ddacfeb20",
@@ -543,7 +547,9 @@
             "e5ca7c9975e3a6b5"
         ],
         "x": 474,
-        "y": 99
+        "y": 99,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "ea3e0b5d6b96f47a",
@@ -564,11 +570,12 @@
     {
         "id": "1f48566b.e8958a",
         "type": "ui_group",
+        "d": true,
         "name": "2. Processed PreRules",
         "tab": "da612906.998368",
-        "order": 3,
+        "order": 5,
         "disp": true,
-        "width": "30",
+        "width": 30,
         "collapse": true,
         "className": ""
     },
@@ -653,7 +660,7 @@
                 }
             },
             "angularTheme": {
-                "primary": "blue",
+                "primary": "indigo",
                 "accents": "blue",
                 "warn": "red",
                 "background": "grey",
@@ -662,7 +669,7 @@
         },
         "site": {
             "name": "QFlow",
-            "hideToolbar": "true",
+            "hideToolbar": "false",
             "allowSwipe": "false",
             "lockMenu": "true",
             "allowTempTheme": "none",
@@ -808,42 +815,43 @@
     {
         "id": "5c07c02344a2bd3d",
         "type": "ui_group",
+        "d": true,
         "name": "1. Parameters File",
         "tab": "da612906.998368",
-        "order": 2,
+        "order": 4,
         "disp": true,
-        "width": "30",
+        "width": 24,
         "collapse": true,
         "className": ""
     },
     {
         "id": "1f86b2145e7e556a",
         "type": "ui_group",
-        "name": "Input File",
+        "name": "Facts",
         "tab": "da612906.998368",
-        "order": 1,
+        "order": 3,
         "disp": true,
-        "width": "14",
+        "width": 15,
         "collapse": false,
         "className": ""
     },
     {
         "id": "18a5a593fcd64912",
         "type": "ui_group",
-        "name": "3. Dynamic Rules from Parameters File",
+        "name": "Dynamic Rules from Parameters File",
         "tab": "da612906.998368",
-        "order": 4,
+        "order": 6,
         "disp": true,
-        "width": "24",
+        "width": 30,
         "collapse": true,
         "className": ""
     },
     {
         "id": "134f09c88dd005fc",
         "type": "ui_group",
-        "name": "4. Facts",
+        "name": "Assert Facts",
         "tab": "da612906.998368",
-        "order": 5,
+        "order": 7,
         "disp": true,
         "width": "24",
         "collapse": true,
@@ -904,43 +912,95 @@
         "hidden": false
     },
     {
-        "id": "0e2eb66497dfe7df",
+        "id": "4060ccd3b1b979fd",
+        "type": "ui_group",
+        "name": "Gauges",
+        "tab": "da612906.998368",
+        "order": 1,
+        "disp": false,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d5b306fd70950040",
+        "type": "ui_group",
+        "name": "Rules",
+        "tab": "da612906.998368",
+        "order": 2,
+        "disp": true,
+        "width": 15,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "439e796aed6e582f",
         "type": "ui_spacer",
-        "z": "82cc831b154f3133",
+        "z": "67991373.45438c",
         "name": "spacer",
-        "group": "18a5a593fcd64912",
-        "order": 4,
-        "width": 1,
+        "group": "4060ccd3b1b979fd",
+        "order": 5,
+        "width": 14,
         "height": 1
     },
     {
-        "id": "0e407c0d41ec50ac",
+        "id": "51ace1859ac101f7",
         "type": "ui_spacer",
-        "z": "82cc831b154f3133",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 6,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "b04367654a663ca2",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 7,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "e05f51a5d9e7eef0",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 8,
+        "width": 14,
+        "height": 1
+    },
+    {
+        "id": "2097edd26ca156df",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
         "name": "spacer",
         "group": "1f48566b.e8958a",
         "order": 3,
-        "width": 1,
+        "width": 6,
         "height": 1
     },
     {
-        "id": "7fcf5f2431271efd",
+        "id": "37b428ec727a8df5",
         "type": "ui_spacer",
-        "z": "82cc831b154f3133",
+        "z": "67991373.45438c",
         "name": "spacer",
-        "group": "5c07c02344a2bd3d",
-        "order": 2,
-        "width": 1,
+        "group": "1f48566b.e8958a",
+        "order": 4,
+        "width": 6,
         "height": 1
     },
     {
-        "id": "4a865b53ddde60de",
+        "id": "0115f7de5a188757",
         "type": "ui_spacer",
-        "z": "82cc831b154f3133",
+        "z": "67991373.45438c",
         "name": "spacer",
-        "group": "134f09c88dd005fc",
+        "group": "1f48566b.e8958a",
         "order": 5,
-        "width": 1,
+        "width": 30,
         "height": 1
     },
     {
@@ -1441,7 +1501,7 @@
         "type": "function",
         "z": "82cc831b154f3133",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n  \n\n\n\n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n       {\n//         // A = B + C + 20 to an array[{A:\"B+C+20\"}]. However if The other option is 100 = a + b + c => needs to be converted to an array \n//         // [{a:100}, {b:100},..]  \n\n        \n\n        let rhs = actionStringRHS.substring(0, actionStringRHS.length - 1).trim()\n        let lhs = r['TOTAL']\n        // lhs = lhs.trim()\n        \n     \n// // Turns out to be a number ie 100 = A + B +c\n        if (!isNaN(lhs)) {\n            // Split the rhs on the \"+\" sign\n            let variables = rhs.split(\"+\");\n            // Trim any whitespace from each variable\n             variables = variables.map(variable => variable.trim());\n            // Create an array of assignment objects\n            action = variables.map(variable => ({ [variable]: lhs }));\n            console.log(\"LINE 37 index and action is \",k, action, lhs, rhs)\n            \n        } else \n        \n        \n         action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1) };\n       } \n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n  \n\n\n\n    // for(var i = 1; i < 15 ; ++i)\n    // {\n    // if(r['DETAIL '+i] != undefined)\n    // actionStringRHS += r['DETAIL '+i] +' +'\n\n    // }\n//     if (actionStringRHS.length > 0) \n//        {\n// //         // A = B + C + 20 to an array[{A:\"B+C+20\"}]. However if The other option is 100 = a + b + c => needs to be converted to an array \n// //         // [{a:100}, {b:100},..]  \n\n        \n\n//         let rhs = actionStringRHS.substring(0, actionStringRHS.length - 1).trim()\n//         let lhs = r['TOTAL']\n//         // lhs = lhs.trim()\n        \n     \n// // // Turns out to be a number ie 100 = A + B +c\n//         if (!isNaN(lhs)) {\n//             // Split the rhs on the \"+\" sign\n//             let variables = rhs.split(\"+\");\n//             // Trim any whitespace from each variable\n//              variables = variables.map(variable => variable.trim());\n//             // Create an array of assignment objects\n//             action = variables.map(variable => ({ [variable]: lhs }));\n//             console.log(\"LINE 37 index and action is \",k, action, lhs, rhs)\n            \n//         } else \n        \n        \n//          action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1) };\n//        } \naction = [{FAILURE: true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1511,9 +1571,10 @@
                 "8302074bca046e52",
                 "a53fbc532450d88c",
                 "c370fdc0adea4b18",
-                "8293ad496140e639",
-                "5511248c69b06213",
-                "03de92d56c236b99"
+                "634a65c934af51b3",
+                "62671df4cfe27264",
+                "6c832fce46c1bafb",
+                "238973b6eb0cf296"
             ]
         ]
     },
@@ -1524,8 +1585,8 @@
         "group": "5c07c02344a2bd3d",
         "name": "1.0 CSV Import Parameters File",
         "order": 1,
-        "width": "24",
-        "height": "5",
+        "width": 24,
+        "height": 5,
         "columns": [
             {
                 "field": "key",
@@ -1621,8 +1682,8 @@
         "group": "1f48566b.e8958a",
         "name": "2. Processed Pre-Rule",
         "order": 1,
-        "width": "24",
-        "height": "5",
+        "width": 24,
+        "height": 5,
         "columns": [
             {
                 "field": "key",
@@ -1677,9 +1738,9 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3. Processed Rules",
-        "order": 1,
-        "width": "24",
-        "height": "9",
+        "order": 2,
+        "width": 30,
+        "height": 5,
         "columns": [
             {
                 "field": "rule.event.ruleId",
@@ -1716,7 +1777,7 @@
                 "title": "Error",
                 "width": "",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "tickCross",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -1810,9 +1871,9 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3.1. Condition Errors",
-        "order": 1,
-        "width": "24",
-        "height": "7",
+        "order": 4,
+        "width": "30",
+        "height": 3,
         "columns": [
             {
                 "field": "ruleId",
@@ -1885,9 +1946,9 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3.2. Facts Needed",
-        "order": 1,
-        "width": "24",
-        "height": "9",
+        "order": 8,
+        "width": "30",
+        "height": 2,
         "columns": [
             {
                 "field": "name",
@@ -1946,54 +2007,100 @@
         ]
     },
     {
-        "id": "8293ad496140e639",
-        "type": "ui_text",
+        "id": "634a65c934af51b3",
+        "type": "ui_gauge",
         "z": "82cc831b154f3133",
-        "group": "1f86b2145e7e556a",
-        "order": 3,
-        "width": "2",
-        "height": "1",
-        "name": "Count of Errors",
-        "label": "Error(s)",
-        "format": "{{msg.payload.outputErrorCount}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1380,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "5511248c69b06213",
-        "type": "ui_text",
-        "z": "82cc831b154f3133",
-        "group": "1f86b2145e7e556a",
+        "name": "Gauge for Errors",
+        "group": "4060ccd3b1b979fd",
         "order": 2,
-        "width": "2",
-        "height": "1",
-        "name": "Count of Rules",
-        "label": "Rules",
-        "format": "{{msg.payload.results.length}}",
-        "layout": "row-spread",
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Errors",
+        "label": "units",
+        "format": "{{msg.payload.outputErrorCount}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#a4110e",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
         "className": "",
-        "x": 1380,
-        "y": 300,
+        "x": 1440,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "03de92d56c236b99",
-        "type": "ui_text",
+        "id": "62671df4cfe27264",
+        "type": "ui_gauge",
         "z": "82cc831b154f3133",
-        "group": "1f86b2145e7e556a",
-        "order": 4,
-        "width": "2",
-        "height": "1",
-        "name": "Count of Facts Needed",
-        "label": "Facts",
-        "format": "{{msg.payload.factsNeededNameValue.length}}",
-        "layout": "row-spread",
+        "name": "Gauge for Rules",
+        "group": "4060ccd3b1b979fd",
+        "order": 1,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Rules",
+        "label": "rules",
+        "format": "{{msg.payload.results.length}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#3cb226",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
         "className": "",
-        "x": 1410,
-        "y": 360,
+        "x": 1440,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6c832fce46c1bafb",
+        "type": "ui_gauge",
+        "z": "82cc831b154f3133",
+        "name": "Gauge for Params",
+        "group": "4060ccd3b1b979fd",
+        "order": 3,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Params",
+        "label": "units",
+        "format": "{{msg.payload.factsNeededNameValue.length}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1430,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "238973b6eb0cf296",
+        "type": "debug",
+        "z": "82cc831b154f3133",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1400,
+        "y": 460,
         "wires": []
     },
     {
@@ -2017,8 +2124,8 @@
         "topic": "",
         "payload": "/Users/revealgc/Desktop/4testMOD.csv",
         "payloadType": "str",
-        "x": 140,
-        "y": 120,
+        "x": 260,
+        "y": 440,
         "wires": [
             [
                 "1e5beed02674863a",
@@ -2036,9 +2143,9 @@
         "name": "Input Parameter File Name",
         "label": "Params file...",
         "tooltip": "Enter the location of the parameters file",
-        "group": "1f86b2145e7e556a",
-        "order": 1,
-        "width": "8",
+        "group": "d5b306fd70950040",
+        "order": 2,
+        "width": "14",
         "height": 1,
         "passthru": true,
         "mode": "text",
@@ -2047,11 +2154,12 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 420,
-        "y": 240,
+        "x": 520,
+        "y": 300,
         "wires": [
             [
-                "b5c53653a76681bf"
+                "b5c53653a76681bf",
+                "fb483894819a453e"
             ]
         ]
     },
@@ -2061,8 +2169,8 @@
         "z": "67991373.45438c",
         "name": "Read CSV File amd create dynamic rules",
         "info": "",
-        "x": 960,
-        "y": 740,
+        "x": 1040,
+        "y": 800,
         "wires": []
     },
     {
@@ -2070,12 +2178,11 @@
         "type": "subflow:82cc831b154f3133",
         "z": "67991373.45438c",
         "name": "",
-        "x": 750,
-        "y": 120,
+        "x": 830,
+        "y": 440,
         "wires": [
             [
-                "f123cf830d3837f6",
-                "3af468cd9306ec3e"
+                "f123cf830d3837f6"
             ]
         ]
     },
@@ -2087,9 +2194,9 @@
         "label": "Facts",
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
-        "order": 5,
-        "width": 14,
-        "height": 1,
+        "order": 2,
+        "width": "14",
+        "height": "1",
         "passthru": true,
         "mode": "text",
         "delay": "0",
@@ -2097,8 +2204,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 550,
-        "y": 620,
+        "x": 630,
+        "y": 680,
         "wires": [
             [
                 "100234cf93c195b8"
@@ -2117,8 +2224,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 780,
-        "y": 520,
+        "x": 860,
+        "y": 580,
         "wires": [
             [
                 "c047c871d9c0e70d"
@@ -2140,8 +2247,8 @@
         "strings": true,
         "include_empty_strings": false,
         "include_null_values": false,
-        "x": 930,
-        "y": 520,
+        "x": 1010,
+        "y": 580,
         "wires": [
             [
                 "c9c9ca415ab95910"
@@ -2152,19 +2259,20 @@
         "id": "c9c9ca415ab95910",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "Get Facts From File",
-        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\nmsg.facts = facts\nreturn msg;",
+        "name": "Get Facts From File Topic: facts",
+        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\nmsg.facts = msg.payload\nmsg.payload = [facts]\n\nmsg.topic = \"facts\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 520,
+        "x": 1690,
+        "y": 580,
         "wires": [
             [
-                "16550455147cd747",
-                "f123cf830d3837f6"
+                "f286b0310d3f556a",
+                "571a7beaed3ab093",
+                "e6a8aa0655705b06"
             ]
         ]
     },
@@ -2175,8 +2283,8 @@
         "group": "134f09c88dd005fc",
         "name": "4. Facts",
         "order": 1,
-        "width": "24",
-        "height": "7",
+        "width": 24,
+        "height": 4,
         "columns": [
             {
                 "field": "rule.event.ruleId",
@@ -2211,8 +2319,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1320,
-        "y": 520,
+        "x": 2120,
+        "y": 760,
         "wires": []
     },
     {
@@ -2236,8 +2344,8 @@
         "topic": "",
         "payload": "/Users/revealgc/Desktop/factsToTest.csv",
         "payloadType": "str",
-        "x": 210,
-        "y": 520,
+        "x": 290,
+        "y": 580,
         "wires": [
             [
                 "100234cf93c195b8",
@@ -2252,17 +2360,19 @@
         "id": "f123cf830d3837f6",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "5. Collect Rules and Facts",
-        "func": "let rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\n\nmsg.payload = rules\nreturn msg;",
+        "name": "Parameter file Rules pub Topic: filerules",
+        "func": "let rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\n\nmsg.payload = rules\nmsg.topic=\"filerules\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1340,
-        "y": 120,
+        "x": 1680,
+        "y": 440,
         "wires": [
-            []
+            [
+                "97e3da9cde534715"
+            ]
         ]
     },
     {
@@ -2274,13 +2384,855 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3640,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "f93589573c440ab8",
+        "type": "ui_template",
+        "z": "67991373.45438c",
+        "group": "18a5a593fcd64912",
+        "name": "Error Label Divider",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"msg.payload\"><b>Errors</b></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 370,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f286b0310d3f556a",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "Merge Facts from DB and File",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2450,
+        "y": 580,
+        "wires": [
+            [
+                "208e41b4acb185dd"
+            ]
+        ]
+    },
+    {
+        "id": "571a7beaed3ab093",
+        "type": "change",
+        "z": "67991373.45438c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "facts",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1940,
+        "y": 720,
+        "wires": [
+            [
+                "16550455147cd747",
+                "24856db77f81d8bb"
+            ]
+        ]
+    },
+    {
+        "id": "fb483894819a453e",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "name": "Get Rule Types from DB",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/rulesrepo/getruletype",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 890,
+        "y": 300,
+        "wires": [
+            [
+                "79f4bff451119fb7"
+            ]
+        ]
+    },
+    {
+        "id": "5f12a638967ad520",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 600,
+        "y": 200,
+        "wires": [
+            [
+                "fb483894819a453e"
+            ]
+        ]
+    },
+    {
+        "id": "199e84df3d73b845",
+        "type": "ui_dropdown",
+        "z": "67991373.45438c",
+        "name": "Rule Types Drop Down Topic: dbruletypes",
+        "label": "",
+        "tooltip": "Select rule types",
+        "place": "Select rule types from the db...",
+        "group": "d5b306fd70950040",
+        "order": 4,
+        "width": 12,
+        "height": 1,
+        "passthru": true,
+        "multiple": true,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "dbruletypes",
+        "topicType": "msg",
+        "className": "",
+        "x": 1660,
+        "y": 300,
+        "wires": [
+            [
+                "284722e989745683"
+            ]
+        ]
+    },
+    {
+        "id": "79f4bff451119fb7",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Prep for DB Rules Dropdown Topic:dbruletypes",
+        "func": "let ret = []\nmsg.payload.map(t => ret.push({ [t.type + '(' + t.cnt +')']: t.type}))\nmsg.options = ret\nmsg.payload = ret\nmsg.topic = \"dbruletypes\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 300,
+        "wires": [
+            [
+                "199e84df3d73b845"
+            ]
+        ]
+    },
+    {
+        "id": "645a9d4772fcd00f",
+        "type": "ui_button",
+        "z": "67991373.45438c",
+        "name": "",
+        "group": "d5b306fd70950040",
+        "order": 5,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Get Rules",
+        "tooltip": "Get rule types",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "dbrules",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "fb483894819a453e"
+            ]
+        ]
+    },
+    {
+        "id": "24856db77f81d8bb",
+        "type": "ui_gauge",
+        "z": "67991373.45438c",
+        "name": "Gauge for Facts from file",
+        "group": "4060ccd3b1b979fd",
+        "order": 4,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Facts",
+        "label": "units",
+        "format": "{{msg.payload.length}}",
+        "min": 0,
+        "max": "300",
+        "colors": [
+            "#0d0b96",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 2170,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "0cd9973f643e23da",
+        "type": "ui_text_input",
+        "z": "67991373.45438c",
+        "name": "Input RID",
+        "label": "Reporting IDs",
+        "tooltip": "Enter at least 3 characters",
+        "group": "1f86b2145e7e556a",
+        "order": 5,
+        "width": "4",
+        "height": "1",
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 160,
+        "y": 900,
+        "wires": [
+            [
+                "3b55370ad9fd31f5"
+            ]
+        ]
+    },
+    {
+        "id": "3b55370ad9fd31f5",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "name": "Get RIDs from DB",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/reporting_unit/findRID/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 350,
+        "y": 900,
+        "wires": [
+            [
+                "7ce52ec9ef003b44"
+            ]
+        ]
+    },
+    {
+        "id": "e76e13639b1f0475",
+        "type": "ui_dropdown",
+        "z": "67991373.45438c",
+        "name": "Rule Types Drop Down Topic: dbreportingids",
+        "label": "",
+        "tooltip": "Select reporting ids...",
+        "place": "Select reporting ids from the db...",
+        "group": "1f86b2145e7e556a",
+        "order": 4,
+        "width": "10",
+        "height": "1",
+        "passthru": true,
+        "multiple": true,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "dbreportingids",
+        "topicType": "msg",
+        "className": "",
+        "x": 1870,
+        "y": 900,
+        "wires": [
+            [
+                "d394b61bcc4755e6"
+            ]
+        ]
+    },
+    {
+        "id": "7ce52ec9ef003b44",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Prep for RID Dropdown Topic:dbreportingids",
+        "func": "let ret = []\n msg.payload.map(t => ret.push({ [t.shortvalue + \" \"+ t.reporting_id]: t.reporting_id}))\nmsg.options = ret\nmsg.payload = ret\nmsg.topic = \"dbreportingids\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1450,
+        "y": 900,
+        "wires": [
+            [
+                "e76e13639b1f0475"
+            ]
+        ]
+    },
+    {
+        "id": "97e3da9cde534715",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "Merge Rules from Type in DB and Files",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 2330,
+        "y": 360,
+        "wires": [
+            [
+                "fd717a88742ae68f"
+            ]
+        ]
+    },
+    {
+        "id": "fd717a88742ae68f",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Pub rules to Topic: rules",
+        "func": "msg.topic = 'rules'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2650,
+        "y": 360,
+        "wires": [
+            [
+                "d73d37edbfa93125"
+            ]
+        ]
+    },
+    {
+        "id": "208e41b4acb185dd",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Pub facts to Topic: facts",
+        "func": "msg.topic = 'facts'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2730,
+        "y": 580,
+        "wires": [
+            [
+                "d73d37edbfa93125"
+            ]
+        ]
+    },
+    {
+        "id": "d73d37edbfa93125",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "Merge Facts and rules",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 3000,
+        "y": 360,
+        "wires": [
+            [
+                "bdfaba796727d01a"
+            ]
+        ]
+    },
+    {
+        "id": "284722e989745683",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Publish to Topic: dbruletypes",
+        "func": "msg.topic = 'dbruletypes'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1980,
+        "y": 300,
+        "wires": [
+            [
+                "97e3da9cde534715"
+            ]
+        ]
+    },
+    {
+        "id": "d394b61bcc4755e6",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Pub Message to Topic: dbreportingids",
+        "func": "msg.topic = 'dbreportingids'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2290,
+        "y": 900,
+        "wires": [
+            [
+                "f286b0310d3f556a"
+            ]
+        ]
+    },
+    {
+        "id": "e6a8aa0655705b06",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
         "complete": "true",
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 320,
+        "x": 2760,
+        "y": 900,
         "wires": []
+    },
+    {
+        "id": "1c758468c1a4fb0f",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "DB:  Checkbox DB Rules Checkbox",
+        "label": "",
+        "tooltip": "",
+        "group": "d5b306fd70950040",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "b_dbruletypes",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 240,
+        "y": 1360,
+        "wires": [
+            [
+                "19bc59e019a2a53b"
+            ]
+        ]
+    },
+    {
+        "id": "94e6b5facd08f824",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "Files: Checkbox Files Rules Checkbox",
+        "label": "",
+        "tooltip": "",
+        "group": "d5b306fd70950040",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "b_parameterFileRules",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 290,
+        "y": 1100,
+        "wires": [
+            [
+                "3ffa2f286878091c"
+            ]
+        ]
+    },
+    {
+        "id": "9d910fda180ee00d",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "DB: Checkbox Facts from RID",
+        "label": "",
+        "tooltip": "",
+        "group": "1f86b2145e7e556a",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "b_addonfacts",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 250,
+        "y": 1260,
+        "wires": [
+            [
+                "19bc59e019a2a53b"
+            ]
+        ]
+    },
+    {
+        "id": "6984090145294ca1",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "Files: Checkbox Facts from Add On Facts",
+        "label": "",
+        "tooltip": "",
+        "group": "1f86b2145e7e556a",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "b_addOnFactsFromFile",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 280,
+        "y": 1000,
+        "wires": [
+            [
+                "3ffa2f286878091c"
+            ]
+        ]
+    },
+    {
+        "id": "3ffa2f286878091c",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 570,
+        "y": 1040,
+        "wires": [
+            [
+                "dd3c3a172eb45f14"
+            ]
+        ]
+    },
+    {
+        "id": "19bc59e019a2a53b",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "1",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 510,
+        "y": 1280,
+        "wires": [
+            [
+                "725103db926aa039"
+            ]
+        ]
+    },
+    {
+        "id": "c0040e8aff627baf",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 970,
+        "y": 1040,
+        "wires": [
+            [
+                "93614b668b82d79b",
+                "20b4725b31175d27"
+            ]
+        ]
+    },
+    {
+        "id": "dd3c3a172eb45f14",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "function 5",
+        "func": "msg.topic = \"b_ruleoptions\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 1040,
+        "wires": [
+            [
+                "c0040e8aff627baf"
+            ]
+        ]
+    },
+    {
+        "id": "725103db926aa039",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "function 6",
+        "func": "msg.topic = \"b_factsoptions\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1140,
+        "wires": [
+            [
+                "c0040e8aff627baf"
+            ]
+        ]
+    },
+    {
+        "id": "93614b668b82d79b",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "bdfaba796727d01a",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Topic: factsandrules",
+        "func": "msg.topic='factsandrules'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3260,
+        "y": 360,
+        "wires": [
+            [
+                "336dfd415e6b3454"
+            ]
+        ]
+    },
+    {
+        "id": "20b4725b31175d27",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Topic: options",
+        "func": "msg.topic=\"options\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3280,
+        "y": 1040,
+        "wires": [
+            [
+                "336dfd415e6b3454"
+            ]
+        ]
+    },
+    {
+        "id": "336dfd415e6b3454",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 3470,
+        "y": 620,
+        "wires": [
+            [
+                "3af468cd9306ec3e"
+            ]
+        ]
     },
     {
         "id": "f0bda8ccf069c334",
@@ -2397,7 +3349,7 @@
         "type": "subflow:831dceaabaf975f9",
         "z": "d886a3864a88d832",
         "name": "",
-        "x": 840,
+        "x": 940,
         "y": 40,
         "wires": [
             [
@@ -2410,8 +3362,8 @@
         "type": "subflow:10e53f47b43ab89e",
         "z": "d886a3864a88d832",
         "name": "4.0 Subflow Completeness",
-        "x": 1110,
-        "y": 200,
+        "x": 1220,
+        "y": 360,
         "wires": [
             [
                 "1393263d0d520dfd"
@@ -2423,8 +3375,8 @@
         "type": "subflow:b99b7893add8c369",
         "z": "d886a3864a88d832",
         "name": "5.0 Logical Checks",
-        "x": 1370,
-        "y": 200,
+        "x": 1190,
+        "y": 420,
         "wires": [
             [
                 "22a7836fd0ee4876"
@@ -2436,8 +3388,8 @@
         "type": "subflow:27fccef587c0b218",
         "z": "d886a3864a88d832",
         "name": "6.0 Ratio/Range Testing",
-        "x": 1620,
-        "y": 200,
+        "x": 1210,
+        "y": 480,
         "wires": [
             [
                 "4242881485341267"
@@ -2449,8 +3401,8 @@
         "type": "subflow:3fa869ffe40596e5",
         "z": "d886a3864a88d832",
         "name": "7.0 Post Ratio/Range",
-        "x": 1900,
-        "y": 200,
+        "x": 1200,
+        "y": 540,
         "wires": [
             [
                 "69135525ff74076e"
@@ -2462,8 +3414,8 @@
         "type": "subflow:98b684914b5fce08",
         "z": "d886a3864a88d832",
         "name": "8.0 Unit Balance",
-        "x": 2140,
-        "y": 200,
+        "x": 1180,
+        "y": 600,
         "wires": [
             [
                 "f57362671b31528b"
@@ -2475,8 +3427,8 @@
         "type": "subflow:2e55e3e8510e62d0",
         "z": "d886a3864a88d832",
         "name": "9.0 Company Additivity Check",
-        "x": 2400,
-        "y": 200,
+        "x": 1230,
+        "y": 680,
         "wires": [
             [
                 "66f76ef1f55de5b8"
@@ -2488,8 +3440,8 @@
         "type": "subflow:2ad5fa373c21d0a3",
         "z": "d886a3864a88d832",
         "name": "10.0 Derived Items",
-        "x": 2710,
-        "y": 200,
+        "x": 1210,
+        "y": 760,
         "wires": [
             [
                 "0f8306d8913bb7d2"
@@ -2501,8 +3453,8 @@
         "type": "subflow:67a3cd3b754e4fbd",
         "z": "d886a3864a88d832",
         "name": "11.0 Post Edit Status Fields",
-        "x": 3000,
-        "y": 200,
+        "x": 1240,
+        "y": 840,
         "wires": [
             [
                 "a0acac50eaa1f639"
@@ -2521,8 +3473,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3280,
-        "y": 200,
+        "x": 1220,
+        "y": 940,
         "wires": []
     },
     {
@@ -2530,7 +3482,7 @@
         "type": "subflow:045ba1012eb08b50",
         "z": "d886a3864a88d832",
         "name": "3.0 Determine Status",
-        "x": 860,
+        "x": 1200,
         "y": 200,
         "wires": [
             [
@@ -3924,7 +4876,7 @@
         "z": "c702b495.9cc2f8",
         "d": true,
         "group": "1f48566b.e8958a",
-        "order": 3,
+        "order": 6,
         "width": 30,
         "height": 9,
         "name": "",
