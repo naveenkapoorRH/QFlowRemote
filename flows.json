@@ -62,12 +62,11 @@
         "env": []
     },
     {
-        "id": "642abfc93e7700ac",
+        "id": "4821a41b2fd327fb",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Form 2",
         "disabled": false,
-        "info": "",
-        "env": []
+        "info": ""
     },
     {
         "id": "c5ce2d38887016b2",
@@ -498,9 +497,7 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1,
-        "w": 838,
-        "h": 208
+        "y": -1
     },
     {
         "id": "5a28e866a67c90ec",
@@ -525,9 +522,7 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279,
-        "w": 1152,
-        "h": 242
+        "y": 279
     },
     {
         "id": "d1e0f39ddacfeb20",
@@ -547,9 +542,7 @@
             "e5ca7c9975e3a6b5"
         ],
         "x": 474,
-        "y": 99,
-        "w": 392,
-        "h": 82
+        "y": 99
     },
     {
         "id": "ea3e0b5d6b96f47a",
@@ -592,17 +585,17 @@
         "id": "fe5119d6c50995ed",
         "type": "ui_base",
         "theme": {
-            "name": "theme-dark",
+            "name": "theme-light",
             "lightTheme": {
                 "default": "#0094CE",
-                "baseColor": "#0094CE",
+                "baseColor": "#6e6e6e",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
-                "baseColor": "#097479",
+                "baseColor": "#e3ffe8",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
@@ -611,20 +604,21 @@
                 "name": "Untitled Theme 1",
                 "default": "#4B7930",
                 "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
             },
             "themeState": {
                 "base-color": {
-                    "default": "#097479",
-                    "value": "#097479",
-                    "edited": false
+                    "default": "#0094CE",
+                    "value": "#6e6e6e",
+                    "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#097479",
+                    "value": "#6e6e6e",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#111111",
+                    "value": "#fafafa",
                     "edited": false
                 },
                 "page-sidebar-backgroundColor": {
@@ -632,27 +626,27 @@
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#0eb8c0",
+                    "value": "#949494",
                     "edited": false
                 },
                 "group-borderColor": {
-                    "value": "#555555",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "group-backgroundColor": {
-                    "value": "#333333",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "widget-textColor": {
-                    "value": "#eeeeee",
+                    "value": "#111111",
                     "edited": false
                 },
                 "widget-backgroundColor": {
-                    "value": "#097479",
+                    "value": "#6e6e6e",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#333333",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "base-font": {
@@ -671,7 +665,7 @@
             "name": "QFlow",
             "hideToolbar": "false",
             "allowSwipe": "false",
-            "lockMenu": "true",
+            "lockMenu": "icon",
             "allowTempTheme": "none",
             "dateFormat": "MM/DD/YYYY",
             "sizes": {
@@ -840,7 +834,7 @@
         "type": "ui_group",
         "name": "Dynamic Rules from Parameters File",
         "tab": "da612906.998368",
-        "order": 6,
+        "order": 7,
         "disp": true,
         "width": 30,
         "collapse": true,
@@ -851,7 +845,7 @@
         "type": "ui_group",
         "name": "Assert Facts",
         "tab": "da612906.998368",
-        "order": 7,
+        "order": 8,
         "disp": true,
         "width": "24",
         "collapse": true,
@@ -1002,6 +996,77 @@
         "order": 5,
         "width": 30,
         "height": 1
+    },
+    {
+        "id": "1d5401bf95a96f03",
+        "type": "ui_group",
+        "name": "JOBS",
+        "tab": "da612906.998368",
+        "order": 6,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d68e7be3.88f088",
+        "type": "ui_group",
+        "name": "Forms Example",
+        "tab": "67ff17e9.83751",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "54bca71e.4287f",
+        "type": "ui_group",
+        "name": "Form",
+        "tab": "67ff17e9.83751",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "67ff17e9.83751",
+        "type": "ui_tab",
+        "name": "Forms Example ",
+        "icon": "home",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "785c383535b14b7d",
+        "type": "ui_group",
+        "z": "4821a41b2fd327fb",
+        "name": "Dashboard Event Log",
+        "tab": "67ff17e9.83751",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "fc893c6c.aaeff",
+        "type": "ui_group",
+        "name": "Leaderboard",
+        "tab": "c79bed56.dc9bd",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c79bed56.dc9bd",
+        "type": "ui_tab",
+        "name": "LeaderBoard",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
     },
     {
         "id": "9a0d32273f30aad5",
@@ -2271,8 +2336,7 @@
         "wires": [
             [
                 "f286b0310d3f556a",
-                "571a7beaed3ab093",
-                "e6a8aa0655705b06"
+                "571a7beaed3ab093"
             ]
         ]
     },
@@ -2388,8 +2452,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3640,
-        "y": 620,
+        "x": 4480,
+        "y": 540,
         "wires": []
     },
     {
@@ -2877,23 +2941,6 @@
         ]
     },
     {
-        "id": "e6a8aa0655705b06",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 18",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 2760,
-        "y": 900,
-        "wires": []
-    },
-    {
         "id": "1c758468c1a4fb0f",
         "type": "ui_switch",
         "z": "67991373.45438c",
@@ -2906,7 +2953,7 @@
         "height": 1,
         "passthru": true,
         "decouple": "false",
-        "topic": "b_dbruletypes",
+        "topic": "b_validationtypes",
         "topicType": "str",
         "style": "",
         "onvalue": "true",
@@ -2931,7 +2978,7 @@
         "id": "94e6b5facd08f824",
         "type": "ui_switch",
         "z": "67991373.45438c",
-        "name": "Files: Checkbox Files Rules Checkbox",
+        "name": "Files: Checkbox Params Files Rules",
         "label": "",
         "tooltip": "",
         "group": "d5b306fd70950040",
@@ -2940,7 +2987,7 @@
         "height": 1,
         "passthru": true,
         "decouple": "false",
-        "topic": "b_parameterFileRules",
+        "topic": "b_paramrulesfile",
         "topicType": "str",
         "style": "",
         "onvalue": "true",
@@ -2953,7 +3000,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 290,
+        "x": 280,
         "y": 1100,
         "wires": [
             [
@@ -2974,7 +3021,7 @@
         "height": 1,
         "passthru": true,
         "decouple": "false",
-        "topic": "b_addonfacts",
+        "topic": "b_reportingID",
         "topicType": "str",
         "style": "",
         "onvalue": "true",
@@ -2999,7 +3046,7 @@
         "id": "6984090145294ca1",
         "type": "ui_switch",
         "z": "67991373.45438c",
-        "name": "Files: Checkbox Facts from Add On Facts",
+        "name": "Files: Checkbox Facts from File",
         "label": "",
         "tooltip": "",
         "group": "1f86b2145e7e556a",
@@ -3008,7 +3055,7 @@
         "height": 1,
         "passthru": true,
         "decouple": "false",
-        "topic": "b_addOnFactsFromFile",
+        "topic": "b_addonFacts",
         "topicType": "str",
         "style": "",
         "onvalue": "true",
@@ -3021,7 +3068,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 280,
+        "x": 250,
         "y": 1000,
         "wires": [
             [
@@ -3109,7 +3156,6 @@
         "y": 1040,
         "wires": [
             [
-                "93614b668b82d79b",
                 "20b4725b31175d27"
             ]
         ]
@@ -3119,7 +3165,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "function 5",
-        "func": "msg.topic = \"b_ruleoptions\"\nreturn msg;",
+        "func": "msg.topic = \"b_files\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3138,7 +3184,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "function 6",
-        "func": "msg.topic = \"b_factsoptions\"\nreturn msg;",
+        "func": "msg.topic = \"b_db\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3151,22 +3197,6 @@
                 "c0040e8aff627baf"
             ]
         ]
-    },
-    {
-        "id": "93614b668b82d79b",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 19",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1140,
-        "y": 1280,
-        "wires": []
     },
     {
         "id": "bdfaba796727d01a",
@@ -3230,7 +3260,211 @@
         "y": 620,
         "wires": [
             [
+                "d50972cc36887a01",
+                "5208228e9775e479",
+                "585c6e84aab3f08f"
+            ]
+        ],
+        "inputLabels": [
+            "Facts Rules and Submit"
+        ],
+        "icon": "node-red/arduino.png"
+    },
+    {
+        "id": "4784bbb6f258640b",
+        "type": "ui_button",
+        "z": "67991373.45438c",
+        "d": true,
+        "name": "",
+        "group": "1d5401bf95a96f03",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Submit JOB",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "submitted",
+        "payloadType": "str",
+        "topic": "submitted",
+        "topicType": "str",
+        "x": 3070,
+        "y": 620,
+        "wires": [
+            [
+                "8c1f468931ef2dba",
+                "336dfd415e6b3454"
+            ]
+        ]
+    },
+    {
+        "id": "d50972cc36887a01",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "function 7",
+        "func": "msg.topic=\"rulessubmitted\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3680,
+        "y": 500,
+        "wires": [
+            [
+                "f424572dc683f8a6"
+            ]
+        ]
+    },
+    {
+        "id": "17cb8d5c1c2dfc81",
+        "type": "ui_template",
+        "z": "67991373.45438c",
+        "group": "1d5401bf95a96f03",
+        "name": "JOB Event Log ",
+        "order": 2,
+        "width": "30",
+        "height": "4",
+        "format": "<ul>\n <li ng-repeat=\"x in msg.payload\">\n     \n <font color=\"green\">{{x.topic}}</font>\n    <ul>\n        <li>{{(x.payload.options)}}</li>\n    </ul>\n </li>\n</ul>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 3860,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5208228e9775e479",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Save Events",
+        "func": "// NK will set the submitted flow to null\n\nflow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3670,
+        "y": 1160,
+        "wires": [
+            [
+                "17cb8d5c1c2dfc81"
+            ]
+        ]
+    },
+    {
+        "id": "8c1f468931ef2dba",
+        "type": "ui_toast",
+        "z": "67991373.45438c",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 3210,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "9cdb7816c09b66db",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "construct qbes calls with rules and facts",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4260,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "585c6e84aab3f08f",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 3890,
+        "y": 620,
+        "wires": [
+            [
                 "3af468cd9306ec3e"
+            ]
+        ]
+    },
+    {
+        "id": "f424572dc683f8a6",
+        "type": "ui_form",
+        "z": "67991373.45438c",
+        "name": "",
+        "label": "Submit JOB Form",
+        "group": "1d5401bf95a96f03",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Networked",
+                "value": "cb_network",
+                "type": "checkbox",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Attended",
+                "value": "cb_attended",
+                "type": "checkbox",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "cb_network": false,
+            "cb_attended": false
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "jobsform",
+        "topicType": "str",
+        "splitLayout": true,
+        "className": "",
+        "x": 4090,
+        "y": 460,
+        "wires": [
+            [
+                "585c6e84aab3f08f"
             ]
         ]
     },
@@ -3349,8 +3583,8 @@
         "type": "subflow:831dceaabaf975f9",
         "z": "d886a3864a88d832",
         "name": "",
-        "x": 940,
-        "y": 40,
+        "x": 880,
+        "y": 100,
         "wires": [
             [
                 "48c251e7e1851bb1"
@@ -3363,7 +3597,7 @@
         "z": "d886a3864a88d832",
         "name": "4.0 Subflow Completeness",
         "x": 1220,
-        "y": 360,
+        "y": 300,
         "wires": [
             [
                 "1393263d0d520dfd"
@@ -3376,7 +3610,7 @@
         "z": "d886a3864a88d832",
         "name": "5.0 Logical Checks",
         "x": 1190,
-        "y": 420,
+        "y": 400,
         "wires": [
             [
                 "22a7836fd0ee4876"
@@ -5386,92 +5620,360 @@
         ]
     },
     {
-        "id": "c77f44f94f19fb09",
-        "type": "ui_template",
-        "z": "642abfc93e7700ac",
-        "group": "8b3784e33ba42593",
-        "name": "JSON2tree",
-        "order": 3,
-        "width": "6",
-        "height": "6",
-        "format": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css\" />\n</head>\n<body>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js\"></script>\n  <div id=\"tree\"><div id=\"jstree\"></div></div>\n  <script>\n  \n  function jsonToJsTreeObject( json_data_object, final_array = new Array() )\n    {\n        Object.keys(json_data_object).forEach( function( data ) {\n            // console.log(\"Key:\" + data);\n            if( Array.isArray(json_data_object[data]) || json_data_object[data] instanceof Object )\n            {\n                final_array.push( { text: `${data}`, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n                // using state attribute \n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n            }\n            else\n            {\n                final_array.push( { text: `${data}`, children: [{ text: `${json_data_object[data]}` }] } );\n                // using state attribute\n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: [{ text: `${json_data_object[data]}` }] } );\n            }\n        });\n\n        return final_array;\n    }\n  \n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n        $('#jstree').remove()\n        let myjsonObject = msg.payload\n        let div = document.createElement('div')\n        div.setAttribute(\"id\", \"jstree\")\n        let treediv = document.getElementById(\"tree\")\n        treediv.appendChild(div)\n        $('#jstree').jstree({ 'core' : {\n                    'data' : jsonToJsTreeObject( myjsonObject )\n        } });\n        $('#jstree').on(\"changed.jstree\", function (e, data) {\n            let path = $('#jstree').jstree(true).get_path(data.node,\"/\");\n            console.log(path);\n            msg.output = path\n            scope.send(msg)\n        });\n    }\n  });\n})(scope);\n\n</script>\n</body>\n</html>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 530,
-        "y": 220,
+        "id": "3aece19508694869",
+        "type": "ui_button",
+        "z": "4821a41b2fd327fb",
+        "name": "Button",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Button",
+        "tooltip": "",
+        "color": "#fffff",
+        "bgcolor": "",
+        "icon": "fa-star",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "Button",
+        "x": 150,
+        "y": 100,
         "wires": [
             [
-                "8d8c29c9e4047092"
+                "71ec6c626243f535"
             ]
         ]
     },
     {
-        "id": "8d8c29c9e4047092",
+        "id": "bb213dd9d74c4713",
+        "type": "ui_dropdown",
+        "z": "4821a41b2fd327fb",
+        "name": "Choice",
+        "label": "Choose what you want ",
+        "tooltip": "",
+        "place": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "Choice 1 : String",
+                "value": "String",
+                "type": "str"
+            },
+            {
+                "label": "Choice 2 : Number",
+                "value": 4,
+                "type": "num"
+            },
+            {
+                "label": "Choice 3 :Boolean",
+                "value": true,
+                "type": "bool"
+            }
+        ],
+        "payload": "",
+        "topic": "Choice ",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "bfd61d2bb51bb7d3",
         "type": "debug",
-        "z": "642abfc93e7700ac",
-        "name": "",
+        "z": "4821a41b2fd327fb",
+        "name": "Dashboard Log",
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "payload",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 220,
+        "x": 760,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "5311e09880914790",
-        "type": "inject",
-        "z": "642abfc93e7700ac",
-        "name": "JSON",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{     \"glossary\": {         \"title\": \"example glossary\", \t\t\"GlossDiv\": {             \"title\": \"S\", \t\t\t\"GlossList\": {                 \"GlossEntry\": {                     \"ID\": \"SGML\", \t\t\t\t\t\"SortAs\": \"SGML\", \t\t\t\t\t\"GlossTerm\": \"Standard Generalized Markup Language\", \t\t\t\t\t\"Acronym\": \"SGML\", \t\t\t\t\t\"Abbrev\": \"ISO 8879:1986\", \t\t\t\t\t\"GlossDef\": {                         \"para\": \"A meta-markup language, used to create markup languages such as DocBook.\", \t\t\t\t\t\t\"GlossSeeAlso\": [\"GML\", \"XML\"]                     }, \t\t\t\t\t\"GlossSee\": \"markup\"                 }             }         }     } }",
-        "payloadType": "json",
-        "x": 350,
-        "y": 220,
+        "id": "e6fb6f269c616c1e",
+        "type": "ui_switch",
+        "z": "4821a41b2fd327fb",
+        "name": "Light Switch",
+        "label": "switch",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "Light Switch ",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 150,
+        "y": 180,
         "wires": [
             [
-                "c77f44f94f19fb09"
+                "71ec6c626243f535"
             ]
         ]
     },
     {
-        "id": "49c7befd02b97aaa",
-        "type": "inject",
-        "z": "642abfc93e7700ac",
-        "name": "JSON",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"name\":\"John\",\"age\":30,\"car\":null}",
-        "payloadType": "json",
-        "x": 350,
+        "id": "e666116ddc314a9d",
+        "type": "ui_slider",
+        "z": "4821a41b2fd327fb",
+        "name": "Slider",
+        "label": "slider",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "Slider",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "d6620b9a7fdd152f",
+        "type": "ui_numeric",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "numeric",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "Numérique",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": "",
+        "x": 160,
         "y": 260,
         "wires": [
             [
-                "c77f44f94f19fb09"
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "f3c2c582f77fb627",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Text Entry Field ",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "Text Entry Feild",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "c053339d3d485845",
+        "type": "ui_form",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Form in Node-RED ",
+        "group": "54bca71e.4287f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Name",
+                "value": "Name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Number",
+                "value": "Number",
+                "type": "number",
+                "required": false
+            },
+            {
+                "label": "Email",
+                "value": "Email",
+                "type": "email",
+                "required": false
+            },
+            {
+                "label": "Password",
+                "value": "Password",
+                "type": "password",
+                "required": false
+            },
+            {
+                "label": "Check Box",
+                "value": "Check Box",
+                "type": "checkbox",
+                "required": false
+            },
+            {
+                "label": "Light Switch",
+                "value": "Light Switch",
+                "type": "switch",
+                "required": false
+            }
+        ],
+        "formValue": {
+            "Name": "",
+            "Number": "",
+            "Email": "",
+            "Password": "",
+            "Check Box": false,
+            "Light Switch": false
+        },
+        "payload": "",
+        "submit": "Submit",
+        "cancel": "Cancle",
+        "topic": "Form",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "71ec6c626243f535",
+        "type": "function",
+        "z": "4821a41b2fd327fb",
+        "name": "Save Events",
+        "func": "\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "bfd61d2bb51bb7d3",
+                "2851e691d3bfa1a6"
+            ]
+        ]
+    },
+    {
+        "id": "2851e691d3bfa1a6",
+        "type": "ui_template",
+        "z": "4821a41b2fd327fb",
+        "group": "785c383535b14b7d",
+        "name": "Dashboard Event Log ",
+        "order": 1,
+        "width": "8",
+        "height": "10",
+        "format": "<ul>\n <li ng-repeat=\"x in msg.payload\">\n <font color=\"red\">{{x.topic}}</font>\n    <ul>\n        <li>{{x.payload}}</li>\n    </ul>\n </li>\n</ul>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "971963f55e94c5ec",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Email Field",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "email",
+        "delay": 300,
+        "topic": "Email Field",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "3cc9c2ca3da31eef",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Password Field",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "password",
+        "delay": 300,
+        "topic": "Password ",
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "864b89d6485ddac4",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Select a color",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "color",
+        "delay": 300,
+        "topic": "Select a color",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "71ec6c626243f535"
             ]
         ]
     }
