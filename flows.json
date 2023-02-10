@@ -7,6 +7,14 @@
         "info": ""
     },
     {
+        "id": "d103860e993c1512",
+        "type": "tab",
+        "label": "Validate RID",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "d886a3864a88d832",
         "type": "tab",
         "label": "Processing Parameters",
@@ -18,14 +26,6 @@
         "id": "ae7e9f579855357c",
         "type": "tab",
         "label": "Spad",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "d103860e993c1512",
-        "type": "tab",
-        "label": "Validate RID",
         "disabled": false,
         "info": "",
         "env": []
@@ -476,6 +476,31 @@
         "color": "#DDAA99"
     },
     {
+        "id": "8d5b6ce343b26ccf",
+        "type": "subflow",
+        "name": "Logger Of all Events",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "5208228e9775e479"
+                    },
+                    {
+                        "id": "63eaa3d343dece84"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "7dc18555ca029842",
         "type": "group",
         "z": "d103860e993c1512",
@@ -497,7 +522,9 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1
+        "y": -1,
+        "w": 838,
+        "h": 208
     },
     {
         "id": "5a28e866a67c90ec",
@@ -522,7 +549,9 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279
+        "y": 279,
+        "w": 1152,
+        "h": 242
     },
     {
         "id": "d1e0f39ddacfeb20",
@@ -542,7 +571,9 @@
             "e5ca7c9975e3a6b5"
         ],
         "x": 474,
-        "y": 99
+        "y": 99,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "ea3e0b5d6b96f47a",
@@ -2169,6 +2200,65 @@
         "wires": []
     },
     {
+        "id": "17cb8d5c1c2dfc81",
+        "type": "ui_template",
+        "z": "8d5b6ce343b26ccf",
+        "group": "1d5401bf95a96f03",
+        "name": "JOB Event Log ",
+        "order": 2,
+        "width": "30",
+        "height": "4",
+        "format": "<ul>\n    <li ng-repeat=\"x in msg.payload\">\n  \n        <font color=\"green\">{{x.topic}}</font>\n        <ul>\n            <li>{{x.payload}}</li>\n        </ul>\n    </li>\n</ul>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 400,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5208228e9775e479",
+        "type": "function",
+        "z": "8d5b6ce343b26ccf",
+        "name": "Save Events",
+        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "17cb8d5c1c2dfc81"
+            ]
+        ]
+    },
+    {
+        "id": "63eaa3d343dece84",
+        "type": "ui_toast",
+        "z": "8d5b6ce343b26ccf",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 190,
+        "y": 260,
+        "wires": []
+    },
+    {
         "id": "9a7a7971.dbc4b8",
         "type": "inject",
         "z": "67991373.45438c",
@@ -2440,23 +2530,6 @@
         ]
     },
     {
-        "id": "3af468cd9306ec3e",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 16",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 4480,
-        "y": 540,
-        "wires": []
-    },
-    {
         "id": "f93589573c440ab8",
         "type": "ui_template",
         "z": "67991373.45438c",
@@ -2489,9 +2562,9 @@
         "key": "topic",
         "joiner": "\\n",
         "joinerType": "str",
-        "accumulate": true,
+        "accumulate": false,
         "timeout": "",
-        "count": "1",
+        "count": "2",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
@@ -2590,7 +2663,7 @@
         "id": "199e84df3d73b845",
         "type": "ui_dropdown",
         "z": "67991373.45438c",
-        "name": "Rule Types Drop Down Topic: dbruletypes",
+        "name": "Rule Types Drop Down Topic: validationTopic",
         "label": "",
         "tooltip": "Select rule types",
         "place": "Select rule types from the db...",
@@ -2608,14 +2681,14 @@
             }
         ],
         "payload": "",
-        "topic": "dbruletypes",
-        "topicType": "msg",
+        "topic": "validationType",
+        "topicType": "str",
         "className": "",
-        "x": 1660,
+        "x": 1670,
         "y": 300,
         "wires": [
             [
-                "284722e989745683"
+                "97e3da9cde534715"
             ]
         ]
     },
@@ -2624,7 +2697,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Prep for DB Rules Dropdown Topic:dbruletypes",
-        "func": "let ret = []\nmsg.payload.map(t => ret.push({ [t.type + '(' + t.cnt +')']: t.type}))\nmsg.options = ret\nmsg.payload = ret\nmsg.topic = \"dbruletypes\"\nreturn msg;",
+        "func": "let ret = []\nmsg.payload.map(t => ret.push({ [t.type + '(' + t.cnt +')']: t.type}))\nmsg.options = ret\nmsg.payload = ret\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2768,7 +2841,7 @@
         "order": 4,
         "width": "10",
         "height": "1",
-        "passthru": true,
+        "passthru": false,
         "multiple": true,
         "options": [
             {
@@ -2822,17 +2895,18 @@
         "joinerType": "str",
         "accumulate": true,
         "timeout": "",
-        "count": "1",
+        "count": "2",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 2330,
-        "y": 360,
+        "x": 2150,
+        "y": 380,
         "wires": [
             [
-                "fd717a88742ae68f"
+                "fd717a88742ae68f",
+                "b8786440407fb767"
             ]
         ]
     },
@@ -2903,25 +2977,6 @@
         ]
     },
     {
-        "id": "284722e989745683",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "Publish to Topic: dbruletypes",
-        "func": "msg.topic = 'dbruletypes'\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1980,
-        "y": 300,
-        "wires": [
-            [
-                "97e3da9cde534715"
-            ]
-        ]
-    },
-    {
         "id": "d394b61bcc4755e6",
         "type": "function",
         "z": "67991373.45438c",
@@ -2941,264 +2996,6 @@
         ]
     },
     {
-        "id": "1c758468c1a4fb0f",
-        "type": "ui_switch",
-        "z": "67991373.45438c",
-        "name": "DB:  Checkbox DB Rules Checkbox",
-        "label": "",
-        "tooltip": "",
-        "group": "d5b306fd70950040",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "b_validationtypes",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 240,
-        "y": 1360,
-        "wires": [
-            [
-                "19bc59e019a2a53b"
-            ]
-        ]
-    },
-    {
-        "id": "94e6b5facd08f824",
-        "type": "ui_switch",
-        "z": "67991373.45438c",
-        "name": "Files: Checkbox Params Files Rules",
-        "label": "",
-        "tooltip": "",
-        "group": "d5b306fd70950040",
-        "order": 1,
-        "width": 1,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "b_paramrulesfile",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 280,
-        "y": 1100,
-        "wires": [
-            [
-                "3ffa2f286878091c"
-            ]
-        ]
-    },
-    {
-        "id": "9d910fda180ee00d",
-        "type": "ui_switch",
-        "z": "67991373.45438c",
-        "name": "DB: Checkbox Facts from RID",
-        "label": "",
-        "tooltip": "",
-        "group": "1f86b2145e7e556a",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "b_reportingID",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 250,
-        "y": 1260,
-        "wires": [
-            [
-                "19bc59e019a2a53b"
-            ]
-        ]
-    },
-    {
-        "id": "6984090145294ca1",
-        "type": "ui_switch",
-        "z": "67991373.45438c",
-        "name": "Files: Checkbox Facts from File",
-        "label": "",
-        "tooltip": "",
-        "group": "1f86b2145e7e556a",
-        "order": 1,
-        "width": 1,
-        "height": 1,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "b_addonFacts",
-        "topicType": "str",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 250,
-        "y": 1000,
-        "wires": [
-            [
-                "3ffa2f286878091c"
-            ]
-        ]
-    },
-    {
-        "id": "3ffa2f286878091c",
-        "type": "join",
-        "z": "67991373.45438c",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "1",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 570,
-        "y": 1040,
-        "wires": [
-            [
-                "dd3c3a172eb45f14"
-            ]
-        ]
-    },
-    {
-        "id": "19bc59e019a2a53b",
-        "type": "join",
-        "z": "67991373.45438c",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "1",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 510,
-        "y": 1280,
-        "wires": [
-            [
-                "725103db926aa039"
-            ]
-        ]
-    },
-    {
-        "id": "c0040e8aff627baf",
-        "type": "join",
-        "z": "67991373.45438c",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 970,
-        "y": 1040,
-        "wires": [
-            [
-                "20b4725b31175d27"
-            ]
-        ]
-    },
-    {
-        "id": "dd3c3a172eb45f14",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "function 5",
-        "func": "msg.topic = \"b_files\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 780,
-        "y": 1040,
-        "wires": [
-            [
-                "c0040e8aff627baf"
-            ]
-        ]
-    },
-    {
-        "id": "725103db926aa039",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "function 6",
-        "func": "msg.topic = \"b_db\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 840,
-        "y": 1140,
-        "wires": [
-            [
-                "c0040e8aff627baf"
-            ]
-        ]
-    },
-    {
         "id": "bdfaba796727d01a",
         "type": "function",
         "z": "67991373.45438c",
@@ -3213,90 +3010,8 @@
         "y": 360,
         "wires": [
             [
-                "336dfd415e6b3454"
-            ]
-        ]
-    },
-    {
-        "id": "20b4725b31175d27",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "Topic: options",
-        "func": "msg.topic=\"options\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3280,
-        "y": 1040,
-        "wires": [
-            [
-                "336dfd415e6b3454"
-            ]
-        ]
-    },
-    {
-        "id": "336dfd415e6b3454",
-        "type": "join",
-        "z": "67991373.45438c",
-        "name": "",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "2",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 3470,
-        "y": 620,
-        "wires": [
-            [
                 "d50972cc36887a01",
-                "5208228e9775e479",
                 "585c6e84aab3f08f"
-            ]
-        ],
-        "inputLabels": [
-            "Facts Rules and Submit"
-        ],
-        "icon": "node-red/arduino.png"
-    },
-    {
-        "id": "4784bbb6f258640b",
-        "type": "ui_button",
-        "z": "67991373.45438c",
-        "d": true,
-        "name": "",
-        "group": "1d5401bf95a96f03",
-        "order": 3,
-        "width": "2",
-        "height": "1",
-        "passthru": false,
-        "label": "Submit JOB",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "submitted",
-        "payloadType": "str",
-        "topic": "submitted",
-        "topicType": "str",
-        "x": 3070,
-        "y": 620,
-        "wires": [
-            [
-                "8c1f468931ef2dba",
-                "336dfd415e6b3454"
             ]
         ]
     },
@@ -3311,72 +3026,13 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3680,
-        "y": 500,
+        "x": 3460,
+        "y": 120,
         "wires": [
             [
                 "f424572dc683f8a6"
             ]
         ]
-    },
-    {
-        "id": "17cb8d5c1c2dfc81",
-        "type": "ui_template",
-        "z": "67991373.45438c",
-        "group": "1d5401bf95a96f03",
-        "name": "JOB Event Log ",
-        "order": 2,
-        "width": "30",
-        "height": "4",
-        "format": "<ul>\n <li ng-repeat=\"x in msg.payload\">\n     \n <font color=\"green\">{{x.topic}}</font>\n    <ul>\n        <li>{{(x.payload.options)}}</li>\n    </ul>\n </li>\n</ul>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 3860,
-        "y": 1160,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5208228e9775e479",
-        "type": "function",
-        "z": "67991373.45438c",
-        "name": "Save Events",
-        "func": "// NK will set the submitted flow to null\n\nflow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 3670,
-        "y": 1160,
-        "wires": [
-            [
-                "17cb8d5c1c2dfc81"
-            ]
-        ]
-    },
-    {
-        "id": "8c1f468931ef2dba",
-        "type": "ui_toast",
-        "z": "67991373.45438c",
-        "position": "top right",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "raw": true,
-        "className": "",
-        "topic": "",
-        "name": "",
-        "x": 3210,
-        "y": 780,
-        "wires": []
     },
     {
         "id": "9cdb7816c09b66db",
@@ -3399,7 +3055,7 @@
         "id": "585c6e84aab3f08f",
         "type": "join",
         "z": "67991373.45438c",
-        "name": "",
+        "name": "join: submit Form and facts and rules",
         "mode": "custom",
         "build": "object",
         "property": "payload",
@@ -3415,11 +3071,12 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 3890,
-        "y": 620,
+        "x": 3710,
+        "y": 400,
         "wires": [
             [
-                "3af468cd9306ec3e"
+                "e01f6f2dd1107736",
+                "298936327e37cf1a"
             ]
         ]
     },
@@ -3427,13 +3084,20 @@
         "id": "f424572dc683f8a6",
         "type": "ui_form",
         "z": "67991373.45438c",
-        "name": "",
-        "label": "Submit JOB Form",
+        "name": "Form: Show Attended, networked, files and db checkboxes",
+        "label": "",
         "group": "1d5401bf95a96f03",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": "15",
+        "height": "4",
         "options": [
+            {
+                "label": "Attended",
+                "value": "cb_attended",
+                "type": "checkbox",
+                "required": true,
+                "rows": null
+            },
             {
                 "label": "Networked",
                 "value": "cb_network",
@@ -3442,16 +3106,41 @@
                 "rows": null
             },
             {
-                "label": "Attended",
-                "value": "cb_attended",
+                "label": "Params File",
+                "value": "cb_paramsFile",
                 "type": "checkbox",
-                "required": false,
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Add On Facts",
+                "value": "cb_addOnFacts",
+                "type": "checkbox",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Reporting IDs",
+                "value": "cb_reportingIDs",
+                "type": "checkbox",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Validation Types",
+                "value": "cb_validationType",
+                "type": "checkbox",
+                "required": true,
                 "rows": null
             }
         ],
         "formValue": {
+            "cb_attended": false,
             "cb_network": false,
-            "cb_attended": false
+            "cb_paramsFile": false,
+            "cb_addOnFacts": false,
+            "cb_reportingIDs": false,
+            "cb_validationType": false
         },
         "payload": "",
         "submit": "submit",
@@ -3460,13 +3149,512 @@
         "topicType": "str",
         "splitLayout": true,
         "className": "",
-        "x": 4090,
-        "y": 460,
+        "x": 3840,
+        "y": 120,
         "wires": [
             [
                 "585c6e84aab3f08f"
             ]
         ]
+    },
+    {
+        "id": "e01f6f2dd1107736",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Prepare for QBES",
+        "func": "//msg.payload has these props:\n\nlet payload = {}\nlet {\ncb_attended,\ncb_network,\ncb_paramsFile,\n    cb_validationType,\ncb_addOnFacts,\ncb_reportingIDs} = msg.payload.jobsform\n\n\nlet {factsandrules} = msg.payload\nlet fileRules = factsandrules.rules.filerules\n let validationType = factsandrules.rules.validationType // just getting the first validationType\n\nlet facts = factsandrules.facts\n\n\n// If add on facts and reporting ids are not defined then do not propogate\nlet addOnFacts = facts ? facts : 0\n\n\nlet reportingIds = (facts.dbreportingids) ? facts.dbreportingids : 0  // just try with the first one\nif (reportingIds == 0 && addOnFacts == 0) {\n    msg.payload = \"No reporting ids or facts defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\nlet reportingId =  reportingIds != 0 && reportingIds.length > 0 ? reportingIds[0] : 0\n\n// Checked the button but did not specify the reporting id value error it\nif (cb_reportingIDs && reportingId == 0){\n    msg.payload = \"No reporting ids were defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\n// Checked the button but did not specify the reporting id value error it\nif (cb_addOnFacts && addOnFacts == 0) {\n    msg.payload = \"No add on facts file was defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n// Checked the button but did not specify the reporting id value error it\nif (cb_validationType && addOnFacts == 0) {\n    msg.payload = \"No validation type was defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\n\npayload = { fileRules, addOnFacts,  validationType,   payload: msg.payload}\n// reportingId, reportingIds}\n\n// export const processEngine = async function (facts, rules, showNetwork = true, attended = false, addOnFacts = {}) {\n\n//     let url = HOSTURL + '/spad/processRules?X-API-KEY=x5nDCpvGTkvHniq8wJ9m&X-JBID=kapoo&DEBUG=false'\n//     try {\n//         let result = await axios.post(url, { facts, rules, showNetwork, attended, addOnFacts })\n//         let resultSet = result.data\n//         return resultSet;\n\n//     }\n//     catch (e) {\n//         alert(e)\n//     }\n//     return;\n// };\n\n\nmsg.topic = 'readyforqbes'\nmsg.payload = payload\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4010,
+        "y": 400,
+        "wires": [
+            [
+                "624b14419a05bf28"
+            ]
+        ]
+    },
+    {
+        "id": "624b14419a05bf28",
+        "type": "switch",
+        "z": "67991373.45438c",
+        "name": "switch: erros and non errors",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "error",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 4260,
+        "y": 400,
+        "wires": [
+            [
+                "90ef637e87d9ed24"
+            ],
+            [
+                "a56036a4f3ead9c9",
+                "71465207ea2287af"
+            ]
+        ],
+        "outputLabels": [
+            "error",
+            "readyforqbes"
+        ]
+    },
+    {
+        "id": "a56036a4f3ead9c9",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "No errors in the request",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4590,
+        "y": 400,
+        "wires": [
+            [
+                "8aeae785add25212"
+            ]
+        ]
+    },
+    {
+        "id": "298936327e37cf1a",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3920,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "90ef637e87d9ed24",
+        "type": "subflow:8d5b6ce343b26ccf",
+        "z": "67991373.45438c",
+        "name": "",
+        "x": 4620,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8aeae785add25212",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "Link Out to Call Qbes",
+        "mode": "link",
+        "links": [
+            "7f7bbaeb8d81be16"
+        ],
+        "x": 4605,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1eb7ebd98af8d066",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Reinit the chosen cboxes",
+        "func": "msg.topic = \"rulessubmitted\"\nmsg.payload = msg.payload.jobsform\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3690,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71465207ea2287af",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "function 8",
+        "func": "msg.payload = \"Ready to submit job\"\n\nmsg.topic = \"submitted\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4560,
+        "y": 340,
+        "wires": [
+            [
+                "90ef637e87d9ed24"
+            ]
+        ]
+    },
+    {
+        "id": "b8786440407fb767",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2100,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f3903be4e24d8dca",
+        "type": "http request",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "API call to validate",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/reporting_unit/{{{rid}}}/validate?DEBUG=true",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 430,
+        "y": 40,
+        "wires": [
+            [
+                "999bbdaf976e7feb"
+            ]
+        ]
+    },
+    {
+        "id": "97d2bd49cb3742bc",
+        "type": "inject",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "Validate RID Input",
+        "props": [
+            {
+                "p": "rid",
+                "v": "8771348140",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload.type",
+                "v": "validate",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "VALIDATE",
+        "x": 190,
+        "y": 40,
+        "wires": [
+            [
+                "f3903be4e24d8dca",
+                "d015bbe8f3761f7f"
+            ]
+        ]
+    },
+    {
+        "id": "999bbdaf976e7feb",
+        "type": "json",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 590,
+        "y": 40,
+        "wires": [
+            [
+                "d529da54696a9982"
+            ]
+        ]
+    },
+    {
+        "id": "d529da54696a9982",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e5ca7c9975e3a6b5",
+        "type": "comment",
+        "z": "d103860e993c1512",
+        "g": "d1e0f39ddacfeb20",
+        "name": "Validate a specific Reporting ID with all rules",
+        "info": "## ## Validate a specific Reporting ID with all rules",
+        "x": 670,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d015bbe8f3761f7f",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a52599d1e82370ad",
+        "type": "inject",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Rule Generate from Free Text",
+        "props": [
+            {
+                "p": "payload.conditionstring",
+                "v": " What is the name, condition, compute as an array and message of the following rule and return it as a json:    Naveen:   I was talking to Patrick and he wanted another    rule name is \"IF the flag for hazardas materials is reported  and the NAICS is in 484\". It should have a rule priority of 5 on a scale of 1 to 10.   and condition is   substr(RECORD_NAICS_NUM, 1,3)== 484 and RCPT_MOTR_HAZRD_STAT == 1 and RCPT_MOTR_HAZRD_PCT == 0 if true then compute  RCPT_MOTR_HAZRD_STAT = 2  Send the message \"Hazardous Material rule fired\".  Do you think we could chat on this soon?  Thanks Amit",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "AI",
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "3773a11cc06cd9db"
+            ]
+        ]
+    },
+    {
+        "id": "3773a11cc06cd9db",
+        "type": "http request",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Post AI Services",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/openai/aicomplete",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 440,
+        "y": 400,
+        "wires": [
+            [
+                "6970f9e5cadfae30"
+            ]
+        ]
+    },
+    {
+        "id": "f47d58da6a345fa9",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.ruleName",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "12d8ce370fc2153f",
+        "type": "function",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Get RuleName",
+        "func": "\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 320,
+        "wires": [
+            [
+                "f47d58da6a345fa9"
+            ]
+        ]
+    },
+    {
+        "id": "6970f9e5cadfae30",
+        "type": "switch",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "",
+        "property": "payload.ruleName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 400,
+        "wires": [
+            [
+                "12d8ce370fc2153f",
+                "eee34fb243fcc025"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "eee34fb243fcc025",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Debug RuleName",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "8764792a5250d529",
+        "type": "comment",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Define AI end point. Pass free text",
+        "info": "## # Open AI parse text",
+        "x": 180,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "7f7bbaeb8d81be16",
+        "type": "link in",
+        "z": "d103860e993c1512",
+        "name": "link in to Call Qbes",
+        "links": [
+            "8aeae785add25212"
+        ],
+        "x": 125,
+        "y": 680,
+        "wires": [
+            [
+                "3af468cd9306ec3e"
+            ]
+        ]
+    },
+    {
+        "id": "3af468cd9306ec3e",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 680,
+        "wires": []
     },
     {
         "id": "f0bda8ccf069c334",
@@ -4086,308 +4274,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "f3903be4e24d8dca",
-        "type": "http request",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "API call to validate",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "http://localhost/reporting_unit/{{{rid}}}/validate?DEBUG=true",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "other",
-                "keyValue": "X-JBID",
-                "valueType": "other",
-                "valueValue": "kapoo"
-            },
-            {
-                "keyType": "other",
-                "keyValue": "X-API-KEY",
-                "valueType": "other",
-                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
-            }
-        ],
-        "x": 430,
-        "y": 40,
-        "wires": [
-            [
-                "999bbdaf976e7feb"
-            ]
-        ]
-    },
-    {
-        "id": "97d2bd49cb3742bc",
-        "type": "inject",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "Validate RID Input",
-        "props": [
-            {
-                "p": "rid",
-                "v": "8771348140",
-                "vt": "num"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "payload.type",
-                "v": "validate",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "VALIDATE",
-        "x": 190,
-        "y": 40,
-        "wires": [
-            [
-                "f3903be4e24d8dca",
-                "d015bbe8f3761f7f"
-            ]
-        ]
-    },
-    {
-        "id": "999bbdaf976e7feb",
-        "type": "json",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 590,
-        "y": 40,
-        "wires": [
-            [
-                "d529da54696a9982"
-            ]
-        ]
-    },
-    {
-        "id": "d529da54696a9982",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "e5ca7c9975e3a6b5",
-        "type": "comment",
-        "z": "d103860e993c1512",
-        "g": "d1e0f39ddacfeb20",
-        "name": "Validate a specific Reporting ID with all rules",
-        "info": "## ## Validate a specific Reporting ID with all rules",
-        "x": 670,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "d015bbe8f3761f7f",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 440,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "a52599d1e82370ad",
-        "type": "inject",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Rule Generate from Free Text",
-        "props": [
-            {
-                "p": "payload.conditionstring",
-                "v": " What is the name, condition, compute as an array and message of the following rule and return it as a json:    Naveen:   I was talking to Patrick and he wanted another    rule name is \"IF the flag for hazardas materials is reported  and the NAICS is in 484\". It should have a rule priority of 5 on a scale of 1 to 10.   and condition is   substr(RECORD_NAICS_NUM, 1,3)== 484 and RCPT_MOTR_HAZRD_STAT == 1 and RCPT_MOTR_HAZRD_PCT == 0 if true then compute  RCPT_MOTR_HAZRD_STAT = 2  Send the message \"Hazardous Material rule fired\".  Do you think we could chat on this soon?  Thanks Amit",
-                "vt": "str"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "AI",
-        "x": 180,
-        "y": 400,
-        "wires": [
-            [
-                "3773a11cc06cd9db"
-            ]
-        ]
-    },
-    {
-        "id": "3773a11cc06cd9db",
-        "type": "http request",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Post AI Services",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "http://localhost/openai/aicomplete",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "other",
-                "keyValue": "X-JBID",
-                "valueType": "other",
-                "valueValue": "kapoo"
-            },
-            {
-                "keyType": "other",
-                "keyValue": "X-API-KEY",
-                "valueType": "other",
-                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
-            }
-        ],
-        "x": 440,
-        "y": 400,
-        "wires": [
-            [
-                "6970f9e5cadfae30"
-            ]
-        ]
-    },
-    {
-        "id": "f47d58da6a345fa9",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "debug 9",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload.ruleName",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "12d8ce370fc2153f",
-        "type": "function",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Get RuleName",
-        "func": "\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 840,
-        "y": 320,
-        "wires": [
-            [
-                "f47d58da6a345fa9"
-            ]
-        ]
-    },
-    {
-        "id": "6970f9e5cadfae30",
-        "type": "switch",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "",
-        "property": "payload.ruleName",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "nnull"
-            },
-            {
-                "t": "null"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 650,
-        "y": 400,
-        "wires": [
-            [
-                "12d8ce370fc2153f",
-                "eee34fb243fcc025"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "eee34fb243fcc025",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Debug RuleName",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 870,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "8764792a5250d529",
-        "type": "comment",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Define AI end point. Pass free text",
-        "info": "## # Open AI parse text",
-        "x": 180,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "a55094dd0e9394ea",
