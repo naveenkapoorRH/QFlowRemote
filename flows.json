@@ -445,7 +445,7 @@
     {
         "id": "82cc831b154f3133",
         "type": "subflow",
-        "name": "Dynamic Rules from Parameter Files",
+        "name": "SUB FLOW Dynamic Rules from Parameter Files",
         "info": "",
         "category": "",
         "in": [
@@ -594,12 +594,11 @@
     {
         "id": "1f48566b.e8958a",
         "type": "ui_group",
-        "d": true,
         "name": "2. Processed PreRules",
         "tab": "da612906.998368",
         "order": 5,
         "disp": true,
-        "width": 30,
+        "width": "30",
         "collapse": true,
         "className": ""
     },
@@ -1597,7 +1596,7 @@
         "type": "function",
         "z": "82cc831b154f3133",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n  \n\n\n\n    // for(var i = 1; i < 15 ; ++i)\n    // {\n    // if(r['DETAIL '+i] != undefined)\n    // actionStringRHS += r['DETAIL '+i] +' +'\n\n    // }\n//     if (actionStringRHS.length > 0) \n//        {\n// //         // A = B + C + 20 to an array[{A:\"B+C+20\"}]. However if The other option is 100 = a + b + c => needs to be converted to an array \n// //         // [{a:100}, {b:100},..]  \n\n        \n\n//         let rhs = actionStringRHS.substring(0, actionStringRHS.length - 1).trim()\n//         let lhs = r['TOTAL']\n//         // lhs = lhs.trim()\n        \n     \n// // // Turns out to be a number ie 100 = A + B +c\n//         if (!isNaN(lhs)) {\n//             // Split the rhs on the \"+\" sign\n//             let variables = rhs.split(\"+\");\n//             // Trim any whitespace from each variable\n//              variables = variables.map(variable => variable.trim());\n//             // Create an array of assignment objects\n//             action = variables.map(variable => ({ [variable]: lhs }));\n//             console.log(\"LINE 37 index and action is \",k, action, lhs, rhs)\n            \n//         } else \n        \n        \n//          action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1) };\n//        } \naction = [{FAILURE: true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = ''\n    let action =[] // [{ 'FAILURE': true }]\n    let actionString = (r['ACTIONSTRING']).trim()\n\n    // actionString = (actionString.endsWith(\";\")) ? actionString.slice(0, -1) + \"\" : \"\"\n    \n\n\n  \n\n    let arr = actionString.split(\";\");\n    console.log(arr)\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n\n        let c_key = key.replace(/[^\\x20-\\x7E]/g, \"\").trim()\n        let c_value = val.replace(\" eq \", \"=\").trim()\n\n        if (key)\n            action.push({ [c_key]: c_value });\n    }\n    \n\n //&& r['ACTIONSTRING'] != '' ? r['ACTIONSTRING'] :  [{'FAILURE': true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    type: k+2,\n    priority: 5,\n    conditionstring:  r['CONDITION'] ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nconsole.log(\"In Convert parameter to pre processed\", preRules)\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1607,8 +1606,9 @@
         "y": 200,
         "wires": [
             [
+                "5ab2c885ede5e880",
                 "fff3d06b988e5233",
-                "5ab2c885ede5e880"
+                "3d503f33328a81f9"
             ]
         ]
     },
@@ -1670,7 +1670,7 @@
                 "634a65c934af51b3",
                 "62671df4cfe27264",
                 "6c832fce46c1bafb",
-                "238973b6eb0cf296"
+                "3d503f33328a81f9"
             ]
         ]
     },
@@ -1891,6 +1891,16 @@
             {
                 "field": "output.value",
                 "title": "Condition Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "JSON.stringify(output)",
+                "title": "Output",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -2184,10 +2194,27 @@
         "wires": []
     },
     {
-        "id": "238973b6eb0cf296",
+        "id": "aea84a7e33de6f9b",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Utility Functions",
+        "func": "\n    // function to convert string of equations to JSON array\n    function stringToJSON (str){\n    \n\n        // function cleanupString(str) { return str.replace(/[^\\x20-\\x7E]/g, \"\").trim(); }\n    \n    let arr = str.split(\";\");\n    let json = [];\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n        if (key)\n            json.push({ [cleanupString(key)]: cleanupString(val.replace(\" eq \", \"=\")) });\n    }\n    return json;\n}\n\nfunction cleanupString(str){ return str.replace(/[^\\x20-\\x7E]/g, \"\").trim(); }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d503f33328a81f9",
         "type": "debug",
         "z": "82cc831b154f3133",
-        "name": "debug 17",
+        "name": "debug 20",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -2195,8 +2222,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1400,
-        "y": 460,
+        "x": 1820,
+        "y": 280,
         "wires": []
     },
     {
@@ -2262,7 +2289,7 @@
         "id": "9a7a7971.dbc4b8",
         "type": "inject",
         "z": "67991373.45438c",
-        "name": "Upload 4testMOD.cvs",
+        "name": "Upload /Users/revealgc/Desktop/NavRules.csv",
         "props": [
             {
                 "p": "payload"
@@ -2277,9 +2304,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "/Users/revealgc/Desktop/4testMOD.csv",
+        "payload": "/Users/revealgc/Desktop/NavRules.csv",
         "payloadType": "str",
-        "x": 260,
+        "x": 340,
         "y": 440,
         "wires": [
             [
@@ -2333,7 +2360,7 @@
         "type": "subflow:82cc831b154f3133",
         "z": "67991373.45438c",
         "name": "",
-        "x": 830,
+        "x": 860,
         "y": 440,
         "wires": [
             [
@@ -2515,7 +2542,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Parameter file Rules pub Topic: filerules",
-        "func": "let rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\n\nmsg.payload = rules\nmsg.topic=\"filerules\"\nreturn msg;",
+        "func": "let rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\nconsole.log(\"Parameter file Rules pub Topic: filerules\", rules)\nmsg.payload = rules\nmsg.topic=\"filerules\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2905,8 +2932,7 @@
         "y": 380,
         "wires": [
             [
-                "fd717a88742ae68f",
-                "b8786440407fb767"
+                "fd717a88742ae68f"
             ]
         ]
     },
@@ -3045,8 +3071,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 4260,
-        "y": 920,
+        "x": 500,
+        "y": 1480,
         "wires": [
             []
         ]
@@ -3075,8 +3101,7 @@
         "y": 400,
         "wires": [
             [
-                "e01f6f2dd1107736",
-                "298936327e37cf1a"
+                "e01f6f2dd1107736"
             ]
         ]
     },
@@ -3162,7 +3187,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Prepare for QBES",
-        "func": "//msg.payload has these props:\n\nlet payload = {}\nlet {\ncb_attended,\ncb_network,\ncb_paramsFile,\n    cb_validationType,\ncb_addOnFacts,\ncb_reportingIDs} = msg.payload.jobsform\n\n\nlet {factsandrules} = msg.payload\nlet fileRules = factsandrules.rules.filerules\n let validationType = factsandrules.rules.validationType // just getting the first validationType\n\nlet facts = factsandrules.facts\n\n\n// If add on facts and reporting ids are not defined then do not propogate\nlet addOnFacts = facts ? facts : 0\n\n\nlet reportingIds = (facts.dbreportingids) ? facts.dbreportingids : 0  // just try with the first one\nif (reportingIds == 0 && addOnFacts == 0) {\n    msg.payload = \"No reporting ids or facts defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\nlet reportingId =  reportingIds != 0 && reportingIds.length > 0 ? reportingIds[0] : 0\n\n// Checked the button but did not specify the reporting id value error it\nif (cb_reportingIDs && reportingId == 0){\n    msg.payload = \"No reporting ids were defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\n// Checked the button but did not specify the reporting id value error it\nif (cb_addOnFacts && addOnFacts == 0) {\n    msg.payload = \"No add on facts file was defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n// Checked the button but did not specify the reporting id value error it\nif (cb_validationType && addOnFacts == 0) {\n    msg.payload = \"No validation type was defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\n\npayload = { fileRules, addOnFacts,  validationType,   payload: msg.payload}\n// reportingId, reportingIds}\n\n// export const processEngine = async function (facts, rules, showNetwork = true, attended = false, addOnFacts = {}) {\n\n//     let url = HOSTURL + '/spad/processRules?X-API-KEY=x5nDCpvGTkvHniq8wJ9m&X-JBID=kapoo&DEBUG=false'\n//     try {\n//         let result = await axios.post(url, { facts, rules, showNetwork, attended, addOnFacts })\n//         let resultSet = result.data\n//         return resultSet;\n\n//     }\n//     catch (e) {\n//         alert(e)\n//     }\n//     return;\n// };\n\n\nmsg.topic = 'readyforqbes'\nmsg.payload = payload\nreturn msg;\n",
+        "func": "//msg.payload has these props:\n\nlet payload = {}\nlet {\ncb_attended,\ncb_network,\ncb_paramsFile,\n    cb_validationType,\ncb_addOnFacts,\ncb_reportingIDs} = msg.payload.jobsform\n\n\nlet {factsandrules} = msg.payload\nlet fileRules = factsandrules.rules.filerules\n let validationType = factsandrules.rules.validationType // just getting the first validationType\n\nlet facts = factsandrules.facts\n\n\n// If add on facts and reporting ids are not defined then do not propogate\nlet addOnFacts = facts ? facts : 0\n\n\nlet reportingIds = (facts.dbreportingids) ? facts.dbreportingids : 0  // just try with the first one\nif (reportingIds == 0 && addOnFacts == 0) {\n    msg.payload = \"No reporting ids or facts defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\nlet reportingId =  reportingIds != 0 && reportingIds.length > 0 ? reportingIds[0] : 0\n\n// Checked the button but did not specify the reporting id value error it\nif (cb_reportingIDs && reportingId == 0){\n    msg.payload = \"No reporting ids were defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\n// Checked the button but did not specify the reporting id value error it\nif (cb_addOnFacts && addOnFacts == 0) {\n    msg.payload = \"No add on facts file was defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n// Checked the button but did not specify the reporting id value error it\nif (cb_validationType && addOnFacts == 0) {\n    msg.payload = \"No validation type was defined\"\n    msg.facts = facts\n    msg.topic = \"error\"\n\n    return msg\n}\n\n\npayload = { \n    facts: factsandrules.facts.facts,\n    rules: factsandrules.rules.filerules, //[0]], // just firing the 1st rule from params file\n    showNetwork: msg.payload.jobsform.cb_network,\n    attended: msg.payload.jobsform.cb_attended,\n    // addOnFacts: factsandrules.facts.facts[0]\n    // addOnFacts: msg.payload.addOnFacts.facts\n}\n\n// let goodpayload = { \"facts\": [{ \"reporting_id\": \"3010008883\", \"EMP_MAR12\": 2000, \"OPEX_TOT_VAL\": 0, \"PAY_ANN\": 82000, \"PAY_QTR1\": 21000, \"RCPT_TOT\": 548000, \"id\": \"24350\", \"ru_metadata_id\": \"287\", \"refper\": \"2017A1\", \"ent_id\": \"9551826335\", \"login_id\": \"8990061112\", \"kau_id\": \"2120563743\", \"alpha\": \"413205\", \"sector\": \"44\", \"naics\": \"441310\", \"unit_type\": \"MU\", \"level_type\": \"e\", \"estab_type\": \"KAU\", \"item_level\": \"All Estab\", \"name1\": \"FL COMPANY 210 CORP\", \"name2\": null, \"street\": \"6560 FL ADDRESS 4 ST\", \"city\": \"FL CITY 4\", \"state\": \"FL\", \"zip\": \"342330000\", \"category\": null, \"naics_csv\": null, \"parent_id\": \"2120563743\", \"parent_type\": \"d\", \"parent_name1\": \" COMPANY 210 CORP\", \"created_by\": \"DATALOAD\", \"created_date\": \"2022-09-23T21:08:27.593Z\", \"last_modified_by\": \"DATAUPDATE\", \"last_modified_date\": \"2022-09-23T23:22:06.701Z\" }], \"rules\": [{ \"event\": { \"ruleId\": 265, \"active\": true, \"name\": \"Tims new rule\", \"actionType\": \"impute\", \"validationType\": \"estab\", \"rulePriority\": \"1\", \"params\": { \"action\": [{ \"MD_PAY_ANN\": \"agg(\\\"PAY_ANN\\\", \\\"state = 'MD'\\\")\" }, { \"VA_PAY_ANN\": \"agg(\\\"PAY_ANN\\\", \\\"state = 'VA'\\\")\" }], \"message\": \"Tims new rule fired\", \"rvsJSON\": [\"PAY_ANN\"], \"apiSource\": {}, \"actionType\": \"impute\", \"apiChecked\": false, \"rvs\": \"[\\\"PAY_ANN\\\"]\" }, \"type\": \"265\" }, \"index\": -1, \"conditions\": { \"all\": [{ \"fact\": \"checkCondition\", \"path\": \"$.value\", \"operator\": \"equal\", \"value\": true, \"params\": { \"conditionstring\": \"substr(RECORD_NAICS_NUM, 1,3)== 484 and RCPT_MOTR_HAZRD_STAT == 1 and RCPT_MOTR_HAZRD_PCT == 0\" } }] } }], \"showNetwork\": true, \"attended\": false, \"addOnFacts\": {} }\n\n\n// payload.facts = goodpayload.facts\n// payload.rules = goodpayload.rules\n\n// call processEngine with the following:\n// addOnFacts: msg.payload.addOnFacts.facts, showNetwork: msg.payload.payload.jobsform.cb_network,\n// attended = msg.payload.payload.jobsform.cb_attended, \n// rules = msg.payload.fileRules, facts =[], \n// reportingId, reportingIds}\n\n// export const processEngine = async function (facts, rules, showNetwork = true, attended = false, addOnFacts = {}) {\n\n//     let url = HOSTURL + '/spad/processRules?X-API-KEY=x5nDCpvGTkvHniq8wJ9m&X-JBID=kapoo&DEBUG=false'\n//     try {\n//         let result = await axios.post(url, { facts, rules, showNetwork, attended, addOnFacts })\n//         let resultSet = result.data\n//         return resultSet;\n\n//     }\n//     catch (e) {\n//         alert(e)\n//     }\n//     return;\n// };\n\n\nmsg.topic = 'qbes'\nmsg.payload = payload\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3232,22 +3257,6 @@
         ]
     },
     {
-        "id": "298936327e37cf1a",
-        "type": "debug",
-        "z": "67991373.45438c",
-        "name": "debug 18",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 3920,
-        "y": 500,
-        "wires": []
-    },
-    {
         "id": "90ef637e87d9ed24",
         "type": "subflow:8d5b6ce343b26ccf",
         "z": "67991373.45438c",
@@ -3306,20 +3315,264 @@
         ]
     },
     {
-        "id": "b8786440407fb767",
+        "id": "7f7bbaeb8d81be16",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in to Call Qbes",
+        "links": [
+            "8aeae785add25212"
+        ],
+        "x": 245,
+        "y": 1080,
+        "wires": [
+            [
+                "d7f2fcd5e791ba92"
+            ]
+        ]
+    },
+    {
+        "id": "3af468cd9306ec3e",
         "type": "debug",
         "z": "67991373.45438c",
-        "name": "debug 19",
+        "name": "Output from QBES",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2100,
-        "y": 280,
+        "x": 1010,
+        "y": 1200,
         "wires": []
+    },
+    {
+        "id": "d7f2fcd5e791ba92",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "name": "Post: ProcessRules ",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/spad/processRules",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "DEBUG",
+                "valueType": "other",
+                "valueValue": "true"
+            }
+        ],
+        "x": 670,
+        "y": 1260,
+        "wires": [
+            [
+                "3af468cd9306ec3e",
+                "711f05a68cde98f5"
+            ]
+        ]
+    },
+    {
+        "id": "358e93ec19c0e1fe",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "Input to QBES",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "7fda4f293c60fa80",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "BAD JSON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"DEBUG\":false,\"parent_id\":0,\"facts\":[{\"reporting_id\":2002865554,\"naics000\":484000,\"TRUCKTRAC_WD_NUM\":1000,\"TRUCKTRAC_WOD_NUM\":30000,\"TRUCKTRAC_NUM_TOT\":300}],\"paramFile\":\"[]\",\"rules\":[{\"event\":{\"ruleId\":2,\"type\":2,\"active\":true,\"name\":\"Initializing variables like naics00\",\"actionType\":\"impute\",\"validationType\":\"dynamic\",\"rulePriority\":5,\"params\":{\"rvs\":\"[\\\"PAY_ANN\\\"]\",\"rvsJSON\":[\"PAY_ANN\"],\"action\":[{\"naics00\":\"naics\"}],\"message\":\"Initializing variables like naics00\"}},\"conditions\":{\"all\":[{\"fact\":\"checkCondition\",\"path\":\"$.value\",\"operator\":\"equal\",\"value\":true,\"params\":{\"conditionstring\":\"1 == 1\"}}]},\"index\":-1}],\"ruleType\":\"validation\",\"showNetwork\":true,\"addOnFacts\":{},\"attended\":true,\"page\":1,\"itemsPerPage\":100,\"filters\":\"{}\"}",
+        "payloadType": "json",
+        "x": 200,
+        "y": 1320,
+        "wires": [
+            [
+                "d7f2fcd5e791ba92",
+                "358e93ec19c0e1fe"
+            ]
+        ]
+    },
+    {
+        "id": "4376a70cd3180bce",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "Good JSON ",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"facts\":[{\"reporting_id\":\"2002865554\",\"COST_RESALE_VAL\":0,\"OPX_VAL\":0,\"PAY_ANN\":2247000,\"RCPT_TOT\":8611000,\"id\":\"63229\",\"ru_metadata_id\":\"802\",\"refper\":\"2017A1\",\"ent_id\":\"9708162188\",\"login_id\":\"9708162188\",\"kau_id\":\"2002865554\",\"alpha\":\"825628\",\"sector\":\"48\",\"naics\":\"484110\",\"unit_type\":\"MU\",\"level_type\":\"d\",\"estab_type\":null,\"item_level\":\"Non-man Industry\",\"name1\":\" COMPANY 8104 INC\",\"name2\":null,\"street\":\"8488  ADDRESS 8 PL\",\"city\":\" CITY 8\",\"state\":null,\"zip\":null,\"category\":null,\"naics_csv\":null,\"parent_id\":\"8605577557\",\"parent_type\":\"KAU\",\"parent_name1\":\"NE COMPANY 8104 INC\",\"created_by\":\"DATALOAD\",\"created_date\":\"2022-09-23T21:08:27.593Z\",\"last_modified_by\":\"DATALOAD\",\"last_modified_date\":\"2022-09-23T21:08:27.593Z\"}],\"rules\":[{\"event\":{\"name\":\"Assigning new facts\",\"type\":\"269\",\"active\":true,\"params\":{\"rvs\":\"[\\\"PAY_ANN\\\",\\\"naics\\\"]\",\"action\":[{\"naics00\":\"toNumber(naics)\"}],\"message\":\"Enter the message you want to display... . Some initial conditions have been pre-defined.\",\"rvsJSON\":[\"PAY_ANN\",\"naics\"],\"apiSource\":{},\"actionType\":\"impute\",\"apiChecked\":false},\"ruleId\":269,\"actionType\":\"impute\",\"rulePriority\":\"10\",\"validationType\":\"params\"},\"index\":-1,\"conditions\":{\"all\":[{\"fact\":\"checkCondition\",\"path\":\"$.value\",\"value\":true,\"params\":{\"conditionstring\":\"1 == 1\"},\"operator\":\"equal\"}]}},{\"event\":{\"name\":\"Truck Inventories not in balance\",\"type\":\"268\",\"active\":true,\"params\":{\"rvs\":\"[\\\"PAY_ANN\\\"]\",\"action\":[{\"FAILURE\":\"true\"}],\"message\":\"Truck Inventories not in balance\",\"rvsJSON\":[\"PAY_ANN\"],\"apiSource\":{},\"actionType\":\"impute\",\"apiChecked\":false},\"ruleId\":268,\"actionType\":\"impute\",\"rulePriority\":\"5\",\"validationType\":\"params\"},\"index\":-1,\"conditions\":{\"all\":[{\"fact\":\"checkCondition\",\"path\":\"$.value\",\"value\":true,\"params\":{\"conditionstring\":\"substr(naics00,1,3) ==484 \"},\"operator\":\"equal\"}]}}],\"showNetwork\":true,\"attended\":false,\"addOnFacts\":{}}",
+        "payloadType": "json",
+        "x": 210,
+        "y": 1380,
+        "wires": [
+            [
+                "d7f2fcd5e791ba92",
+                "358e93ec19c0e1fe"
+            ]
+        ]
+    },
+    {
+        "id": "cb959980d8916eba",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "Keep bad facts and good rules.  Fix the rules",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"DEBUG\":false,\"parent_id\":0,\"facts\":[{\"reporting_id\":2002865554,\"naics000\":484000,\"TRUCKTRAC_WD_NUM\":1000,\"TRUCKTRAC_WOD_NUM\":30000,\"TRUCKTRAC_NUM_TOT\":300}],\"paramFile\":\"[]\",\"rules\":[{\"event\":{\"name\":\"Assigning new facts\",\"type\":\"269\",\"active\":true,\"params\":{\"rvs\":\"[\\\"PAY_ANN\\\",\\\"naics\\\"]\",\"action\":[{\"naics00\":\"toNumber(naics)\"}],\"message\":\"Enter the message you want to display... . Some initial conditions have been pre-defined.\",\"rvsJSON\":[\"PAY_ANN\",\"naics\"],\"apiSource\":{},\"actionType\":\"impute\",\"apiChecked\":false},\"ruleId\":269,\"actionType\":\"impute\",\"rulePriority\":\"10\",\"validationType\":\"params\"},\"index\":-1,\"conditions\":{\"all\":[{\"fact\":\"checkCondition\",\"path\":\"$.value\",\"value\":true,\"params\":{\"conditionstring\":\"1 == 1\"},\"operator\":\"equal\"}]}},{\"event\":{\"name\":\"Truck Inventories not in balance\",\"type\":\"268\",\"active\":true,\"params\":{\"rvs\":\"[\\\"PAY_ANN\\\"]\",\"action\":[{\"FAILURE\":\"true\"}],\"message\":\"Truck Inventories not in balance\",\"rvsJSON\":[\"PAY_ANN\"],\"apiSource\":{},\"actionType\":\"impute\",\"apiChecked\":false},\"ruleId\":268,\"actionType\":\"impute\",\"rulePriority\":\"5\",\"validationType\":\"params\"},\"index\":-1,\"conditions\":{\"all\":[{\"fact\":\"checkCondition\",\"path\":\"$.value\",\"value\":true,\"params\":{\"conditionstring\":\"substr(naics00,1,3) ==484 \"},\"operator\":\"equal\"}]}}],\"ruleType\":\"validation\",\"showNetwork\":true,\"attended\":true,\"addOnFacts\":{},\"page\":1,\"itemsPerPage\":100,\"filters\":\"{}\"}",
+        "payloadType": "json",
+        "x": 310,
+        "y": 1240,
+        "wires": [
+            [
+                "d7f2fcd5e791ba92"
+            ]
+        ]
+    },
+    {
+        "id": "b2a708b497345ef0",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "TEST JSON",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"DEBUG\":false,\"parent_id\":0,\"facts\":[{\"reporting_id\":2002865554,\"naics000\":484000,\"TRUCKTRAC_WD_NUM\":1000,\"TRUCKTRAC_WOD_NUM\":30000,\"TRUCKTRAC_NUM_TOT\":300}],\"paramFile\":\"[]\",\"rules\":[{\"event\":{\"ruleId\":2,\"type\":2,\"active\":true,\"name\":\"Initializing variables like naics00\",\"actionType\":\"impute\",\"validationType\":\"dynamic\",\"rulePriority\":5,\"params\":{\"rvs\":\"[\\\"PAY_ANN\\\"]\",\"rvsJSON\":[\"PAY_ANN\"],\"action\":[{\"naics00\":\"naics\"}],\"message\":\"Initializing variables like naics00\"}},\"conditions\":{\"all\":[{\"fact\":\"checkCondition\",\"path\":\"$.value\",\"operator\":\"equal\",\"value\":true,\"params\":{\"conditionstring\":\"1 == 1\"}}]},\"index\":-1}],\"ruleType\":\"validation\",\"showNetwork\":true,\"addOnFacts\":{},\"attended\":true,\"page\":1,\"itemsPerPage\":100,\"filters\":\"{}\"}",
+        "payloadType": "json",
+        "x": 210,
+        "y": 1280,
+        "wires": [
+            [
+                "d7f2fcd5e791ba92"
+            ]
+        ]
+    },
+    {
+        "id": "711f05a68cde98f5",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Send to log the output of the results",
+        "func": "let messages = []\n\nlet P = msg.payload\nP.rules.valid.map(p=> messages.push({ruleId: p.id, message: p.message}))\n\n\nmsg.payload = {\n    \"Workflow ID\": msg.payload.workflowId,\n    \"Rules Passed\": msg.payload.rules.valid.length,\n\n    \"Rules Failed\": msg.payload.rules.invalid.length,\n    messages\n\n}\nmsg.topic = \"QBES Output\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 1060,
+        "wires": [
+            [
+                "a6f6c7c8e634f3b6"
+            ]
+        ]
+    },
+    {
+        "id": "a6f6c7c8e634f3b6",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "Link Output from QBES",
+        "mode": "link",
+        "links": [
+            "e6988e4fbd37a5b8"
+        ],
+        "x": 1145,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "e6988e4fbd37a5b8",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 1",
+        "links": [
+            "a6f6c7c8e634f3b6"
+        ],
+        "x": 4325,
+        "y": 120,
+        "wires": [
+            [
+                "90ef637e87d9ed24"
+            ]
+        ]
     },
     {
         "id": "f3903be4e24d8dca",
@@ -3621,39 +3874,6 @@
         "info": "## # Open AI parse text",
         "x": 180,
         "y": 340,
-        "wires": []
-    },
-    {
-        "id": "7f7bbaeb8d81be16",
-        "type": "link in",
-        "z": "d103860e993c1512",
-        "name": "link in to Call Qbes",
-        "links": [
-            "8aeae785add25212"
-        ],
-        "x": 125,
-        "y": 680,
-        "wires": [
-            [
-                "3af468cd9306ec3e"
-            ]
-        ]
-    },
-    {
-        "id": "3af468cd9306ec3e",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "name": "debug 16",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 340,
-        "y": 680,
         "wires": []
     },
     {
