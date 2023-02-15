@@ -7,6 +7,14 @@
         "info": ""
     },
     {
+        "id": "d103860e993c1512",
+        "type": "tab",
+        "label": "Validate RID",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "d886a3864a88d832",
         "type": "tab",
         "label": "Processing Parameters",
@@ -18,14 +26,6 @@
         "id": "ae7e9f579855357c",
         "type": "tab",
         "label": "Spad",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
-        "id": "d103860e993c1512",
-        "type": "tab",
-        "label": "Validate RID",
         "disabled": false,
         "info": "",
         "env": []
@@ -62,9 +62,24 @@
         "env": []
     },
     {
-        "id": "642abfc93e7700ac",
+        "id": "4821a41b2fd327fb",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "Form 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "2e37e573b3c922d6",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "adb3cbccdc688b93",
+        "type": "tab",
+        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
@@ -446,7 +461,7 @@
     {
         "id": "82cc831b154f3133",
         "type": "subflow",
-        "name": "Dynamic Rules from Parameter Files",
+        "name": "SUB FLOW Dynamic Rules from Parameter Files",
         "info": "",
         "category": "",
         "in": [
@@ -477,6 +492,31 @@
         "color": "#DDAA99"
     },
     {
+        "id": "8d5b6ce343b26ccf",
+        "type": "subflow",
+        "name": "Logger Of all Events",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 240,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "5208228e9775e479"
+                    },
+                    {
+                        "id": "fea303947b28f5ab"
+                    }
+                ]
+            }
+        ],
+        "out": [],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
         "id": "7dc18555ca029842",
         "type": "group",
         "z": "d103860e993c1512",
@@ -498,7 +538,9 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1
+        "y": -1,
+        "w": 838,
+        "h": 208
     },
     {
         "id": "5a28e866a67c90ec",
@@ -523,7 +565,9 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279
+        "y": 279,
+        "w": 1152,
+        "h": 242
     },
     {
         "id": "d1e0f39ddacfeb20",
@@ -543,7 +587,107 @@
             "e5ca7c9975e3a6b5"
         ],
         "x": 474,
-        "y": 99
+        "y": 99,
+        "w": 392,
+        "h": 82
+    },
+    {
+        "id": "c0b83f35fdc02130",
+        "type": "group",
+        "z": "67991373.45438c",
+        "name": "FACS FROM DB -Select Reporting IDs from DropDown",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "0cd9973f643e23da",
+            "3b55370ad9fd31f5",
+            "e76e13639b1f0475",
+            "7ce52ec9ef003b44",
+            "d394b61bcc4755e6"
+        ],
+        "x": 14,
+        "y": 939,
+        "w": 1532,
+        "h": 82
+    },
+    {
+        "id": "ef50b77b253a7883",
+        "type": "group",
+        "z": "67991373.45438c",
+        "name": "Rules Types",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "fb483894819a453e",
+            "5f12a638967ad520",
+            "199e84df3d73b845",
+            "79f4bff451119fb7",
+            "645a9d4772fcd00f",
+            "739c4193fa8fce2c",
+            "d587f5de3f4014c8"
+        ],
+        "x": 14,
+        "y": 239,
+        "w": 1792,
+        "h": 182
+    },
+    {
+        "id": "62708d0bbe922798",
+        "type": "group",
+        "z": "67991373.45438c",
+        "name": "FACTS: From File",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "97cb22c43553888b",
+            "04f3b0fb456d2117",
+            "100234cf93c195b8",
+            "c047c871d9c0e70d",
+            "c9c9ca415ab95910",
+            "16550455147cd747",
+            "211d46862546b6bf",
+            "571a7beaed3ab093",
+            "24856db77f81d8bb",
+            "21a2308db46311bb",
+            "58df41cd8e54a653"
+        ],
+        "x": 14,
+        "y": 539,
+        "w": 1432,
+        "h": 322
+    },
+    {
+        "id": "19463268a6c67561",
+        "type": "group",
+        "z": "67991373.45438c",
+        "name": "Rules: From Parameter Files",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "9a7a7971.dbc4b8",
+            "1e5beed02674863a",
+            "b5c53653a76681bf",
+            "06db3e224b379422"
+        ],
+        "x": 14,
+        "y": 99,
+        "w": 1432,
+        "h": 82,
+        "info": "# Rules from Parameter Files"
+    },
+    {
+        "id": "748ca46ea16faad4",
+        "type": "junction",
+        "z": "67991373.45438c",
+        "x": 2161.7333374023438,
+        "y": 1642.7333374023438,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "ea3e0b5d6b96f47a",
@@ -564,9 +708,10 @@
     {
         "id": "1f48566b.e8958a",
         "type": "ui_group",
+        "d": true,
         "name": "2. Processed PreRules",
         "tab": "da612906.998368",
-        "order": 3,
+        "order": 9,
         "disp": true,
         "width": "30",
         "collapse": true,
@@ -585,17 +730,17 @@
         "id": "fe5119d6c50995ed",
         "type": "ui_base",
         "theme": {
-            "name": "theme-dark",
+            "name": "theme-light",
             "lightTheme": {
                 "default": "#0094CE",
-                "baseColor": "#0094CE",
+                "baseColor": "#6e6e6e",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
-                "baseColor": "#097479",
+                "baseColor": "#e3ffe8",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
                 "edited": true,
                 "reset": false
@@ -604,20 +749,21 @@
                 "name": "Untitled Theme 1",
                 "default": "#4B7930",
                 "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
             },
             "themeState": {
                 "base-color": {
-                    "default": "#097479",
-                    "value": "#097479",
-                    "edited": false
+                    "default": "#0094CE",
+                    "value": "#6e6e6e",
+                    "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#097479",
+                    "value": "#6e6e6e",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#111111",
+                    "value": "#fafafa",
                     "edited": false
                 },
                 "page-sidebar-backgroundColor": {
@@ -625,27 +771,27 @@
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#0eb8c0",
+                    "value": "#949494",
                     "edited": false
                 },
                 "group-borderColor": {
-                    "value": "#555555",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "group-backgroundColor": {
-                    "value": "#333333",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "widget-textColor": {
-                    "value": "#eeeeee",
+                    "value": "#111111",
                     "edited": false
                 },
                 "widget-backgroundColor": {
-                    "value": "#097479",
+                    "value": "#6e6e6e",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#333333",
+                    "value": "#ffffff",
                     "edited": false
                 },
                 "base-font": {
@@ -653,7 +799,7 @@
                 }
             },
             "angularTheme": {
-                "primary": "blue",
+                "primary": "indigo",
                 "accents": "blue",
                 "warn": "red",
                 "background": "grey",
@@ -662,9 +808,9 @@
         },
         "site": {
             "name": "QFlow",
-            "hideToolbar": "true",
+            "hideToolbar": "false",
             "allowSwipe": "false",
-            "lockMenu": "true",
+            "lockMenu": "icon",
             "allowTempTheme": "none",
             "dateFormat": "MM/DD/YYYY",
             "sizes": {
@@ -725,7 +871,7 @@
         "name": "Home",
         "icon": "dashboard",
         "order": 1,
-        "disabled": false,
+        "disabled": true,
         "hidden": false
     },
     {
@@ -808,42 +954,43 @@
     {
         "id": "5c07c02344a2bd3d",
         "type": "ui_group",
+        "d": true,
         "name": "1. Parameters File",
         "tab": "da612906.998368",
-        "order": 2,
+        "order": 8,
         "disp": true,
-        "width": "30",
+        "width": 24,
         "collapse": true,
         "className": ""
     },
     {
         "id": "1f86b2145e7e556a",
         "type": "ui_group",
-        "name": "Input File",
+        "name": "Facts",
         "tab": "da612906.998368",
-        "order": 1,
+        "order": 5,
         "disp": true,
-        "width": "14",
+        "width": 16,
         "collapse": false,
         "className": ""
     },
     {
         "id": "18a5a593fcd64912",
         "type": "ui_group",
-        "name": "3. Dynamic Rules from Parameters File",
+        "name": "Dynamic Rules from Parameters File",
         "tab": "da612906.998368",
-        "order": 4,
+        "order": 11,
         "disp": true,
-        "width": "24",
+        "width": 24,
         "collapse": true,
         "className": ""
     },
     {
         "id": "134f09c88dd005fc",
         "type": "ui_group",
-        "name": "4. Facts",
+        "name": "Assert Facts",
         "tab": "da612906.998368",
-        "order": 5,
+        "order": 12,
         "disp": true,
         "width": "24",
         "collapse": true,
@@ -904,43 +1051,246 @@
         "hidden": false
     },
     {
-        "id": "0e2eb66497dfe7df",
+        "id": "4060ccd3b1b979fd",
+        "type": "ui_group",
+        "name": "Gauges",
+        "tab": "da612906.998368",
+        "order": 1,
+        "disp": false,
+        "width": "18",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d5b306fd70950040",
+        "type": "ui_group",
+        "name": "Rules",
+        "tab": "da612906.998368",
+        "order": 3,
+        "disp": true,
+        "width": 16,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1d5401bf95a96f03",
+        "type": "ui_group",
+        "name": "JOBS",
+        "tab": "da612906.998368",
+        "order": 10,
+        "disp": true,
+        "width": 24,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d68e7be3.88f088",
+        "type": "ui_group",
+        "name": "Forms Example",
+        "tab": "67ff17e9.83751",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "54bca71e.4287f",
+        "type": "ui_group",
+        "name": "Form",
+        "tab": "67ff17e9.83751",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "67ff17e9.83751",
+        "type": "ui_tab",
+        "name": "Forms Example ",
+        "icon": "home",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "785c383535b14b7d",
+        "type": "ui_group",
+        "z": "4821a41b2fd327fb",
+        "name": "Dashboard Event Log",
+        "tab": "67ff17e9.83751",
+        "order": 3,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "fc893c6c.aaeff",
+        "type": "ui_group",
+        "name": "Leaderboard",
+        "tab": "c79bed56.dc9bd",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c79bed56.dc9bd",
+        "type": "ui_tab",
+        "name": "LeaderBoard",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "779fdd53a3120890",
+        "type": "ui_group",
+        "name": "Submit Job",
+        "tab": "da612906.998368",
+        "order": 7,
+        "disp": true,
+        "width": 16,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3e2848fe47a8e089",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6c5eaeae4cddb9b5",
+        "type": "ui_group",
+        "name": "Dummy",
+        "tab": "da612906.998368",
+        "order": 2,
+        "disp": false,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4c1a66c045af9fe9",
+        "type": "ui_group",
+        "name": "Dummy 11",
+        "tab": "da612906.998368",
+        "order": 6,
+        "disp": false,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "90b2b640d0604f0c",
+        "type": "ui_group",
+        "name": "Dummy  12",
+        "tab": "da612906.998368",
+        "order": 4,
+        "disp": true,
+        "width": "30",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5d2c762b30aa4565",
+        "type": "ui_group",
+        "name": "Group 13",
+        "tab": "da612906.998368",
+        "order": 13,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "89738f37a85241c4",
+        "type": "ui_group",
+        "name": "Group 14",
+        "tab": "da612906.998368",
+        "order": 14,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "56be97cb79ecb625",
         "type": "ui_spacer",
         "z": "82cc831b154f3133",
         "name": "spacer",
-        "group": "18a5a593fcd64912",
-        "order": 4,
-        "width": 1,
+        "group": "4060ccd3b1b979fd",
+        "order": 5,
+        "width": 2,
         "height": 1
     },
     {
-        "id": "0e407c0d41ec50ac",
+        "id": "e2507736cc86c392",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "f159a8f9eb3c04cb",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "781f4d68043cf2cc",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a0758b51c226cd36",
         "type": "ui_spacer",
         "z": "82cc831b154f3133",
         "name": "spacer",
         "group": "1f48566b.e8958a",
         "order": 3,
-        "width": 1,
+        "width": 6,
         "height": 1
     },
     {
-        "id": "7fcf5f2431271efd",
+        "id": "6cdd5f39d21973f3",
         "type": "ui_spacer",
         "z": "82cc831b154f3133",
         "name": "spacer",
-        "group": "5c07c02344a2bd3d",
-        "order": 2,
-        "width": 1,
+        "group": "1f48566b.e8958a",
+        "order": 4,
+        "width": 6,
         "height": 1
     },
     {
-        "id": "4a865b53ddde60de",
+        "id": "01133e110feaf9fc",
         "type": "ui_spacer",
         "z": "82cc831b154f3133",
         "name": "spacer",
-        "group": "134f09c88dd005fc",
+        "group": "1f48566b.e8958a",
         "order": 5,
-        "width": 1,
+        "width": 30,
+        "height": 1
+    },
+    {
+        "id": "683bcf053c9dce40",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "1d5401bf95a96f03",
+        "order": 2,
+        "width": 16,
         "height": 1
     },
     {
@@ -1441,7 +1791,7 @@
         "type": "function",
         "z": "82cc831b154f3133",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = '', action = []\n    let shortCondition = r['Short Condition'] != undefined ?  r['Short Condition'] + ' and ' : ''\n  \n\n\n\n    for(var i = 1; i < 15 ; ++i)\n    {\n    if(r['DETAIL '+i] != undefined)\n    actionStringRHS += r['DETAIL '+i] +' +'\n\n    }\n    if (actionStringRHS.length > 0) \n       {\n//         // A = B + C + 20 to an array[{A:\"B+C+20\"}]. However if The other option is 100 = a + b + c => needs to be converted to an array \n//         // [{a:100}, {b:100},..]  \n\n        \n\n        let rhs = actionStringRHS.substring(0, actionStringRHS.length - 1).trim()\n        let lhs = r['TOTAL']\n        // lhs = lhs.trim()\n        \n     \n// // Turns out to be a number ie 100 = A + B +c\n        if (!isNaN(lhs)) {\n            // Split the rhs on the \"+\" sign\n            let variables = rhs.split(\"+\");\n            // Trim any whitespace from each variable\n             variables = variables.map(variable => variable.trim());\n            // Create an array of assignment objects\n            action = variables.map(variable => ({ [variable]: lhs }));\n            console.log(\"LINE 37 index and action is \",k, action, lhs, rhs)\n            \n        } else \n        \n        \n         action[0] = { [r['TOTAL']]: actionStringRHS.substring(0, actionStringRHS.length - 1) };\n       } \n\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    priority: 5,\n    conditionstring: shortCondition + r['CONDITION'] + ' and UNIT_TYPE == \"'+r['UNIT TYPE']+'\"' ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n    let actionStringRHS = ''\n    let action =[] // [{ 'FAILURE': true }]\n    let actionString = (r['ACTIONSTRING']).trim()\n\n    // actionString = (actionString.endsWith(\";\")) ? actionString.slice(0, -1) + \"\" : \"\"\n    \n\n\n  \n\n    let arr = actionString.split(\";\");\n    console.log(arr)\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n\n        let c_key = key.replace(/[^\\x20-\\x7E]/g, \"\").trim()\n        let c_value = val.replace(\" eq \", \"=\").trim()\n\n        if (key)\n            action.push({ [c_key]: c_value });\n    }\n    \n\n //&& r['ACTIONSTRING'] != '' ? r['ACTIONSTRING'] :  [{'FAILURE': true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    type: k+2,\n    priority: 5,\n    conditionstring:  r['CONDITION'] ,\n    message: r['DESCRIPTION'], \n    action,\n        actionString: JSON.stringify(action)\n    })\n\n})\nconsole.log(\"In Convert parameter to pre processed\", preRules)\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -1451,8 +1801,8 @@
         "y": 200,
         "wires": [
             [
-                "fff3d06b988e5233",
-                "5ab2c885ede5e880"
+                "5ab2c885ede5e880",
+                "fff3d06b988e5233"
             ]
         ]
     },
@@ -1511,9 +1861,9 @@
                 "8302074bca046e52",
                 "a53fbc532450d88c",
                 "c370fdc0adea4b18",
-                "8293ad496140e639",
-                "5511248c69b06213",
-                "03de92d56c236b99"
+                "634a65c934af51b3",
+                "62671df4cfe27264",
+                "6c832fce46c1bafb"
             ]
         ]
     },
@@ -1524,8 +1874,8 @@
         "group": "5c07c02344a2bd3d",
         "name": "1.0 CSV Import Parameters File",
         "order": 1,
-        "width": "24",
-        "height": "5",
+        "width": 24,
+        "height": 5,
         "columns": [
             {
                 "field": "key",
@@ -1621,8 +1971,8 @@
         "group": "1f48566b.e8958a",
         "name": "2. Processed Pre-Rule",
         "order": 1,
-        "width": "24",
-        "height": "5",
+        "width": 24,
+        "height": 5,
         "columns": [
             {
                 "field": "key",
@@ -1678,8 +2028,8 @@
         "group": "18a5a593fcd64912",
         "name": "3. Processed Rules",
         "order": 1,
-        "width": "24",
-        "height": "9",
+        "width": 24,
+        "height": 5,
         "columns": [
             {
                 "field": "rule.event.ruleId",
@@ -1716,7 +2066,7 @@
                 "title": "Error",
                 "width": "",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "tickCross",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -1734,6 +2084,16 @@
             {
                 "field": "output.value",
                 "title": "Condition Value",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "JSON.stringify(output)",
+                "title": "Output",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -1810,9 +2170,9 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3.1. Condition Errors",
-        "order": 1,
-        "width": "24",
-        "height": "7",
+        "order": 2,
+        "width": 24,
+        "height": 3,
         "columns": [
             {
                 "field": "ruleId",
@@ -1885,9 +2245,9 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3.2. Facts Needed",
-        "order": 1,
-        "width": "24",
-        "height": "9",
+        "order": 3,
+        "width": 24,
+        "height": 2,
         "columns": [
             {
                 "field": "name",
@@ -1946,61 +2306,234 @@
         ]
     },
     {
-        "id": "8293ad496140e639",
-        "type": "ui_text",
+        "id": "634a65c934af51b3",
+        "type": "ui_gauge",
         "z": "82cc831b154f3133",
-        "group": "1f86b2145e7e556a",
-        "order": 3,
-        "width": "2",
-        "height": "1",
-        "name": "Count of Errors",
-        "label": "Error(s)",
-        "format": "{{msg.payload.outputErrorCount}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 1380,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "5511248c69b06213",
-        "type": "ui_text",
-        "z": "82cc831b154f3133",
-        "group": "1f86b2145e7e556a",
+        "name": "Gauge for Errors",
+        "group": "4060ccd3b1b979fd",
         "order": 2,
-        "width": "2",
-        "height": "1",
-        "name": "Count of Rules",
-        "label": "Rules",
-        "format": "{{msg.payload.results.length}}",
-        "layout": "row-spread",
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Errors",
+        "label": "units",
+        "format": "{{msg.payload.outputErrorCount}}",
+        "min": 0,
+        "max": "10",
+        "colors": [
+            "#a4110e",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
         "className": "",
-        "x": 1380,
-        "y": 300,
+        "x": 1440,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "03de92d56c236b99",
-        "type": "ui_text",
+        "id": "62671df4cfe27264",
+        "type": "ui_gauge",
         "z": "82cc831b154f3133",
-        "group": "1f86b2145e7e556a",
-        "order": 4,
-        "width": "2",
-        "height": "1",
-        "name": "Count of Facts Needed",
-        "label": "Facts",
-        "format": "{{msg.payload.factsNeededNameValue.length}}",
-        "layout": "row-spread",
+        "name": "Gauge for Rules",
+        "group": "4060ccd3b1b979fd",
+        "order": 1,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Rules",
+        "label": "rules",
+        "format": "{{msg.payload.results.length}}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#3cb226",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
         "className": "",
-        "x": 1410,
-        "y": 360,
+        "x": 1440,
+        "y": 340,
         "wires": []
+    },
+    {
+        "id": "6c832fce46c1bafb",
+        "type": "ui_gauge",
+        "z": "82cc831b154f3133",
+        "name": "Gauge for Params",
+        "group": "4060ccd3b1b979fd",
+        "order": 3,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Params",
+        "label": "units",
+        "format": "{{msg.payload.factsNeededNameValue.length}}",
+        "min": 0,
+        "max": "1000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1430,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "aea84a7e33de6f9b",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "Utility Functions",
+        "func": "\n    // function to convert string of equations to JSON array\n    function stringToJSON (str){\n    \n\n        // function cleanupString(str) { return str.replace(/[^\\x20-\\x7E]/g, \"\").trim(); }\n    \n    let arr = str.split(\";\");\n    let json = [];\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n        if (key)\n            json.push({ [cleanupString(key)]: cleanupString(val.replace(\" eq \", \"=\")) });\n    }\n    return json;\n}\n\nfunction cleanupString(str){ return str.replace(/[^\\x20-\\x7E]/g, \"\").trim(); }",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17cb8d5c1c2dfc81",
+        "type": "ui_template",
+        "z": "8d5b6ce343b26ccf",
+        "group": "1d5401bf95a96f03",
+        "name": "JOB Event Log ",
+        "order": 3,
+        "width": 24,
+        "height": 5,
+        "format": "<ul>\n    <li ng-repeat=\"x in msg.payload\">\n  \n        <font color=\"green\">{{x.topic}}</font>\n        <ul>\n            <li>{{x.payload}}</li>\n        </ul>\n    </li>\n</ul>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 980,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5208228e9775e479",
+        "type": "function",
+        "z": "8d5b6ce343b26ccf",
+        "name": "Save Events",
+        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 240,
+        "wires": [
+            [
+                "17cb8d5c1c2dfc81"
+            ]
+        ]
+    },
+    {
+        "id": "63eaa3d343dece84",
+        "type": "ui_toast",
+        "z": "8d5b6ce343b26ccf",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "QBES Output",
+        "name": "",
+        "x": 630,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "fea303947b28f5ab",
+        "type": "function",
+        "z": "8d5b6ce343b26ccf",
+        "name": "function 5",
+        "func": "msg.payload = \"Job submitted\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 380,
+        "wires": [
+            [
+                "63eaa3d343dece84"
+            ]
+        ]
+    },
+    {
+        "id": "3bd3c0ad26af3e70",
+        "type": "ui_button",
+        "z": "8d5b6ce343b26ccf",
+        "name": "",
+        "group": "1d5401bf95a96f03",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "label": "Reset Log",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-circle-o",
+        "payload": "[]",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 390,
+        "y": 180,
+        "wires": [
+            [
+                "e5d60e2f52182631"
+            ]
+        ]
+    },
+    {
+        "id": "e5d60e2f52182631",
+        "type": "function",
+        "z": "8d5b6ce343b26ccf",
+        "name": "Clear context set dashboardLog to []",
+        "func": "context.set('dashboardLog', []);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 180,
+        "wires": [
+            [
+                "17cb8d5c1c2dfc81"
+            ]
+        ]
     },
     {
         "id": "9a7a7971.dbc4b8",
         "type": "inject",
         "z": "67991373.45438c",
-        "name": "Upload 4testMOD.cvs",
+        "g": "19463268a6c67561",
+        "name": "Inject Filename",
         "props": [
             {
                 "p": "payload"
@@ -2018,11 +2551,10 @@
         "payload": "/Users/revealgc/Desktop/4testMOD.csv",
         "payloadType": "str",
         "x": 140,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
-                "1e5beed02674863a",
-                "b5c53653a76681bf"
+                "1e5beed02674863a"
             ]
         ],
         "outputLabels": [
@@ -2033,12 +2565,13 @@
         "id": "1e5beed02674863a",
         "type": "ui_text_input",
         "z": "67991373.45438c",
+        "g": "19463268a6c67561",
         "name": "Input Parameter File Name",
         "label": "Params file...",
         "tooltip": "Enter the location of the parameters file",
-        "group": "1f86b2145e7e556a",
-        "order": 1,
-        "width": "8",
+        "group": "d5b306fd70950040",
+        "order": 2,
+        "width": 15,
         "height": 1,
         "passthru": true,
         "mode": "text",
@@ -2047,8 +2580,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 420,
-        "y": 240,
+        "x": 440,
+        "y": 140,
         "wires": [
             [
                 "b5c53653a76681bf"
@@ -2059,23 +2592,24 @@
         "id": "97cb22c43553888b",
         "type": "comment",
         "z": "67991373.45438c",
-        "name": "Read CSV File amd create dynamic rules",
-        "info": "",
-        "x": 960,
-        "y": 740,
+        "g": "62708d0bbe922798",
+        "name": "Fact from files",
+        "info": "# Facts CSV File ",
+        "x": 910,
+        "y": 820,
         "wires": []
     },
     {
         "id": "b5c53653a76681bf",
         "type": "subflow:82cc831b154f3133",
         "z": "67991373.45438c",
+        "g": "19463268a6c67561",
         "name": "",
-        "x": 750,
-        "y": 120,
+        "x": 800,
+        "y": 140,
         "wires": [
             [
-                "f123cf830d3837f6",
-                "3af468cd9306ec3e"
+                "06db3e224b379422"
             ]
         ]
     },
@@ -2083,12 +2617,13 @@
         "id": "04f3b0fb456d2117",
         "type": "ui_text_input",
         "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
         "name": "Input Dataset File Name",
         "label": "Facts",
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
-        "order": 5,
-        "width": 14,
+        "order": 2,
+        "width": 15,
         "height": 1,
         "passthru": true,
         "mode": "text",
@@ -2097,7 +2632,7 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 550,
+        "x": 370,
         "y": 620,
         "wires": [
             [
@@ -2109,6 +2644,7 @@
         "id": "100234cf93c195b8",
         "type": "file in",
         "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
         "name": "Read File",
         "filename": "payload",
         "filenameType": "msg",
@@ -2117,8 +2653,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 780,
-        "y": 520,
+        "x": 580,
+        "y": 620,
         "wires": [
             [
                 "c047c871d9c0e70d"
@@ -2129,6 +2665,7 @@
         "id": "c047c871d9c0e70d",
         "type": "csv",
         "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
         "name": "",
         "sep": ",",
         "hdrin": true,
@@ -2140,11 +2677,12 @@
         "strings": true,
         "include_empty_strings": false,
         "include_null_values": false,
-        "x": 930,
-        "y": 520,
+        "x": 730,
+        "y": 620,
         "wires": [
             [
-                "c9c9ca415ab95910"
+                "c9c9ca415ab95910",
+                "58df41cd8e54a653"
             ]
         ]
     },
@@ -2152,19 +2690,19 @@
         "id": "c9c9ca415ab95910",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "Get Facts From File",
-        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\nmsg.facts = facts\nreturn msg;",
+        "g": "62708d0bbe922798",
+        "name": "Save Facts from file",
+        "func": "let facts = {}\nmsg.payload.map((r, k) => {\n    facts = {...facts, ...{[r['name']]: r['value']}}\n})\n\nflow.set(\"facts\", facts)\n\n\nmsg.facts = msg.payload\nmsg.payload = [facts]\n\n\n\nmsg.topic = \"facts\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 520,
+        "x": 920,
+        "y": 620,
         "wires": [
             [
-                "16550455147cd747",
-                "f123cf830d3837f6"
+                "571a7beaed3ab093"
             ]
         ]
     },
@@ -2172,11 +2710,12 @@
         "id": "16550455147cd747",
         "type": "ui_table",
         "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
         "group": "134f09c88dd005fc",
         "name": "4. Facts",
         "order": 1,
-        "width": "24",
-        "height": "7",
+        "width": 24,
+        "height": 4,
         "columns": [
             {
                 "field": "rule.event.ruleId",
@@ -2211,15 +2750,16 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1320,
-        "y": 520,
+        "x": 1240,
+        "y": 660,
         "wires": []
     },
     {
         "id": "211d46862546b6bf",
         "type": "inject",
         "z": "67991373.45438c",
-        "name": "Submit '/Users/revealgc/Desktop/factsToTest.csv'",
+        "g": "62708d0bbe922798",
+        "name": "FileName Inject",
         "props": [
             {
                 "p": "payload"
@@ -2236,11 +2776,10 @@
         "topic": "",
         "payload": "/Users/revealgc/Desktop/factsToTest.csv",
         "payloadType": "str",
-        "x": 210,
-        "y": 520,
+        "x": 140,
+        "y": 620,
         "wires": [
             [
-                "100234cf93c195b8",
                 "04f3b0fb456d2117"
             ]
         ],
@@ -2249,27 +2788,1329 @@
         ]
     },
     {
-        "id": "f123cf830d3837f6",
+        "id": "571a7beaed3ab093",
+        "type": "change",
+        "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
+        "name": "Enable ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "facts",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "value",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1110,
+        "y": 620,
+        "wires": [
+            [
+                "16550455147cd747",
+                "24856db77f81d8bb",
+                "21a2308db46311bb"
+            ]
+        ]
+    },
+    {
+        "id": "fb483894819a453e",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "g": "ef50b77b253a7883",
+        "name": "Get Rule Types from DB",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/rulesrepo/getruletype",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "79f4bff451119fb7"
+            ]
+        ]
+    },
+    {
+        "id": "5f12a638967ad520",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "g": "ef50b77b253a7883",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 380,
+        "wires": [
+            [
+                "fb483894819a453e"
+            ]
+        ]
+    },
+    {
+        "id": "199e84df3d73b845",
+        "type": "ui_dropdown",
+        "z": "67991373.45438c",
+        "g": "ef50b77b253a7883",
+        "name": "Rule Types Drop Down Topic: validationTopic",
+        "label": "",
+        "tooltip": "Select rule types",
+        "place": "Select rule types from the db...",
+        "group": "d5b306fd70950040",
+        "order": 4,
+        "width": 12,
+        "height": 1,
+        "passthru": true,
+        "multiple": true,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "validationType",
+        "topicType": "str",
+        "className": "",
+        "x": 1190,
+        "y": 340,
+        "wires": [
+            [
+                "739c4193fa8fce2c"
+            ]
+        ]
+    },
+    {
+        "id": "79f4bff451119fb7",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "5. Collect Rules and Facts",
-        "func": "let rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\n\nmsg.payload = rules\nreturn msg;",
+        "g": "ef50b77b253a7883",
+        "name": "Prep for DB Rules Dropdown Topic:dbruletypes",
+        "func": "let ret = []\nmsg.payload.map(t => ret.push({ [t.type + '(' + t.cnt +')']: t.type}))\nmsg.options = ret\nmsg.payload = ret\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1340,
-        "y": 120,
+        "x": 780,
+        "y": 340,
+        "wires": [
+            [
+                "199e84df3d73b845"
+            ]
+        ]
+    },
+    {
+        "id": "645a9d4772fcd00f",
+        "type": "ui_button",
+        "z": "67991373.45438c",
+        "g": "ef50b77b253a7883",
+        "name": "",
+        "group": "d5b306fd70950040",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Get Rules",
+        "tooltip": "Get rule types",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-database",
+        "payload": "dbrules",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "fb483894819a453e"
+            ]
+        ]
+    },
+    {
+        "id": "24856db77f81d8bb",
+        "type": "ui_gauge",
+        "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
+        "name": "Gauge for Facts from file",
+        "group": "4060ccd3b1b979fd",
+        "order": 4,
+        "width": 4,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Facts",
+        "label": "units",
+        "format": "{{msg.payload.length}}",
+        "min": 0,
+        "max": "300",
+        "colors": [
+            "#0d0b96",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 1290,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0cd9973f643e23da",
+        "type": "ui_text_input",
+        "z": "67991373.45438c",
+        "g": "c0b83f35fdc02130",
+        "name": "Input RID",
+        "label": "Reporting IDs",
+        "tooltip": "Enter at least 3 characters",
+        "group": "1f86b2145e7e556a",
+        "order": 5,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 100,
+        "y": 980,
+        "wires": [
+            [
+                "3b55370ad9fd31f5"
+            ]
+        ]
+    },
+    {
+        "id": "3b55370ad9fd31f5",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "g": "c0b83f35fdc02130",
+        "name": "Get RIDs from DB",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/reporting_unit/findRID/{{{payload}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 330,
+        "y": 980,
+        "wires": [
+            [
+                "7ce52ec9ef003b44"
+            ]
+        ]
+    },
+    {
+        "id": "e76e13639b1f0475",
+        "type": "ui_dropdown",
+        "z": "67991373.45438c",
+        "g": "c0b83f35fdc02130",
+        "name": "Rule Types Drop Down Topic: dbreportingids",
+        "label": "",
+        "tooltip": "Select reporting ids...",
+        "place": "Select reporting ids from the db...",
+        "group": "1f86b2145e7e556a",
+        "order": 4,
+        "width": 10,
+        "height": 1,
+        "passthru": false,
+        "multiple": true,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "dbreportingids",
+        "topicType": "msg",
+        "className": "",
+        "x": 1050,
+        "y": 980,
+        "wires": [
+            [
+                "d394b61bcc4755e6"
+            ]
+        ]
+    },
+    {
+        "id": "7ce52ec9ef003b44",
+        "type": "function",
+        "z": "67991373.45438c",
+        "g": "c0b83f35fdc02130",
+        "name": "Prep for RID Dropdown Topic:dbreportingids",
+        "func": "let ret = []\n msg.payload.map(t => ret.push({ [t.shortvalue + \" \"+ t.reporting_id]: t.reporting_id}))\nmsg.options = ret\nmsg.payload = ret\nmsg.topic = \"dbreportingids\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 980,
+        "wires": [
+            [
+                "e76e13639b1f0475"
+            ]
+        ]
+    },
+    {
+        "id": "d394b61bcc4755e6",
+        "type": "function",
+        "z": "67991373.45438c",
+        "g": "c0b83f35fdc02130",
+        "name": "Save Reporting IDs",
+        "func": "let rid = msg.payload\nflow.set(\"reporting_id\", rid)\nmsg.payload = rid.length > 0\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 980,
+        "wires": [
+            [
+                "f45097235bf5254d"
+            ]
+        ]
+    },
+    {
+        "id": "1e61b63c0502b4e9",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2600,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "044139040f928c41",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2400,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "8c1b098c01bc4977",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "cb_ff",
+        "label": "",
+        "tooltip": "",
+        "group": "1f86b2145e7e556a",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "cb_ff",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 2050,
+        "y": 620,
+        "wires": [
+            [
+                "fd562624ab71790e"
+            ]
+        ]
+    },
+    {
+        "id": "5f1b840d2df55385",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Save checkboxes",
+        "func": "let P = msg.payload\n\n// Save Checkboxes\n\nflow.set(\"cb_ff\", P.cb_ff)\n\nflow.set(\"cb_fd\", P.cb_fd)\nflow.set(\"cb_rf\", P.cb_rf)\nflow.set(\"cb_rd\", P.cb_rd)\n\nflow.set(\"cb_network\", P.cb_network)\nflow.set(\"cb_attached\", P.cb_attached)\n\n\n// rules and facts must be from either files or db\nmsg.payload = (P.cb_ff || P.cb_fd) && (P.cb_rf || P.cb_rd)\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2430,
+        "y": 820,
+        "wires": [
+            [
+                "1e61b63c0502b4e9",
+                "dfb61e11af38dafd"
+            ]
+        ]
+    },
+    {
+        "id": "f45097235bf5254d",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "cb_fd",
+        "label": "",
+        "tooltip": "",
+        "group": "1f86b2145e7e556a",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "cb_fd",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 2010,
+        "y": 980,
+        "wires": [
+            [
+                "fd562624ab71790e"
+            ]
+        ]
+    },
+    {
+        "id": "7068b9cdbaed7677",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Reset all",
+        "func": "flow.set(\"rules\",[])\nflow.set(\"facts\", {})\nflow.set(\"reporting_id\", {})\nflow.set(\"validationType\", {})\n\n\nflow.set(\"cb_attached\", false)\n\nflow.set(\"cb_network\", false)\n\n\n flow.set('cb_ff', false)\nflow.set('cb_fd', false)\n\nflow.set('cb_rf', false)\nflow.set('cb_rd', false)\nmsg.payload = false\n\nmsg.enabled = false",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2400,
+        "y": 1640,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "fd562624ab71790e",
+        "type": "join",
+        "z": "67991373.45438c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "6",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 2250,
+        "y": 820,
+        "wires": [
+            [
+                "5f1b840d2df55385",
+                "044139040f928c41"
+            ]
+        ]
+    },
+    {
+        "id": "ef78548912a4d7aa",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "cb_rf",
+        "label": "",
+        "tooltip": "",
+        "group": "d5b306fd70950040",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "cb_rf",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 2050,
+        "y": 140,
+        "wires": [
+            [
+                "fd562624ab71790e"
+            ]
+        ]
+    },
+    {
+        "id": "9a41aca46f8e70f2",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "cb_rd",
+        "label": "",
+        "tooltip": "",
+        "group": "d5b306fd70950040",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "cb_rd",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 2050,
+        "y": 340,
+        "wires": [
+            [
+                "fd562624ab71790e"
+            ]
+        ]
+    },
+    {
+        "id": "7f5231b4f331e49b",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "",
+        "label": "Network",
+        "tooltip": "",
+        "group": "779fdd53a3120890",
+        "order": 2,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "cb_network",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 2060,
+        "y": 1200,
+        "wires": [
+            [
+                "fd562624ab71790e"
+            ]
+        ]
+    },
+    {
+        "id": "ba7a7633a548b05b",
+        "type": "ui_switch",
+        "z": "67991373.45438c",
+        "name": "",
+        "label": "Attached",
+        "tooltip": "",
+        "group": "779fdd53a3120890",
+        "order": 1,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "cb_attached",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 2040,
+        "y": 1080,
+        "wires": [
+            [
+                "fd562624ab71790e"
+            ]
+        ]
+    },
+    {
+        "id": "48fe92c3d9b4d8bb",
+        "type": "ui_button",
+        "z": "67991373.45438c",
+        "name": "",
+        "group": "779fdd53a3120890",
+        "order": 3,
+        "width": 8,
+        "height": 1,
+        "passthru": false,
+        "label": "Submit JOB",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-tasks",
+        "payload": "DONE",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "x": 3010,
+        "y": 820,
+        "wires": [
+            [
+                "73055769ca44b5f7"
+            ]
+        ]
+    },
+    {
+        "id": "dfb61e11af38dafd",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Enable or Disable Submit JOB button",
+        "func": "msg.enabled = msg.payload\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2750,
+        "y": 820,
+        "wires": [
+            [
+                "48fe92c3d9b4d8bb"
+            ]
+        ]
+    },
+    {
+        "id": "06db3e224b379422",
+        "type": "function",
+        "z": "67991373.45438c",
+        "g": "19463268a6c67561",
+        "name": "Save RULES and Radio Button(rf)",
+        "func": "\n\nlet rules = []\n\nmsg.payload.results.map(r => rules.push(r.rule))\nflow.set(\"rules\", rules)\n\nmsg.payload = !(msg.payload.outputErrorCount > 0)\nmsg.enabled = !(msg.payload.outputErrorCount > 0)\n\n\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 140,
+        "wires": [
+            [
+                "ef78548912a4d7aa"
+            ]
+        ]
+    },
+    {
+        "id": "1e3847f427e4c74f",
+        "type": "ui_button",
+        "z": "67991373.45438c",
+        "name": "",
+        "group": "779fdd53a3120890",
+        "order": 4,
+        "width": 8,
+        "height": 1,
+        "passthru": true,
+        "label": "Reset",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "fa-circle-o",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "",
+        "topicType": "str",
+        "x": 1910,
+        "y": 1700,
+        "wires": [
+            [
+                "8701991a4839bab8",
+                "b2a8b14d99432a2d",
+                "cbbf5c9004d0946e",
+                "30dce0e234d60286",
+                "c3a24bb78c2a2175",
+                "9db5fcbd4b1fd8c3",
+                "093e4ef6e2a39496",
+                "d67e28129722d643",
+                "5d9d0ae34f31c5f4"
+            ]
+        ]
+    },
+    {
+        "id": "21a2308db46311bb",
+        "type": "function",
+        "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
+        "name": "Change payload to true",
+        "func": "msg.payload = true\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1310,
+        "y": 620,
+        "wires": [
+            [
+                "8c1b098c01bc4977"
+            ]
+        ]
+    },
+    {
+        "id": "b87799331653cd82",
+        "type": "subflow:8d5b6ce343b26ccf",
+        "z": "67991373.45438c",
+        "name": "",
+        "x": 3980,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "58df41cd8e54a653",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "g": "62708d0bbe922798",
+        "name": "debug 21",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "73055769ca44b5f7",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Create Payload",
+        "func": "msg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attached: flow.get(\"cb_attached\"), \n    validationType: flow.get(\"validationType\") || 'validation'\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3200,
+        "y": 820,
+        "wires": [
+            [
+                "2d31a9cbb8b25e8f",
+                "d7f2fcd5e791ba92"
+            ]
+        ]
+    },
+    {
+        "id": "2d31a9cbb8b25e8f",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 23",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3380,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "8701991a4839bab8",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "889e30d476808397"
+        ],
+        "x": 2135,
+        "y": 1960,
+        "wires": []
+    },
+    {
+        "id": "889e30d476808397",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 1",
+        "links": [
+            "8701991a4839bab8"
+        ],
+        "x": 1965,
+        "y": 300,
+        "wires": [
+            [
+                "9a41aca46f8e70f2"
+            ]
+        ]
+    },
+    {
+        "id": "b2a8b14d99432a2d",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "24e108b562edc235"
+        ],
+        "x": 2135,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "24e108b562edc235",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 2",
+        "links": [
+            "b2a8b14d99432a2d"
+        ],
+        "x": 1965,
+        "y": 100,
+        "wires": [
+            [
+                "ef78548912a4d7aa"
+            ]
+        ]
+    },
+    {
+        "id": "cbbf5c9004d0946e",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "4e7718304bce05d2"
+        ],
+        "x": 2145,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "4e7718304bce05d2",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 3",
+        "links": [
+            "cbbf5c9004d0946e"
+        ],
+        "x": 2575,
+        "y": 780,
+        "wires": [
+            [
+                "dfb61e11af38dafd"
+            ]
+        ]
+    },
+    {
+        "id": "30dce0e234d60286",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 4",
+        "mode": "link",
+        "links": [
+            "5b50d2fc0efaeade"
+        ],
+        "x": 2145,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "5b50d2fc0efaeade",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 4",
+        "links": [
+            "30dce0e234d60286"
+        ],
+        "x": 2295,
+        "y": 1780,
+        "wires": [
+            [
+                "7068b9cdbaed7677"
+            ]
+        ]
+    },
+    {
+        "id": "c3a24bb78c2a2175",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 5",
+        "mode": "link",
+        "links": [
+            "fc93792ff8aaff26"
+        ],
+        "x": 2135,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "fc93792ff8aaff26",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 5",
+        "links": [
+            "c3a24bb78c2a2175"
+        ],
+        "x": 1965,
+        "y": 580,
+        "wires": [
+            [
+                "8c1b098c01bc4977"
+            ]
+        ]
+    },
+    {
+        "id": "9db5fcbd4b1fd8c3",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "5c24e7ac5f83708c"
+        ],
+        "x": 2145,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "5c24e7ac5f83708c",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 6",
+        "links": [
+            "9db5fcbd4b1fd8c3"
+        ],
+        "x": 1955,
+        "y": 1040,
+        "wires": [
+            [
+                "ba7a7633a548b05b"
+            ]
+        ]
+    },
+    {
+        "id": "093e4ef6e2a39496",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "d2bbd2904874d7a2"
+        ],
+        "x": 2145,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "d2bbd2904874d7a2",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 7",
+        "links": [
+            "093e4ef6e2a39496"
+        ],
+        "x": 1955,
+        "y": 1160,
+        "wires": [
+            [
+                "7f5231b4f331e49b"
+            ]
+        ]
+    },
+    {
+        "id": "d67e28129722d643",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 8",
+        "mode": "link",
+        "links": [
+            "5561391c72b77ec4"
+        ],
+        "x": 2135,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "5561391c72b77ec4",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "name": "link in 8",
+        "links": [
+            "d67e28129722d643"
+        ],
+        "x": 1935,
+        "y": 940,
+        "wires": [
+            [
+                "f45097235bf5254d"
+            ]
+        ]
+    },
+    {
+        "id": "739c4193fa8fce2c",
+        "type": "function",
+        "z": "67991373.45438c",
+        "g": "ef50b77b253a7883",
+        "name": "Save Validation Type and Radio Button(rd)",
+        "func": "flow.set(\"validationType\", msg.payload)\nmsg.payload = msg.payload.length > 0 \nmsg.enabled = !(msg.payload.length > 0 )\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1620,
+        "y": 340,
+        "wires": [
+            [
+                "9a41aca46f8e70f2"
+            ]
         ]
     },
     {
         "id": "3af468cd9306ec3e",
         "type": "debug",
         "z": "67991373.45438c",
-        "name": "debug 16",
+        "name": "Output from QBES",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3630,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "d7f2fcd5e791ba92",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "name": "Post: ProcessRules ",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/spad/processRules",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "DEBUG",
+                "valueType": "other",
+                "valueValue": "true"
+            }
+        ],
+        "x": 3410,
+        "y": 820,
+        "wires": [
+            [
+                "3af468cd9306ec3e",
+                "711f05a68cde98f5"
+            ]
+        ]
+    },
+    {
+        "id": "711f05a68cde98f5",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Send to log the output of the results",
+        "func": "let messages = []\n\nlet P = msg.payload\nP.rules.valid.map(p=> messages.push({ruleId: p.id, message: p.message}))\n\n\nmsg.payload = {\n    \"Workflow ID\": msg.payload.workflowId,\n    \"Rules Passed\": msg.payload.rules.valid.length,\n\n    \"Rules Failed\": msg.payload.rules.invalid.length,\n    messages\n\n}\nmsg.topic = \"QBES Output\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3690,
+        "y": 820,
+        "wires": [
+            [
+                "b87799331653cd82"
+            ]
+        ]
+    },
+    {
+        "id": "5d9d0ae34f31c5f4",
+        "type": "link out",
+        "z": "67991373.45438c",
+        "name": "link out 9",
+        "mode": "link",
+        "links": [
+            "d587f5de3f4014c8"
+        ],
+        "x": 2135,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "d587f5de3f4014c8",
+        "type": "link in",
+        "z": "67991373.45438c",
+        "g": "ef50b77b253a7883",
+        "name": "link in 9",
+        "links": [
+            "5d9d0ae34f31c5f4"
+        ],
+        "x": 265,
+        "y": 280,
+        "wires": [
+            [
+                "fb483894819a453e"
+            ]
+        ]
+    },
+    {
+        "id": "f3903be4e24d8dca",
+        "type": "http request",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "API call to validate",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/reporting_unit/{{{rid}}}/validate?DEBUG=true",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 430,
+        "y": 40,
+        "wires": [
+            [
+                "999bbdaf976e7feb"
+            ]
+        ]
+    },
+    {
+        "id": "97d2bd49cb3742bc",
+        "type": "inject",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "Validate RID Input",
+        "props": [
+            {
+                "p": "rid",
+                "v": "8771348140",
+                "vt": "num"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload.type",
+                "v": "validate",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "VALIDATE",
+        "x": 190,
+        "y": 40,
+        "wires": [
+            [
+                "f3903be4e24d8dca",
+                "d015bbe8f3761f7f"
+            ]
+        ]
+    },
+    {
+        "id": "999bbdaf976e7feb",
+        "type": "json",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 590,
+        "y": 40,
+        "wires": [
+            [
+                "d529da54696a9982"
+            ]
+        ]
+    },
+    {
+        "id": "d529da54696a9982",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e5ca7c9975e3a6b5",
+        "type": "comment",
+        "z": "d103860e993c1512",
+        "g": "d1e0f39ddacfeb20",
+        "name": "Validate a specific Reporting ID with all rules",
+        "info": "## ## Validate a specific Reporting ID with all rules",
+        "x": 670,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "d015bbe8f3761f7f",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "name": "debug 8",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -2278,8 +4119,172 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
+        "x": 440,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a52599d1e82370ad",
+        "type": "inject",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Rule Generate from Free Text",
+        "props": [
+            {
+                "p": "payload.conditionstring",
+                "v": " What is the name, condition, compute as an array and message of the following rule and return it as a json:    Naveen:   I was talking to Patrick and he wanted another    rule name is \"IF the flag for hazardas materials is reported  and the NAICS is in 484\". It should have a rule priority of 5 on a scale of 1 to 10.   and condition is   substr(RECORD_NAICS_NUM, 1,3)== 484 and RCPT_MOTR_HAZRD_STAT == 1 and RCPT_MOTR_HAZRD_PCT == 0 if true then compute  RCPT_MOTR_HAZRD_STAT = 2  Send the message \"Hazardous Material rule fired\".  Do you think we could chat on this soon?  Thanks Amit",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "AI",
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "3773a11cc06cd9db"
+            ]
+        ]
+    },
+    {
+        "id": "3773a11cc06cd9db",
+        "type": "http request",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Post AI Services",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/openai/aicomplete",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 440,
+        "y": 400,
+        "wires": [
+            [
+                "6970f9e5cadfae30"
+            ]
+        ]
+    },
+    {
+        "id": "f47d58da6a345fa9",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.ruleName",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "12d8ce370fc2153f",
+        "type": "function",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Get RuleName",
+        "func": "\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
         "y": 320,
+        "wires": [
+            [
+                "f47d58da6a345fa9"
+            ]
+        ]
+    },
+    {
+        "id": "6970f9e5cadfae30",
+        "type": "switch",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "",
+        "property": "payload.ruleName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 400,
+        "wires": [
+            [
+                "12d8ce370fc2153f",
+                "eee34fb243fcc025"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "eee34fb243fcc025",
+        "type": "debug",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Debug RuleName",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "8764792a5250d529",
+        "type": "comment",
+        "z": "d103860e993c1512",
+        "g": "5a28e866a67c90ec",
+        "name": "Define AI end point. Pass free text",
+        "info": "## # Open AI parse text",
+        "x": 180,
+        "y": 340,
         "wires": []
     },
     {
@@ -2397,8 +4402,8 @@
         "type": "subflow:831dceaabaf975f9",
         "z": "d886a3864a88d832",
         "name": "",
-        "x": 840,
-        "y": 40,
+        "x": 880,
+        "y": 100,
         "wires": [
             [
                 "48c251e7e1851bb1"
@@ -2410,8 +4415,8 @@
         "type": "subflow:10e53f47b43ab89e",
         "z": "d886a3864a88d832",
         "name": "4.0 Subflow Completeness",
-        "x": 1110,
-        "y": 200,
+        "x": 1220,
+        "y": 300,
         "wires": [
             [
                 "1393263d0d520dfd"
@@ -2423,8 +4428,8 @@
         "type": "subflow:b99b7893add8c369",
         "z": "d886a3864a88d832",
         "name": "5.0 Logical Checks",
-        "x": 1370,
-        "y": 200,
+        "x": 1190,
+        "y": 400,
         "wires": [
             [
                 "22a7836fd0ee4876"
@@ -2436,8 +4441,8 @@
         "type": "subflow:27fccef587c0b218",
         "z": "d886a3864a88d832",
         "name": "6.0 Ratio/Range Testing",
-        "x": 1620,
-        "y": 200,
+        "x": 1210,
+        "y": 480,
         "wires": [
             [
                 "4242881485341267"
@@ -2449,8 +4454,8 @@
         "type": "subflow:3fa869ffe40596e5",
         "z": "d886a3864a88d832",
         "name": "7.0 Post Ratio/Range",
-        "x": 1900,
-        "y": 200,
+        "x": 1200,
+        "y": 540,
         "wires": [
             [
                 "69135525ff74076e"
@@ -2462,8 +4467,8 @@
         "type": "subflow:98b684914b5fce08",
         "z": "d886a3864a88d832",
         "name": "8.0 Unit Balance",
-        "x": 2140,
-        "y": 200,
+        "x": 1180,
+        "y": 600,
         "wires": [
             [
                 "f57362671b31528b"
@@ -2475,8 +4480,8 @@
         "type": "subflow:2e55e3e8510e62d0",
         "z": "d886a3864a88d832",
         "name": "9.0 Company Additivity Check",
-        "x": 2400,
-        "y": 200,
+        "x": 1230,
+        "y": 680,
         "wires": [
             [
                 "66f76ef1f55de5b8"
@@ -2488,8 +4493,8 @@
         "type": "subflow:2ad5fa373c21d0a3",
         "z": "d886a3864a88d832",
         "name": "10.0 Derived Items",
-        "x": 2710,
-        "y": 200,
+        "x": 1210,
+        "y": 760,
         "wires": [
             [
                 "0f8306d8913bb7d2"
@@ -2501,8 +4506,8 @@
         "type": "subflow:67a3cd3b754e4fbd",
         "z": "d886a3864a88d832",
         "name": "11.0 Post Edit Status Fields",
-        "x": 3000,
-        "y": 200,
+        "x": 1240,
+        "y": 840,
         "wires": [
             [
                 "a0acac50eaa1f639"
@@ -2521,8 +4526,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3280,
-        "y": 200,
+        "x": 1220,
+        "y": 940,
         "wires": []
     },
     {
@@ -2530,7 +4535,7 @@
         "type": "subflow:045ba1012eb08b50",
         "z": "d886a3864a88d832",
         "name": "3.0 Determine Status",
-        "x": 860,
+        "x": 1200,
         "y": 200,
         "wires": [
             [
@@ -2900,308 +4905,6 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "f3903be4e24d8dca",
-        "type": "http request",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "API call to validate",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "http://localhost/reporting_unit/{{{rid}}}/validate?DEBUG=true",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "other",
-                "keyValue": "X-JBID",
-                "valueType": "other",
-                "valueValue": "kapoo"
-            },
-            {
-                "keyType": "other",
-                "keyValue": "X-API-KEY",
-                "valueType": "other",
-                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
-            }
-        ],
-        "x": 430,
-        "y": 40,
-        "wires": [
-            [
-                "999bbdaf976e7feb"
-            ]
-        ]
-    },
-    {
-        "id": "97d2bd49cb3742bc",
-        "type": "inject",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "Validate RID Input",
-        "props": [
-            {
-                "p": "rid",
-                "v": "8771348140",
-                "vt": "num"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "payload.type",
-                "v": "validate",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "VALIDATE",
-        "x": 190,
-        "y": 40,
-        "wires": [
-            [
-                "f3903be4e24d8dca",
-                "d015bbe8f3761f7f"
-            ]
-        ]
-    },
-    {
-        "id": "999bbdaf976e7feb",
-        "type": "json",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "",
-        "property": "payload",
-        "action": "",
-        "pretty": false,
-        "x": 590,
-        "y": 40,
-        "wires": [
-            [
-                "d529da54696a9982"
-            ]
-        ]
-    },
-    {
-        "id": "d529da54696a9982",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 40,
-        "wires": []
-    },
-    {
-        "id": "e5ca7c9975e3a6b5",
-        "type": "comment",
-        "z": "d103860e993c1512",
-        "g": "d1e0f39ddacfeb20",
-        "name": "Validate a specific Reporting ID with all rules",
-        "info": "## ## Validate a specific Reporting ID with all rules",
-        "x": 670,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "d015bbe8f3761f7f",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 440,
-        "y": 80,
-        "wires": []
-    },
-    {
-        "id": "a52599d1e82370ad",
-        "type": "inject",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Rule Generate from Free Text",
-        "props": [
-            {
-                "p": "payload.conditionstring",
-                "v": " What is the name, condition, compute as an array and message of the following rule and return it as a json:    Naveen:   I was talking to Patrick and he wanted another    rule name is \"IF the flag for hazardas materials is reported  and the NAICS is in 484\". It should have a rule priority of 5 on a scale of 1 to 10.   and condition is   substr(RECORD_NAICS_NUM, 1,3)== 484 and RCPT_MOTR_HAZRD_STAT == 1 and RCPT_MOTR_HAZRD_PCT == 0 if true then compute  RCPT_MOTR_HAZRD_STAT = 2  Send the message \"Hazardous Material rule fired\".  Do you think we could chat on this soon?  Thanks Amit",
-                "vt": "str"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "AI",
-        "x": 180,
-        "y": 400,
-        "wires": [
-            [
-                "3773a11cc06cd9db"
-            ]
-        ]
-    },
-    {
-        "id": "3773a11cc06cd9db",
-        "type": "http request",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Post AI Services",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "http://localhost/openai/aicomplete",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "other",
-                "keyValue": "X-JBID",
-                "valueType": "other",
-                "valueValue": "kapoo"
-            },
-            {
-                "keyType": "other",
-                "keyValue": "X-API-KEY",
-                "valueType": "other",
-                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
-            }
-        ],
-        "x": 440,
-        "y": 400,
-        "wires": [
-            [
-                "6970f9e5cadfae30"
-            ]
-        ]
-    },
-    {
-        "id": "f47d58da6a345fa9",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "debug 9",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload.ruleName",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1060,
-        "y": 400,
-        "wires": []
-    },
-    {
-        "id": "12d8ce370fc2153f",
-        "type": "function",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Get RuleName",
-        "func": "\nreturn msg",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 840,
-        "y": 320,
-        "wires": [
-            [
-                "f47d58da6a345fa9"
-            ]
-        ]
-    },
-    {
-        "id": "6970f9e5cadfae30",
-        "type": "switch",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "",
-        "property": "payload.ruleName",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "nnull"
-            },
-            {
-                "t": "null"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 650,
-        "y": 400,
-        "wires": [
-            [
-                "12d8ce370fc2153f",
-                "eee34fb243fcc025"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "eee34fb243fcc025",
-        "type": "debug",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Debug RuleName",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 870,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "8764792a5250d529",
-        "type": "comment",
-        "z": "d103860e993c1512",
-        "g": "5a28e866a67c90ec",
-        "name": "Define AI end point. Pass free text",
-        "info": "## # Open AI parse text",
-        "x": 180,
-        "y": 340,
-        "wires": []
     },
     {
         "id": "a55094dd0e9394ea",
@@ -3924,7 +5627,7 @@
         "z": "c702b495.9cc2f8",
         "d": true,
         "group": "1f48566b.e8958a",
-        "order": 3,
+        "order": 6,
         "width": 30,
         "height": 9,
         "name": "",
@@ -4434,92 +6137,360 @@
         ]
     },
     {
-        "id": "c77f44f94f19fb09",
-        "type": "ui_template",
-        "z": "642abfc93e7700ac",
-        "group": "8b3784e33ba42593",
-        "name": "JSON2tree",
-        "order": 3,
-        "width": "6",
-        "height": "6",
-        "format": "<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css\" />\n</head>\n<body>\n    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js\"></script>\n  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js\"></script>\n  <div id=\"tree\"><div id=\"jstree\"></div></div>\n  <script>\n  \n  function jsonToJsTreeObject( json_data_object, final_array = new Array() )\n    {\n        Object.keys(json_data_object).forEach( function( data ) {\n            // console.log(\"Key:\" + data);\n            if( Array.isArray(json_data_object[data]) || json_data_object[data] instanceof Object )\n            {\n                final_array.push( { text: `${data}`, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n                // using state attribute \n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: jsonToJsTreeObject( json_data_object[data], new Array() ) } );\n            }\n            else\n            {\n                final_array.push( { text: `${data}`, children: [{ text: `${json_data_object[data]}` }] } );\n                // using state attribute\n                // final_array.push( { text: `${data}`, state : {  'opened' : false, 'selected' : false }, children: [{ text: `${json_data_object[data]}` }] } );\n            }\n        });\n\n        return final_array;\n    }\n  \n(function(scope) {\n  scope.$watch('msg', function(msg) {\n    if (msg) {\n        $('#jstree').remove()\n        let myjsonObject = msg.payload\n        let div = document.createElement('div')\n        div.setAttribute(\"id\", \"jstree\")\n        let treediv = document.getElementById(\"tree\")\n        treediv.appendChild(div)\n        $('#jstree').jstree({ 'core' : {\n                    'data' : jsonToJsTreeObject( myjsonObject )\n        } });\n        $('#jstree').on(\"changed.jstree\", function (e, data) {\n            let path = $('#jstree').jstree(true).get_path(data.node,\"/\");\n            console.log(path);\n            msg.output = path\n            scope.send(msg)\n        });\n    }\n  });\n})(scope);\n\n</script>\n</body>\n</html>",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "className": "",
-        "x": 530,
-        "y": 220,
+        "id": "3aece19508694869",
+        "type": "ui_button",
+        "z": "4821a41b2fd327fb",
+        "name": "Button",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Button",
+        "tooltip": "",
+        "color": "#fffff",
+        "bgcolor": "",
+        "icon": "fa-star",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "Button",
+        "x": 150,
+        "y": 100,
         "wires": [
             [
-                "8d8c29c9e4047092"
+                "71ec6c626243f535"
             ]
         ]
     },
     {
-        "id": "8d8c29c9e4047092",
+        "id": "bb213dd9d74c4713",
+        "type": "ui_dropdown",
+        "z": "4821a41b2fd327fb",
+        "name": "Choice",
+        "label": "Choose what you want ",
+        "tooltip": "",
+        "place": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "Choice 1 : String",
+                "value": "String",
+                "type": "str"
+            },
+            {
+                "label": "Choice 2 : Number",
+                "value": 4,
+                "type": "num"
+            },
+            {
+                "label": "Choice 3 :Boolean",
+                "value": true,
+                "type": "bool"
+            }
+        ],
+        "payload": "",
+        "topic": "Choice ",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "bfd61d2bb51bb7d3",
         "type": "debug",
-        "z": "642abfc93e7700ac",
-        "name": "",
+        "z": "4821a41b2fd327fb",
+        "name": "Dashboard Log",
         "active": true,
         "tosidebar": true,
         "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
+        "complete": "payload",
         "statusVal": "",
         "statusType": "auto",
-        "x": 690,
-        "y": 220,
+        "x": 760,
+        "y": 200,
         "wires": []
     },
     {
-        "id": "5311e09880914790",
-        "type": "inject",
-        "z": "642abfc93e7700ac",
-        "name": "JSON",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{     \"glossary\": {         \"title\": \"example glossary\", \t\t\"GlossDiv\": {             \"title\": \"S\", \t\t\t\"GlossList\": {                 \"GlossEntry\": {                     \"ID\": \"SGML\", \t\t\t\t\t\"SortAs\": \"SGML\", \t\t\t\t\t\"GlossTerm\": \"Standard Generalized Markup Language\", \t\t\t\t\t\"Acronym\": \"SGML\", \t\t\t\t\t\"Abbrev\": \"ISO 8879:1986\", \t\t\t\t\t\"GlossDef\": {                         \"para\": \"A meta-markup language, used to create markup languages such as DocBook.\", \t\t\t\t\t\t\"GlossSeeAlso\": [\"GML\", \"XML\"]                     }, \t\t\t\t\t\"GlossSee\": \"markup\"                 }             }         }     } }",
-        "payloadType": "json",
-        "x": 350,
-        "y": 220,
+        "id": "e6fb6f269c616c1e",
+        "type": "ui_switch",
+        "z": "4821a41b2fd327fb",
+        "name": "Light Switch",
+        "label": "switch",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "Light Switch ",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 150,
+        "y": 180,
         "wires": [
             [
-                "c77f44f94f19fb09"
+                "71ec6c626243f535"
             ]
         ]
     },
     {
-        "id": "49c7befd02b97aaa",
-        "type": "inject",
-        "z": "642abfc93e7700ac",
-        "name": "JSON",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"name\":\"John\",\"age\":30,\"car\":null}",
-        "payloadType": "json",
-        "x": 350,
+        "id": "e666116ddc314a9d",
+        "type": "ui_slider",
+        "z": "4821a41b2fd327fb",
+        "name": "Slider",
+        "label": "slider",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "Slider",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "d6620b9a7fdd152f",
+        "type": "ui_numeric",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "numeric",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "Numérique",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": "",
+        "x": 160,
         "y": 260,
         "wires": [
             [
-                "c77f44f94f19fb09"
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "f3c2c582f77fb627",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Text Entry Field ",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "Text Entry Feild",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "c053339d3d485845",
+        "type": "ui_form",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Form in Node-RED ",
+        "group": "54bca71e.4287f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Name",
+                "value": "Name",
+                "type": "text",
+                "required": true
+            },
+            {
+                "label": "Number",
+                "value": "Number",
+                "type": "number",
+                "required": false
+            },
+            {
+                "label": "Email",
+                "value": "Email",
+                "type": "email",
+                "required": false
+            },
+            {
+                "label": "Password",
+                "value": "Password",
+                "type": "password",
+                "required": false
+            },
+            {
+                "label": "Check Box",
+                "value": "Check Box",
+                "type": "checkbox",
+                "required": false
+            },
+            {
+                "label": "Light Switch",
+                "value": "Light Switch",
+                "type": "switch",
+                "required": false
+            }
+        ],
+        "formValue": {
+            "Name": "",
+            "Number": "",
+            "Email": "",
+            "Password": "",
+            "Check Box": false,
+            "Light Switch": false
+        },
+        "payload": "",
+        "submit": "Submit",
+        "cancel": "Cancle",
+        "topic": "Form",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "71ec6c626243f535",
+        "type": "function",
+        "z": "4821a41b2fd327fb",
+        "name": "Save Events",
+        "func": "\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "bfd61d2bb51bb7d3",
+                "2851e691d3bfa1a6"
+            ]
+        ]
+    },
+    {
+        "id": "2851e691d3bfa1a6",
+        "type": "ui_template",
+        "z": "4821a41b2fd327fb",
+        "group": "785c383535b14b7d",
+        "name": "Dashboard Event Log ",
+        "order": 1,
+        "width": "8",
+        "height": "10",
+        "format": "<ul>\n <li ng-repeat=\"x in msg.payload\">\n <font color=\"red\">{{x.topic}}</font>\n    <ul>\n        <li>{{x.payload}}</li>\n    </ul>\n </li>\n</ul>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "971963f55e94c5ec",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Email Field",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "email",
+        "delay": 300,
+        "topic": "Email Field",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "3cc9c2ca3da31eef",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Password Field",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "password",
+        "delay": 300,
+        "topic": "Password ",
+        "x": 140,
+        "y": 380,
+        "wires": [
+            [
+                "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "864b89d6485ddac4",
+        "type": "ui_text_input",
+        "z": "4821a41b2fd327fb",
+        "name": "",
+        "label": "Select a color",
+        "tooltip": "",
+        "group": "d68e7be3.88f088",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "color",
+        "delay": 300,
+        "topic": "Select a color",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "71ec6c626243f535"
             ]
         ]
     }
