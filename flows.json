@@ -538,9 +538,7 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1,
-        "w": 838,
-        "h": 208
+        "y": -1
     },
     {
         "id": "5a28e866a67c90ec",
@@ -565,31 +563,7 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279,
-        "w": 1152,
-        "h": 242
-    },
-    {
-        "id": "d1e0f39ddacfeb20",
-        "type": "group",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "e5ca7c9975e3a6b5"
-        ],
-        "x": 474,
-        "y": 99,
-        "w": 392,
-        "h": 82
+        "y": 279
     },
     {
         "id": "c0b83f35fdc02130",
@@ -678,6 +652,26 @@
         "w": 1432,
         "h": 82,
         "info": "# Rules from Parameter Files"
+    },
+    {
+        "id": "d1e0f39ddacfeb20",
+        "type": "group",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "e5ca7c9975e3a6b5"
+        ],
+        "x": 474,
+        "y": 99
     },
     {
         "id": "748ca46ea16faad4",
@@ -2548,7 +2542,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "/Users/revealgc/Desktop/4testMOD.csv",
+        "payload": "/Users/revealgc/Download/4testMOD.csv",
         "payloadType": "str",
         "x": 140,
         "y": 140,
