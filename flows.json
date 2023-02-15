@@ -85,6 +85,14 @@
         "env": []
     },
     {
+        "id": "813a171cf0470b24",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "c5ce2d38887016b2",
         "type": "subflow",
         "name": "Apply rules by level type",
@@ -6485,6 +6493,58 @@
         "wires": [
             [
                 "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "cffb599fd51d0200",
+        "type": "http in",
+        "z": "813a171cf0470b24",
+        "name": "Test Input Point",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "3cc51bee5b3acd4c"
+            ]
+        ]
+    },
+    {
+        "id": "0d49c1e77a91ecc4",
+        "type": "debug",
+        "z": "813a171cf0470b24",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3cc51bee5b3acd4c",
+        "type": "function",
+        "z": "813a171cf0470b24",
+        "name": "function 6",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "0d49c1e77a91ecc4"
             ]
         ]
     }
