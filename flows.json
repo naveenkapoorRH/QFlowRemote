@@ -606,30 +606,10 @@
             "7ce52ec9ef003b44",
             "d394b61bcc4755e6"
         ],
-        "x": 54,
-        "y": 519,
+        "x": 14,
+        "y": 939,
         "w": 1532,
         "h": 82
-    },
-    {
-        "id": "decf6aa6f40ce8bc",
-        "type": "group",
-        "z": "67991373.45438c",
-        "name": "Submit QBES",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "7f7bbaeb8d81be16",
-            "3af468cd9306ec3e",
-            "d7f2fcd5e791ba92",
-            "711f05a68cde98f5",
-            "a6f6c7c8e634f3b6"
-        ],
-        "x": 2994,
-        "y": 859,
-        "w": 882,
-        "h": 242
     },
     {
         "id": "ef50b77b253a7883",
@@ -648,8 +628,8 @@
             "739c4193fa8fce2c",
             "d587f5de3f4014c8"
         ],
-        "x": 54,
-        "y": 299,
+        "x": 14,
+        "y": 239,
         "w": 1792,
         "h": 182
     },
@@ -674,9 +654,9 @@
             "21a2308db46311bb",
             "58df41cd8e54a653"
         ],
-        "x": 54,
-        "y": 899,
-        "w": 1772,
+        "x": 14,
+        "y": 539,
+        "w": 1432,
         "h": 322
     },
     {
@@ -693,9 +673,9 @@
             "b5c53653a76681bf",
             "06db3e224b379422"
         ],
-        "x": 54,
-        "y": 779,
-        "w": 1452,
+        "x": 14,
+        "y": 99,
+        "w": 1432,
         "h": 82,
         "info": "# Rules from Parameter Files"
     },
@@ -728,6 +708,7 @@
     {
         "id": "1f48566b.e8958a",
         "type": "ui_group",
+        "d": true,
         "name": "2. Processed PreRules",
         "tab": "da612906.998368",
         "order": 9,
@@ -989,7 +970,7 @@
         "tab": "da612906.998368",
         "order": 5,
         "disp": true,
-        "width": 15,
+        "width": 16,
         "collapse": false,
         "className": ""
     },
@@ -1000,7 +981,7 @@
         "tab": "da612906.998368",
         "order": 11,
         "disp": true,
-        "width": 30,
+        "width": 24,
         "collapse": true,
         "className": ""
     },
@@ -1087,39 +1068,9 @@
         "tab": "da612906.998368",
         "order": 3,
         "disp": true,
-        "width": 15,
+        "width": 16,
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "2097edd26ca156df",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 3,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "37b428ec727a8df5",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 4,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "0115f7de5a188757",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "1f48566b.e8958a",
-        "order": 5,
-        "width": 30,
-        "height": 1
     },
     {
         "id": "1d5401bf95a96f03",
@@ -1128,7 +1079,7 @@
         "tab": "da612906.998368",
         "order": 10,
         "disp": true,
-        "width": "30",
+        "width": 24,
         "collapse": false,
         "className": ""
     },
@@ -1199,7 +1150,7 @@
         "tab": "da612906.998368",
         "order": 7,
         "disp": true,
-        "width": "18",
+        "width": 16,
         "collapse": false,
         "className": ""
     },
@@ -1261,6 +1212,86 @@
         "order": 14,
         "disp": true,
         "width": 6
+    },
+    {
+        "id": "56be97cb79ecb625",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "e2507736cc86c392",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 6,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "f159a8f9eb3c04cb",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "781f4d68043cf2cc",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "4060ccd3b1b979fd",
+        "order": 8,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a0758b51c226cd36",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 3,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "6cdd5f39d21973f3",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 4,
+        "width": 6,
+        "height": 1
+    },
+    {
+        "id": "01133e110feaf9fc",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "1f48566b.e8958a",
+        "order": 5,
+        "width": 30,
+        "height": 1
+    },
+    {
+        "id": "683bcf053c9dce40",
+        "type": "ui_spacer",
+        "z": "82cc831b154f3133",
+        "name": "spacer",
+        "group": "1d5401bf95a96f03",
+        "order": 2,
+        "width": 16,
+        "height": 1
     },
     {
         "id": "9a0d32273f30aad5",
@@ -1996,8 +2027,8 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3. Processed Rules",
-        "order": 2,
-        "width": 30,
+        "order": 1,
+        "width": 24,
         "height": 5,
         "columns": [
             {
@@ -2139,8 +2170,8 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3.1. Condition Errors",
-        "order": 4,
-        "width": "30",
+        "order": 2,
+        "width": 24,
         "height": 3,
         "columns": [
             {
@@ -2214,8 +2245,8 @@
         "z": "82cc831b154f3133",
         "group": "18a5a593fcd64912",
         "name": "3.2. Facts Needed",
-        "order": 8,
-        "width": "30",
+        "order": 3,
+        "width": 24,
         "height": 2,
         "columns": [
             {
@@ -2378,9 +2409,9 @@
         "z": "8d5b6ce343b26ccf",
         "group": "1d5401bf95a96f03",
         "name": "JOB Event Log ",
-        "order": 2,
-        "width": "30",
-        "height": "4",
+        "order": 3,
+        "width": 24,
+        "height": 5,
         "format": "<ul>\n    <li ng-repeat=\"x in msg.payload\">\n  \n        <font color=\"green\">{{x.topic}}</font>\n        <ul>\n            <li>{{x.payload}}</li>\n        </ul>\n    </li>\n</ul>",
         "storeOutMessages": true,
         "fwdInMessages": true,
@@ -2457,15 +2488,15 @@
         "name": "",
         "group": "1d5401bf95a96f03",
         "order": 1,
-        "width": "9",
-        "height": "1",
+        "width": 8,
+        "height": 1,
         "passthru": false,
         "label": "Reset Log",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "",
+        "icon": "fa-circle-o",
         "payload": "[]",
         "payloadType": "str",
         "topic": "",
@@ -2519,8 +2550,8 @@
         "topic": "",
         "payload": "/Users/revealgc/Desktop/4testMOD.csv",
         "payloadType": "str",
-        "x": 180,
-        "y": 820,
+        "x": 140,
+        "y": 140,
         "wires": [
             [
                 "1e5beed02674863a"
@@ -2540,7 +2571,7 @@
         "tooltip": "Enter the location of the parameters file",
         "group": "d5b306fd70950040",
         "order": 2,
-        "width": "14",
+        "width": 15,
         "height": 1,
         "passthru": true,
         "mode": "text",
@@ -2549,8 +2580,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 480,
-        "y": 820,
+        "x": 440,
+        "y": 140,
         "wires": [
             [
                 "b5c53653a76681bf"
@@ -2564,8 +2595,8 @@
         "g": "62708d0bbe922798",
         "name": "Fact from files",
         "info": "# Facts CSV File ",
-        "x": 950,
-        "y": 1180,
+        "x": 910,
+        "y": 820,
         "wires": []
     },
     {
@@ -2574,8 +2605,8 @@
         "z": "67991373.45438c",
         "g": "19463268a6c67561",
         "name": "",
-        "x": 940,
-        "y": 820,
+        "x": 800,
+        "y": 140,
         "wires": [
             [
                 "06db3e224b379422"
@@ -2592,8 +2623,8 @@
         "tooltip": "Enter the location of the parameters file",
         "group": "1f86b2145e7e556a",
         "order": 2,
-        "width": "14",
-        "height": "1",
+        "width": 15,
+        "height": 1,
         "passthru": true,
         "mode": "text",
         "delay": "0",
@@ -2601,8 +2632,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 490,
-        "y": 980,
+        "x": 370,
+        "y": 620,
         "wires": [
             [
                 "100234cf93c195b8"
@@ -2622,8 +2653,8 @@
         "sendError": false,
         "encoding": "none",
         "allProps": false,
-        "x": 800,
-        "y": 980,
+        "x": 580,
+        "y": 620,
         "wires": [
             [
                 "c047c871d9c0e70d"
@@ -2646,8 +2677,8 @@
         "strings": true,
         "include_empty_strings": false,
         "include_null_values": false,
-        "x": 950,
-        "y": 980,
+        "x": 730,
+        "y": 620,
         "wires": [
             [
                 "c9c9ca415ab95910",
@@ -2667,8 +2698,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1140,
-        "y": 980,
+        "x": 920,
+        "y": 620,
         "wires": [
             [
                 "571a7beaed3ab093"
@@ -2719,8 +2750,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1640,
-        "y": 1020,
+        "x": 1240,
+        "y": 660,
         "wires": []
     },
     {
@@ -2745,8 +2776,8 @@
         "topic": "",
         "payload": "/Users/revealgc/Desktop/factsToTest.csv",
         "payloadType": "str",
-        "x": 180,
-        "y": 980,
+        "x": 140,
+        "y": 620,
         "wires": [
             [
                 "04f3b0fb456d2117"
@@ -2790,8 +2821,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1430,
-        "y": 980,
+        "x": 1110,
+        "y": 620,
         "wires": [
             [
                 "16550455147cd747",
@@ -2817,8 +2848,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 450,
-        "y": 400,
+        "x": 410,
+        "y": 340,
         "wires": [
             [
                 "79f4bff451119fb7"
@@ -2847,8 +2878,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 160,
-        "y": 440,
+        "x": 120,
+        "y": 380,
         "wires": [
             [
                 "fb483894819a453e"
@@ -2866,7 +2897,7 @@
         "place": "Select rule types from the db...",
         "group": "d5b306fd70950040",
         "order": 4,
-        "width": "12",
+        "width": 12,
         "height": 1,
         "passthru": true,
         "multiple": true,
@@ -2881,8 +2912,8 @@
         "topic": "validationType",
         "topicType": "str",
         "className": "",
-        "x": 1230,
-        "y": 400,
+        "x": 1190,
+        "y": 340,
         "wires": [
             [
                 "739c4193fa8fce2c"
@@ -2901,8 +2932,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 400,
+        "x": 780,
+        "y": 340,
         "wires": [
             [
                 "199e84df3d73b845"
@@ -2917,7 +2948,7 @@
         "name": "",
         "group": "d5b306fd70950040",
         "order": 5,
-        "width": 2,
+        "width": 3,
         "height": 1,
         "passthru": false,
         "label": "Get Rules",
@@ -2925,13 +2956,13 @@
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "",
+        "icon": "fa-database",
         "payload": "dbrules",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 140,
-        "y": 340,
+        "x": 100,
+        "y": 280,
         "wires": [
             [
                 "fb483894819a453e"
@@ -2962,8 +2993,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 1690,
-        "y": 940,
+        "x": 1290,
+        "y": 580,
         "wires": []
     },
     {
@@ -2976,8 +3007,8 @@
         "tooltip": "Enter at least 3 characters",
         "group": "1f86b2145e7e556a",
         "order": 5,
-        "width": "4",
-        "height": "1",
+        "width": 5,
+        "height": 1,
         "passthru": true,
         "mode": "text",
         "delay": "0",
@@ -2985,8 +3016,8 @@
         "sendOnBlur": true,
         "className": "",
         "topicType": "msg",
-        "x": 140,
-        "y": 560,
+        "x": 100,
+        "y": 980,
         "wires": [
             [
                 "3b55370ad9fd31f5"
@@ -3023,8 +3054,8 @@
                 "valueValue": "x5nDCpvGTkvHniq8wJ9m"
             }
         ],
-        "x": 370,
-        "y": 560,
+        "x": 330,
+        "y": 980,
         "wires": [
             [
                 "7ce52ec9ef003b44"
@@ -3042,8 +3073,8 @@
         "place": "Select reporting ids from the db...",
         "group": "1f86b2145e7e556a",
         "order": 4,
-        "width": "8",
-        "height": "1",
+        "width": 10,
+        "height": 1,
         "passthru": false,
         "multiple": true,
         "options": [
@@ -3057,8 +3088,8 @@
         "topic": "dbreportingids",
         "topicType": "msg",
         "className": "",
-        "x": 1090,
-        "y": 560,
+        "x": 1050,
+        "y": 980,
         "wires": [
             [
                 "d394b61bcc4755e6"
@@ -3077,8 +3108,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 560,
+        "x": 650,
+        "y": 980,
         "wires": [
             [
                 "e76e13639b1f0475"
@@ -3097,8 +3128,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1470,
-        "y": 560,
+        "x": 1430,
+        "y": 980,
         "wires": [
             [
                 "f45097235bf5254d"
@@ -3146,8 +3177,8 @@
         "tooltip": "",
         "group": "1f86b2145e7e556a",
         "order": 1,
-        "width": "1",
-        "height": "1",
+        "width": 1,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "cb_ff",
@@ -3164,7 +3195,7 @@
         "animate": false,
         "className": "",
         "x": 2050,
-        "y": 980,
+        "y": 620,
         "wires": [
             [
                 "fd562624ab71790e"
@@ -3200,8 +3231,8 @@
         "tooltip": "",
         "group": "1f86b2145e7e556a",
         "order": 3,
-        "width": "1",
-        "height": "1",
+        "width": 1,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "cb_fd",
@@ -3217,8 +3248,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 2030,
-        "y": 560,
+        "x": 2010,
+        "y": 980,
         "wires": [
             [
                 "fd562624ab71790e"
@@ -3280,8 +3311,8 @@
         "tooltip": "",
         "group": "d5b306fd70950040",
         "order": 1,
-        "width": "1",
-        "height": "1",
+        "width": 1,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "cb_rf",
@@ -3298,7 +3329,7 @@
         "animate": false,
         "className": "",
         "x": 2050,
-        "y": 820,
+        "y": 140,
         "wires": [
             [
                 "fd562624ab71790e"
@@ -3314,8 +3345,8 @@
         "tooltip": "",
         "group": "d5b306fd70950040",
         "order": 3,
-        "width": "1",
-        "height": "1",
+        "width": 1,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "cb_rd",
@@ -3332,7 +3363,7 @@
         "animate": false,
         "className": "",
         "x": 2050,
-        "y": 400,
+        "y": 340,
         "wires": [
             [
                 "fd562624ab71790e"
@@ -3348,8 +3379,8 @@
         "tooltip": "",
         "group": "779fdd53a3120890",
         "order": 2,
-        "width": "9",
-        "height": "1",
+        "width": 8,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "cb_network",
@@ -3382,8 +3413,8 @@
         "tooltip": "",
         "group": "779fdd53a3120890",
         "order": 1,
-        "width": "9",
-        "height": "1",
+        "width": 8,
+        "height": 1,
         "passthru": true,
         "decouple": "false",
         "topic": "cb_attached",
@@ -3414,15 +3445,15 @@
         "name": "",
         "group": "779fdd53a3120890",
         "order": 3,
-        "width": "9",
-        "height": "1",
+        "width": 8,
+        "height": 1,
         "passthru": false,
         "label": "Submit JOB",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "",
+        "icon": "fa-tasks",
         "payload": "DONE",
         "payloadType": "str",
         "topic": "",
@@ -3466,8 +3497,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1340,
-        "y": 820,
+        "x": 1280,
+        "y": 140,
         "wires": [
             [
                 "ef78548912a4d7aa"
@@ -3481,15 +3512,15 @@
         "name": "",
         "group": "779fdd53a3120890",
         "order": 4,
-        "width": "9",
-        "height": "1",
+        "width": 8,
+        "height": 1,
         "passthru": true,
         "label": "Reset",
         "tooltip": "",
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "",
+        "icon": "fa-circle-o",
         "payload": "false",
         "payloadType": "bool",
         "topic": "",
@@ -3522,8 +3553,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1690,
-        "y": 980,
+        "x": 1310,
+        "y": 620,
         "wires": [
             [
                 "8c1b098c01bc4977"
@@ -3535,8 +3566,8 @@
         "type": "subflow:8d5b6ce343b26ccf",
         "z": "67991373.45438c",
         "name": "",
-        "x": 4000,
-        "y": 900,
+        "x": 3980,
+        "y": 820,
         "wires": []
     },
     {
@@ -3552,8 +3583,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 1060,
+        "x": 880,
+        "y": 680,
         "wires": []
     },
     {
@@ -3589,7 +3620,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 3380,
-        "y": 740,
+        "y": 760,
         "wires": []
     },
     {
@@ -3614,7 +3645,7 @@
             "8701991a4839bab8"
         ],
         "x": 1965,
-        "y": 360,
+        "y": 300,
         "wires": [
             [
                 "9a41aca46f8e70f2"
@@ -3643,7 +3674,7 @@
             "b2a8b14d99432a2d"
         ],
         "x": 1965,
-        "y": 780,
+        "y": 100,
         "wires": [
             [
                 "ef78548912a4d7aa"
@@ -3730,7 +3761,7 @@
             "c3a24bb78c2a2175"
         ],
         "x": 1965,
-        "y": 940,
+        "y": 580,
         "wires": [
             [
                 "8c1b098c01bc4977"
@@ -3816,8 +3847,8 @@
         "links": [
             "d67e28129722d643"
         ],
-        "x": 1955,
-        "y": 520,
+        "x": 1935,
+        "y": 940,
         "wires": [
             [
                 "f45097235bf5254d"
@@ -3836,8 +3867,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1660,
-        "y": 400,
+        "x": 1620,
+        "y": 340,
         "wires": [
             [
                 "9a41aca46f8e70f2"
@@ -3848,7 +3879,6 @@
         "id": "3af468cd9306ec3e",
         "type": "debug",
         "z": "67991373.45438c",
-        "g": "decf6aa6f40ce8bc",
         "name": "Output from QBES",
         "active": true,
         "tosidebar": true,
@@ -3858,15 +3888,14 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3640,
-        "y": 960,
+        "x": 3630,
+        "y": 900,
         "wires": []
     },
     {
         "id": "d7f2fcd5e791ba92",
         "type": "http request",
         "z": "67991373.45438c",
-        "g": "decf6aa6f40ce8bc",
         "name": "Post: ProcessRules ",
         "method": "POST",
         "ret": "obj",
@@ -3898,8 +3927,8 @@
                 "valueValue": "true"
             }
         ],
-        "x": 3400,
-        "y": 920,
+        "x": 3410,
+        "y": 820,
         "wires": [
             [
                 "3af468cd9306ec3e",
@@ -3911,7 +3940,6 @@
         "id": "711f05a68cde98f5",
         "type": "function",
         "z": "67991373.45438c",
-        "g": "decf6aa6f40ce8bc",
         "name": "Send to log the output of the results",
         "func": "let messages = []\n\nlet P = msg.payload\nP.rules.valid.map(p=> messages.push({ruleId: p.id, message: p.message}))\n\n\nmsg.payload = {\n    \"Workflow ID\": msg.payload.workflowId,\n    \"Rules Passed\": msg.payload.rules.valid.length,\n\n    \"Rules Failed\": msg.payload.rules.invalid.length,\n    messages\n\n}\nmsg.topic = \"QBES Output\"\nreturn msg;",
         "outputs": 1,
@@ -3919,8 +3947,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3700,
-        "y": 900,
+        "x": 3690,
+        "y": 820,
         "wires": [
             [
                 "b87799331653cd82"
@@ -3949,8 +3977,8 @@
         "links": [
             "5d9d0ae34f31c5f4"
         ],
-        "x": 305,
-        "y": 340,
+        "x": 265,
+        "y": 280,
         "wires": [
             [
                 "fb483894819a453e"
