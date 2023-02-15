@@ -3988,6 +3988,59 @@
         ]
     },
     {
+        "id": "d445d2aa213681e6",
+        "type": "http in",
+        "z": "67991373.45438c",
+        "name": "Test Input Point",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1360,
+        "y": 1360,
+        "wires": [
+            [
+                "077745dd4456572b"
+            ]
+        ]
+    },
+    {
+        "id": "7e3f13f11c3166e4",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1900,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "077745dd4456572b",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "function 7",
+        "func": "msg.payload = \"Service called\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 1360,
+        "wires": [
+            [
+                "7e3f13f11c3166e4",
+                "1e3847f427e4c74f"
+            ]
+        ]
+    },
+    {
         "id": "f3903be4e24d8dca",
         "type": "http request",
         "z": "d103860e993c1512",
