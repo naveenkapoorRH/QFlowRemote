@@ -6534,7 +6534,7 @@
         "type": "function",
         "z": "813a171cf0470b24",
         "name": "function 6",
-        "func": "\nreturn msg;",
+        "func": "msg.payload = \"Service called\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
