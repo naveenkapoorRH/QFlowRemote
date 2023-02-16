@@ -2444,7 +2444,7 @@
         "type": "function",
         "z": "82cc831b154f3133",
         "name": "function 9",
-        "func": "\nreturn msg;",
+        "func": "msg.payload = msg.error.message\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
