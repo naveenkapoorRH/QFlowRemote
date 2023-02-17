@@ -546,7 +546,9 @@
             "d015bbe8f3761f7f"
         ],
         "x": 54,
-        "y": -1
+        "y": -1,
+        "w": 838,
+        "h": 208
     },
     {
         "id": "5a28e866a67c90ec",
@@ -571,7 +573,9 @@
             "8764792a5250d529"
         ],
         "x": 14,
-        "y": 279
+        "y": 279,
+        "w": 1152,
+        "h": 242
     },
     {
         "id": "c0b83f35fdc02130",
@@ -679,7 +683,9 @@
             "e5ca7c9975e3a6b5"
         ],
         "x": 474,
-        "y": 99
+        "y": 99,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "748ca46ea16faad4",
@@ -4182,43 +4188,6 @@
         "wires": []
     },
     {
-        "id": "74d3615b7d68a56b",
-        "type": "http request",
-        "z": "67991373.45438c",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://localhost/rulesrepo/factsandrules/{msg.reporting_id}",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [
-            {
-                "keyType": "other",
-                "keyValue": "X-JBID",
-                "valueType": "other",
-                "valueValue": "kapoo"
-            },
-            {
-                "keyType": "other",
-                "keyValue": "X-API-KEY",
-                "valueType": "other",
-                "valueValue": "\tx5nDCpvGTkvHniq8wJ9m"
-            }
-        ],
-        "x": 350,
-        "y": 1400,
-        "wires": [
-            [
-                "29e5403351fd72d9"
-            ]
-        ]
-    },
-    {
         "id": "96facefabfa129ae",
         "type": "inject",
         "z": "67991373.45438c",
@@ -4248,8 +4217,7 @@
         "y": 1400,
         "wires": [
             [
-                "74d3615b7d68a56b",
-                "29e5403351fd72d9"
+                "b50c075944f35652"
             ]
         ]
     },
@@ -4268,6 +4236,43 @@
         "x": 380,
         "y": 1580,
         "wires": []
+    },
+    {
+        "id": "b50c075944f35652",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "name": "API call to validate",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/reporting_unit/{{{reporting_id}}}/validate?DEBUG=true",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 590,
+        "y": 1400,
+        "wires": [
+            [
+                "29e5403351fd72d9"
+            ]
+        ]
     },
     {
         "id": "f3903be4e24d8dca",
