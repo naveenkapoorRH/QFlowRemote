@@ -4241,11 +4241,11 @@
         "id": "b50c075944f35652",
         "type": "http request",
         "z": "67991373.45438c",
-        "name": "API call to validate",
+        "name": "API Get Facts by RID",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://localhost/reporting_unit/{{{reporting_id}}}/validate?DEBUG=true",
+        "url": "http://localhost/rulesrepo/factsandrules/{{{reporting_id}}}/validate?DEBUG=true",
         "tls": "",
         "persist": false,
         "proxy": "",
@@ -4266,7 +4266,7 @@
                 "valueValue": "x5nDCpvGTkvHniq8wJ9m"
             }
         ],
-        "x": 590,
+        "x": 600,
         "y": 1400,
         "wires": [
             [
