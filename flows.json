@@ -4245,7 +4245,7 @@
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
-        "url": "http://localhost/rulesrepo/factsandrules/{{{reporting_id}}}/validate?DEBUG=true",
+        "url": "http://localhost/rulesrepo/factsandrules/{{{reporting_id}}}?DEBUG=true",
         "tls": "",
         "persist": false,
         "proxy": "",
