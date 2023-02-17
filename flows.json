@@ -4189,7 +4189,7 @@
         "method": "GET",
         "ret": "txt",
         "paytoqs": "ignore",
-        "url": "http://localhost/rulesrepo/factsandrules/{{{msg.reporting_id}}}",
+        "url": "http://localhost/rulesrepo/factsandrules/{msg.reporting_id}",
         "tls": "",
         "persist": false,
         "proxy": "",
