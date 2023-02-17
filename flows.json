@@ -4544,7 +4544,7 @@
             [
                 "12d8ce370fc2153f",
                 "eee34fb243fcc025",
-                "2afe1b70382b1d3c"
+                "da904483e17171f2"
             ],
             []
         ]
@@ -4596,6 +4596,31 @@
         "x": 770,
         "y": 620,
         "wires": []
+    },
+    {
+        "id": "da904483e17171f2",
+        "type": "change",
+        "z": "d103860e993c1512",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ruleName",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 680,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "f0bda8ccf069c334",
