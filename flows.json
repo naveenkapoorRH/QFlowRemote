@@ -4182,6 +4182,93 @@
         "wires": []
     },
     {
+        "id": "74d3615b7d68a56b",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://localhost/rulesrepo/factsandrules/{{msg.reporting_id}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "\tx5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 350,
+        "y": 1400,
+        "wires": [
+            [
+                "29e5403351fd72d9"
+            ]
+        ]
+    },
+    {
+        "id": "96facefabfa129ae",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "Inject a reporting ID",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "reporting_id",
+                "v": "3010013214",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3010013214",
+        "payloadType": "num",
+        "x": 150,
+        "y": 1400,
+        "wires": [
+            [
+                "74d3615b7d68a56b"
+            ]
+        ]
+    },
+    {
+        "id": "29e5403351fd72d9",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 540,
+        "y": 1400,
+        "wires": []
+    },
+    {
         "id": "f3903be4e24d8dca",
         "type": "http request",
         "z": "d103860e993c1512",
