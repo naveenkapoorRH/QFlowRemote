@@ -3201,7 +3201,7 @@
         "z": "67991373.45438c",
         "g": "c0b83f35fdc02130",
         "name": "Save Reporting IDs",
-        "func": "let rid = msg.payload\nflow.set(\"reporting_id\", rid)\nmsg.payload = rid.length > 0\n\nreturn msg;",
+        "func": "let rid = msg.payload\nmsg.reporting_id = msg.payload\nflow.set(\"reporting_id\", rid)\nmsg.payload = rid.length > 0\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3211,7 +3211,8 @@
         "y": 980,
         "wires": [
             [
-                "f45097235bf5254d"
+                "f45097235bf5254d",
+                "b50c075944f35652"
             ]
         ]
     },
@@ -4213,8 +4214,8 @@
         "topic": "",
         "payload": "3010013214",
         "payloadType": "num",
-        "x": 150,
-        "y": 1400,
+        "x": 830,
+        "y": 1100,
         "wires": [
             [
                 "b50c075944f35652"
@@ -4233,8 +4234,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
-        "y": 1580,
+        "x": 1060,
+        "y": 1280,
         "wires": []
     },
     {
@@ -4266,8 +4267,8 @@
                 "valueValue": "x5nDCpvGTkvHniq8wJ9m"
             }
         ],
-        "x": 600,
-        "y": 1400,
+        "x": 1280,
+        "y": 1100,
         "wires": [
             [
                 "29e5403351fd72d9"
