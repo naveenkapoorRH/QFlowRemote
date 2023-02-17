@@ -4543,7 +4543,8 @@
         "wires": [
             [
                 "12d8ce370fc2153f",
-                "eee34fb243fcc025"
+                "eee34fb243fcc025",
+                "2afe1b70382b1d3c"
             ],
             []
         ]
@@ -4575,6 +4576,25 @@
         "info": "## # Open AI parse text",
         "x": 180,
         "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2afe1b70382b1d3c",
+        "type": "ui_toast",
+        "z": "d103860e993c1512",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 770,
+        "y": 620,
         "wires": []
     },
     {
