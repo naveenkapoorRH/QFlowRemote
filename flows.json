@@ -2518,7 +2518,8 @@
         "y": 240,
         "wires": [
             [
-                "17cb8d5c1c2dfc81"
+                "17cb8d5c1c2dfc81",
+                "20fe51011ee16859"
             ]
         ]
     },
@@ -2603,9 +2604,47 @@
         "y": 180,
         "wires": [
             [
-                "17cb8d5c1c2dfc81"
+                "17cb8d5c1c2dfc81",
+                "20fe51011ee16859"
             ]
         ]
+    },
+    {
+        "id": "20fe51011ee16859",
+        "type": "ui_table",
+        "z": "8d5b6ce343b26ccf",
+        "group": "1d5401bf95a96f03",
+        "name": "Output",
+        "order": 3,
+        "width": "18",
+        "height": "6",
+        "columns": [
+            {
+                "field": "rules.valid",
+                "title": "#",
+                "width": "",
+                "align": "left",
+                "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "rules.valid",
+                "title": "Vaid",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 950,
+        "y": 380,
+        "wires": []
     },
     {
         "id": "9a7a7971.dbc4b8",
