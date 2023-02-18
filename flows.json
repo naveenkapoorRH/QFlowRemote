@@ -514,10 +514,7 @@
                         "id": "fea303947b28f5ab"
                     },
                     {
-                        "id": "42849eb6f8ee9501"
-                    },
-                    {
-                        "id": "ab90b0bddcd19584"
+                        "id": "5208228e9775e479"
                     }
                 ]
             }
@@ -2704,25 +2701,6 @@
         "x": 380,
         "y": 480,
         "wires": []
-    },
-    {
-        "id": "ab90b0bddcd19584",
-        "type": "function",
-        "z": "8d5b6ce343b26ccf",
-        "name": "Convert to an array",
-        "func": "msg.payload = [msg.payload]\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 300,
-        "wires": [
-            [
-                "5208228e9775e479"
-            ]
-        ]
     },
     {
         "id": "9a7a7971.dbc4b8",
