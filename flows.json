@@ -2635,7 +2635,7 @@
                 }
             },
             {
-                "field": "payload.wflid",
+                "field": "wflid",
                 "title": "WFID",
                 "width": "",
                 "align": "left",
@@ -2645,8 +2645,38 @@
                 }
             },
             {
-                "field": "payload.passed",
+                "field": "passed",
                 "title": "Passed",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "failed",
+                "title": "Failed",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "startTime",
+                "title": "Start Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "endTime",
+                "title": "End Time",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
