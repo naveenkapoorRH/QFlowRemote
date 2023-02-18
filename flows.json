@@ -2595,7 +2595,7 @@
         "type": "function",
         "z": "8d5b6ce343b26ccf",
         "name": "Clear context set dashboardLog to []",
-        "func": "context.set('dashboardLog', []);\nreturn msg;",
+        "func": "context.set('dashboardLog', []);\nmsg.payload = []\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
