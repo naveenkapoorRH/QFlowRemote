@@ -2631,8 +2631,8 @@
                 }
             },
             {
-                "field": "payload[\"Rules Passed\"]",
-                "title": "Vaid",
+                "field": "{{payload[\"Rules Passed\"]}}",
+                "title": "Valid",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
