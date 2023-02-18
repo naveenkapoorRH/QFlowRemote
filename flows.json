@@ -2631,8 +2631,18 @@
                 }
             },
             {
-                "field": "payload[\"Rules Passed\"]",
-                "title": "Valid",
+                "field": "payload.wflid",
+                "title": "WFID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.passed",
+                "title": "Passed",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
@@ -3728,7 +3738,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Create Payload",
-        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = parseInt(flow.get(\"reporting_id\") || 2002865554)\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    // ruleType: 'validation',\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
+        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n\n\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    // ruleType: 'validation',\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4077,7 +4087,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Send to log the output of the results",
-        "func": "let messages = []\n\nlet P = msg.payload\nP.rules.valid.map(p=> messages.push({ruleId: p.id, message: p.message}))\n\n\nmsg.payload = {\n    \"Workflow ID\": msg.payload.workflowId,\n    \"Rules Passed\": msg.payload.rules.valid.length,\n\n    \"Rules Failed\": msg.payload.rules.invalid.length,\n    messages\n\n}\nmsg.topic = \"QBES Output\"\nreturn msg;",
+        "func": "let messages = []\n\nlet P = msg.payload\nP.rules.valid.map(p=> messages.push({ruleId: p.id, message: p.message}))\n\n\nmsg.payload = {\n    wflid: msg.payload.workflowId,\n    passed: msg.payload.rules.valid.length,\n\n    failed: msg.payload.rules.invalid.length,\n    messages,\n    startTime: flow.get(\"startTime\"),\n    endTime: new Date().toLocaleString()\n\n}\nmsg.topic = \"QBES Output\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
