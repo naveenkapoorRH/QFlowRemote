@@ -2631,7 +2631,7 @@
                 }
             },
             {
-                "field": "Rules Passed",
+                "field": "payload[\"Rules Passed\"]",
                 "title": "Vaid",
                 "width": "",
                 "align": "left",
