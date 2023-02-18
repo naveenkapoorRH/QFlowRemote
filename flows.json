@@ -517,10 +517,10 @@
                         "id": "fea303947b28f5ab"
                     },
                     {
-                        "id": "20fe51011ee16859"
+                        "id": "42849eb6f8ee9501"
                     },
                     {
-                        "id": "42849eb6f8ee9501"
+                        "id": "ab90b0bddcd19584"
                     }
                 ]
             }
@@ -2687,8 +2687,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 430,
-        "y": 580,
+        "x": 670,
+        "y": 320,
         "wires": []
     },
     {
@@ -2706,6 +2706,25 @@
         "x": 380,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "ab90b0bddcd19584",
+        "type": "function",
+        "z": "8d5b6ce343b26ccf",
+        "name": "Convert to an array",
+        "func": "msg.payload = [msg.payload]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 320,
+        "wires": [
+            [
+                "20fe51011ee16859"
+            ]
+        ]
     },
     {
         "id": "9a7a7971.dbc4b8",
