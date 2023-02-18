@@ -2630,7 +2630,7 @@
                 }
             },
             {
-                "field": "rules.valid",
+                "field": "Rules Passed",
                 "title": "Vaid",
                 "width": "",
                 "align": "left",
