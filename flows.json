@@ -641,7 +641,7 @@
             "58df41cd8e54a653"
         ],
         "x": 14,
-        "y": 539,
+        "y": 519,
         "w": 1432,
         "h": 322
     },
@@ -2675,7 +2675,7 @@
         "name": "Fact from files",
         "info": "# Facts CSV File ",
         "x": 910,
-        "y": 820,
+        "y": 800,
         "wires": []
     },
     {
@@ -2712,7 +2712,7 @@
         "className": "",
         "topicType": "msg",
         "x": 370,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "100234cf93c195b8"
@@ -2733,7 +2733,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 580,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "c047c871d9c0e70d"
@@ -2757,7 +2757,7 @@
         "include_empty_strings": false,
         "include_null_values": false,
         "x": 730,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "c9c9ca415ab95910",
@@ -2778,7 +2778,7 @@
         "finalize": "",
         "libs": [],
         "x": 920,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "571a7beaed3ab093"
@@ -2830,7 +2830,7 @@
         "outputs": 0,
         "cts": false,
         "x": 1240,
-        "y": 660,
+        "y": 640,
         "wires": []
     },
     {
@@ -2856,7 +2856,7 @@
         "payload": "/Users/revealgc/Desktop/factsToTest.csv",
         "payloadType": "str",
         "x": 140,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "04f3b0fb456d2117"
@@ -2901,7 +2901,7 @@
         "to": "",
         "reg": false,
         "x": 1110,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "16550455147cd747",
@@ -3073,7 +3073,7 @@
         "seg2": "",
         "className": "",
         "x": 1290,
-        "y": 580,
+        "y": 560,
         "wires": []
     },
     {
@@ -3275,7 +3275,7 @@
         "animate": false,
         "className": "",
         "x": 2050,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "fd562624ab71790e"
@@ -3634,7 +3634,7 @@
         "finalize": "",
         "libs": [],
         "x": 1310,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "8c1b098c01bc4977"
@@ -3664,7 +3664,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 880,
-        "y": 680,
+        "y": 640,
         "wires": []
     },
     {
@@ -3672,7 +3672,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Create Payload",
-        "func": "msg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attached: flow.get(\"cb_attached\"), \n    validationType: flow.get(\"validationType\") || 'validation'\n}\nreturn msg;",
+        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = flow.get(\"reporting_id\") || 0\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    ruleType: flow.get(\"validationType\") || ['validation'],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3841,7 +3841,7 @@
             "c3a24bb78c2a2175"
         ],
         "x": 1965,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "8c1b098c01bc4977"
@@ -4148,8 +4148,8 @@
         "className": "",
         "topic": "",
         "name": "",
-        "x": 690,
-        "y": 1180,
+        "x": 610,
+        "y": 1160,
         "wires": []
     },
     {
@@ -4163,8 +4163,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 460,
-        "y": 1260,
+        "x": 440,
+        "y": 1180,
         "wires": [
             [
                 "4fab4477a5dae9fd",
@@ -4184,8 +4184,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 1280,
+        "x": 580,
+        "y": 1200,
         "wires": []
     },
     {
