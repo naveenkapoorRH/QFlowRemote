@@ -2548,7 +2548,7 @@
         "type": "function",
         "z": "8d5b6ce343b26ccf",
         "name": "function 5",
-        "func": "msg.payload = \"Job submitted\"\nreturn msg;",
+        "func": "msg.payload = \"Job Completed at:\"+ new Date().toLocaleString()\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3779,7 +3779,8 @@
         "wires": [
             [
                 "2d31a9cbb8b25e8f",
-                "d7f2fcd5e791ba92"
+                "d7f2fcd5e791ba92",
+                "f87a1ec1239428aa"
             ]
         ]
     },
@@ -4368,6 +4369,44 @@
         "wires": [
             [
                 "29e5403351fd72d9"
+            ]
+        ]
+    },
+    {
+        "id": "2a1010c6c72b92ee",
+        "type": "ui_toast",
+        "z": "67991373.45438c",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Show Job is submitted",
+        "x": 3330,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "f87a1ec1239428aa",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Job Submitted",
+        "func": "msg.payload = 'Job Submitted at: '+ new Date().toLocaleString()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3120,
+        "y": 900,
+        "wires": [
+            [
+                "2a1010c6c72b92ee"
             ]
         ]
     },
