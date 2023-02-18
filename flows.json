@@ -1297,9 +1297,9 @@
         "z": "82cc831b154f3133",
         "name": "spacer",
         "group": "1d5401bf95a96f03",
-        "order": 2,
-        "width": 16,
-        "height": 1
+        "order": 4,
+        "width": "24",
+        "height": "1"
     },
     {
         "id": "9a0d32273f30aad5",
@@ -2489,7 +2489,7 @@
         "d": true,
         "group": "1d5401bf95a96f03",
         "name": "JOB Event Log ",
-        "order": 3,
+        "order": 2,
         "width": 24,
         "height": 5,
         "format": "<ul>\n    <li ng-repeat=\"x in msg.payload\">\n  \n        <font color=\"green\">{{x.topic}}</font>\n        <ul>\n            <li>{{x.payload}}</li>\n        </ul>\n    </li>\n</ul>",
@@ -2568,7 +2568,7 @@
         "z": "8d5b6ce343b26ccf",
         "name": "",
         "group": "1d5401bf95a96f03",
-        "order": 1,
+        "order": 3,
         "width": 8,
         "height": 1,
         "passthru": false,
@@ -2616,9 +2616,9 @@
         "z": "8d5b6ce343b26ccf",
         "group": "1d5401bf95a96f03",
         "name": "Output",
-        "order": 3,
-        "width": "18",
-        "height": "6",
+        "order": 1,
+        "width": "24",
+        "height": "7",
         "columns": [
             {
                 "field": "rules.valid",
@@ -2683,8 +2683,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 830,
-        "y": 540,
+        "x": 970,
+        "y": 320,
         "wires": []
     },
     {
@@ -2699,8 +2699,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 380,
-        "y": 480,
+        "x": 940,
+        "y": 420,
         "wires": []
     },
     {
