@@ -2486,6 +2486,7 @@
         "id": "17cb8d5c1c2dfc81",
         "type": "ui_template",
         "z": "8d5b6ce343b26ccf",
+        "d": true,
         "group": "1d5401bf95a96f03",
         "name": "JOB Event Log ",
         "order": 3,
@@ -2518,7 +2519,6 @@
         "y": 240,
         "wires": [
             [
-                "17cb8d5c1c2dfc81",
                 "20fe51011ee16859",
                 "42849eb6f8ee9501"
             ]
