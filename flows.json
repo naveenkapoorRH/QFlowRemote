@@ -3672,7 +3672,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Create Payload",
-        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = parseInt(flow.get(\"reporting_id\") || 2002865554)\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    ruleType: 'validation',\n    // ruleType: JSON.stringify(flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
+        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = parseInt(flow.get(\"reporting_id\") || 2002865554)\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    // ruleType: 'validation',\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
