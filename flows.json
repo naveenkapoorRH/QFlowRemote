@@ -2631,7 +2631,7 @@
                 }
             },
             {
-                "field": "wflid",
+                "field": "payload.wflid",
                 "title": "WFID",
                 "width": "",
                 "align": "left",
@@ -2641,7 +2641,7 @@
                 }
             },
             {
-                "field": "passed",
+                "field": "payload.passed",
                 "title": "Passed",
                 "width": "",
                 "align": "left",
@@ -2651,7 +2651,7 @@
                 }
             },
             {
-                "field": "failed",
+                "field": "payload.failed",
                 "title": "Failed",
                 "width": "",
                 "align": "left",
@@ -2661,7 +2661,7 @@
                 }
             },
             {
-                "field": "startTime",
+                "field": "payload.startTime",
                 "title": "Start Time",
                 "width": "",
                 "align": "left",
@@ -2671,7 +2671,7 @@
                 }
             },
             {
-                "field": "endTime",
+                "field": "payload.endTime",
                 "title": "End Time",
                 "width": "",
                 "align": "left",
@@ -2683,8 +2683,8 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 770,
-        "y": 320,
+        "x": 830,
+        "y": 540,
         "wires": []
     },
     {
