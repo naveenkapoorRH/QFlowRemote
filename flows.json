@@ -85,6 +85,14 @@
         "env": []
     },
     {
+        "id": "813a171cf0470b24",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "c5ce2d38887016b2",
         "type": "subflow",
         "name": "Apply rules by level type",
@@ -503,10 +511,10 @@
                 "y": 240,
                 "wires": [
                     {
-                        "id": "5208228e9775e479"
+                        "id": "fea303947b28f5ab"
                     },
                     {
-                        "id": "fea303947b28f5ab"
+                        "id": "5208228e9775e479"
                     }
                 ]
             }
@@ -567,29 +575,7 @@
         "x": 14,
         "y": 279,
         "w": 1152,
-        "h": 242
-    },
-    {
-        "id": "d1e0f39ddacfeb20",
-        "type": "group",
-        "z": "d103860e993c1512",
-        "g": "7dc18555ca029842",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "e5ca7c9975e3a6b5"
-        ],
-        "x": 474,
-        "y": 99,
-        "w": 392,
-        "h": 82
+        "h": 262
     },
     {
         "id": "c0b83f35fdc02130",
@@ -655,7 +641,7 @@
             "58df41cd8e54a653"
         ],
         "x": 14,
-        "y": 539,
+        "y": 519,
         "w": 1432,
         "h": 322
     },
@@ -678,6 +664,28 @@
         "w": 1432,
         "h": 82,
         "info": "# Rules from Parameter Files"
+    },
+    {
+        "id": "d1e0f39ddacfeb20",
+        "type": "group",
+        "z": "d103860e993c1512",
+        "g": "7dc18555ca029842",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "e5ca7c9975e3a6b5"
+        ],
+        "x": 474,
+        "y": 99,
+        "w": 392,
+        "h": 82
     },
     {
         "id": "748ca46ea16faad4",
@@ -1289,9 +1297,9 @@
         "z": "82cc831b154f3133",
         "name": "spacer",
         "group": "1d5401bf95a96f03",
-        "order": 2,
-        "width": 16,
-        "height": 1
+        "order": 4,
+        "width": "24",
+        "height": "1"
     },
     {
         "id": "9a0d32273f30aad5",
@@ -2404,12 +2412,84 @@
         ]
     },
     {
+        "id": "c7bbcb8e289cfe40",
+        "type": "catch",
+        "z": "82cc831b154f3133",
+        "name": "Catch read file errors",
+        "scope": null,
+        "uncaught": false,
+        "x": 220,
+        "y": 520,
+        "wires": [
+            [
+                "e5ae3f0c5950f841"
+            ]
+        ]
+    },
+    {
+        "id": "260189c8c6ed366b",
+        "type": "ui_toast",
+        "z": "82cc831b154f3133",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 690,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e5ae3f0c5950f841",
+        "type": "function",
+        "z": "82cc831b154f3133",
+        "name": "function 9",
+        "func": "msg.payload = msg.error.message\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 600,
+        "wires": [
+            [
+                "260189c8c6ed366b",
+                "ba709063e175e036"
+            ]
+        ]
+    },
+    {
+        "id": "ba709063e175e036",
+        "type": "debug",
+        "z": "82cc831b154f3133",
+        "name": "debug 27",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 620,
+        "wires": []
+    },
+    {
         "id": "17cb8d5c1c2dfc81",
         "type": "ui_template",
         "z": "8d5b6ce343b26ccf",
+        "d": true,
         "group": "1d5401bf95a96f03",
         "name": "JOB Event Log ",
-        "order": 3,
+        "order": 2,
         "width": 24,
         "height": 5,
         "format": "<ul>\n    <li ng-repeat=\"x in msg.payload\">\n  \n        <font color=\"green\">{{x.topic}}</font>\n        <ul>\n            <li>{{x.payload}}</li>\n        </ul>\n    </li>\n</ul>",
@@ -2435,11 +2515,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 650,
         "y": 240,
         "wires": [
             [
-                "17cb8d5c1c2dfc81"
+                "20fe51011ee16859",
+                "42849eb6f8ee9501"
             ]
         ]
     },
@@ -2467,7 +2548,7 @@
         "type": "function",
         "z": "8d5b6ce343b26ccf",
         "name": "function 5",
-        "func": "msg.payload = \"Job submitted\"\nreturn msg;",
+        "func": "msg.payload = \"Job Completed at:\"+ new Date().toLocaleString()\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2487,7 +2568,7 @@
         "z": "8d5b6ce343b26ccf",
         "name": "",
         "group": "1d5401bf95a96f03",
-        "order": 1,
+        "order": 3,
         "width": 8,
         "height": 1,
         "passthru": false,
@@ -2514,7 +2595,7 @@
         "type": "function",
         "z": "8d5b6ce343b26ccf",
         "name": "Clear context set dashboardLog to []",
-        "func": "context.set('dashboardLog', []);\nreturn msg;",
+        "func": "context.set('dashboardLog', []);\nmsg.payload = []\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2524,9 +2605,103 @@
         "y": 180,
         "wires": [
             [
-                "17cb8d5c1c2dfc81"
+                "17cb8d5c1c2dfc81",
+                "20fe51011ee16859"
             ]
         ]
+    },
+    {
+        "id": "20fe51011ee16859",
+        "type": "ui_table",
+        "z": "8d5b6ce343b26ccf",
+        "group": "1d5401bf95a96f03",
+        "name": "Output",
+        "order": 1,
+        "width": "24",
+        "height": "7",
+        "columns": [
+            {
+                "field": "rules.valid",
+                "title": "#",
+                "width": "",
+                "align": "left",
+                "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.wflid",
+                "title": "WFID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.passed",
+                "title": "Passed",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.failed",
+                "title": "Failed",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.startTime",
+                "title": "Start Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "payload.endTime",
+                "title": "End Time",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 970,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "42849eb6f8ee9501",
+        "type": "debug",
+        "z": "8d5b6ce343b26ccf",
+        "name": "debug 29",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 420,
+        "wires": []
     },
     {
         "id": "9a7a7971.dbc4b8",
@@ -2548,7 +2723,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "/Users/revealgc/Desktop/4testMOD.csv",
+        "payload": "/Users/revealgc/Download/4testMOD.csv",
         "payloadType": "str",
         "x": 140,
         "y": 140,
@@ -2596,7 +2771,7 @@
         "name": "Fact from files",
         "info": "# Facts CSV File ",
         "x": 910,
-        "y": 820,
+        "y": 800,
         "wires": []
     },
     {
@@ -2633,7 +2808,7 @@
         "className": "",
         "topicType": "msg",
         "x": 370,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "100234cf93c195b8"
@@ -2654,7 +2829,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 580,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "c047c871d9c0e70d"
@@ -2678,7 +2853,7 @@
         "include_empty_strings": false,
         "include_null_values": false,
         "x": 730,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "c9c9ca415ab95910",
@@ -2699,7 +2874,7 @@
         "finalize": "",
         "libs": [],
         "x": 920,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "571a7beaed3ab093"
@@ -2751,7 +2926,7 @@
         "outputs": 0,
         "cts": false,
         "x": 1240,
-        "y": 660,
+        "y": 640,
         "wires": []
     },
     {
@@ -2777,7 +2952,7 @@
         "payload": "/Users/revealgc/Desktop/factsToTest.csv",
         "payloadType": "str",
         "x": 140,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "04f3b0fb456d2117"
@@ -2822,7 +2997,7 @@
         "to": "",
         "reg": false,
         "x": 1110,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "16550455147cd747",
@@ -2994,7 +3169,7 @@
         "seg2": "",
         "className": "",
         "x": 1290,
-        "y": 580,
+        "y": 560,
         "wires": []
     },
     {
@@ -3122,7 +3297,7 @@
         "z": "67991373.45438c",
         "g": "c0b83f35fdc02130",
         "name": "Save Reporting IDs",
-        "func": "let rid = msg.payload\nflow.set(\"reporting_id\", rid)\nmsg.payload = rid.length > 0\n\nreturn msg;",
+        "func": "let rid = msg.payload\nmsg.reporting_id = msg.payload\nflow.set(\"reporting_id\", rid)\nmsg.payload = rid.length > 0\n\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3132,7 +3307,8 @@
         "y": 980,
         "wires": [
             [
-                "f45097235bf5254d"
+                "f45097235bf5254d",
+                "b50c075944f35652"
             ]
         ]
     },
@@ -3195,7 +3371,7 @@
         "animate": false,
         "className": "",
         "x": 2050,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "fd562624ab71790e"
@@ -3554,7 +3730,7 @@
         "finalize": "",
         "libs": [],
         "x": 1310,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "8c1b098c01bc4977"
@@ -3584,7 +3760,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 880,
-        "y": 680,
+        "y": 640,
         "wires": []
     },
     {
@@ -3592,7 +3768,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Create Payload",
-        "func": "msg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attached: flow.get(\"cb_attached\"), \n    validationType: flow.get(\"validationType\") || 'validation'\n}\nreturn msg;",
+        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n\n\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    // ruleType: 'validation',\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3603,7 +3779,8 @@
         "wires": [
             [
                 "2d31a9cbb8b25e8f",
-                "d7f2fcd5e791ba92"
+                "d7f2fcd5e791ba92",
+                "f87a1ec1239428aa"
             ]
         ]
     },
@@ -3761,7 +3938,7 @@
             "c3a24bb78c2a2175"
         ],
         "x": 1965,
-        "y": 580,
+        "y": 560,
         "wires": [
             [
                 "8c1b098c01bc4977"
@@ -3941,7 +4118,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Send to log the output of the results",
-        "func": "let messages = []\n\nlet P = msg.payload\nP.rules.valid.map(p=> messages.push({ruleId: p.id, message: p.message}))\n\n\nmsg.payload = {\n    \"Workflow ID\": msg.payload.workflowId,\n    \"Rules Passed\": msg.payload.rules.valid.length,\n\n    \"Rules Failed\": msg.payload.rules.invalid.length,\n    messages\n\n}\nmsg.topic = \"QBES Output\"\nreturn msg;",
+        "func": "let messages = []\n\nlet P = msg.payload\nP.rules.valid.map(p=> messages.push({ruleId: p.id, message: p.message}))\n\n\nmsg.payload = {\n    wflid: msg.payload.workflowId,\n    passed: msg.payload.rules.valid.length,\n\n    failed: msg.payload.rules.invalid.length,\n    messages,\n    startTime: flow.get(\"startTime\"),\n    endTime: new Date().toLocaleString()\n\n}\nmsg.topic = \"QBES Output\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3982,6 +4159,254 @@
         "wires": [
             [
                 "fb483894819a453e"
+            ]
+        ]
+    },
+    {
+        "id": "d445d2aa213681e6",
+        "type": "http in",
+        "z": "67991373.45438c",
+        "name": "Test Input Point",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 1360,
+        "y": 1360,
+        "wires": [
+            [
+                "077745dd4456572b"
+            ]
+        ]
+    },
+    {
+        "id": "7e3f13f11c3166e4",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1900,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "077745dd4456572b",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "function 7",
+        "func": "msg.payload = \"Service called\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1660,
+        "y": 1360,
+        "wires": [
+            [
+                "7e3f13f11c3166e4",
+                "1e3847f427e4c74f"
+            ]
+        ]
+    },
+    {
+        "id": "24a6d577acd5cbc7",
+        "type": "catch",
+        "z": "67991373.45438c",
+        "name": "Catch read file errors",
+        "scope": null,
+        "uncaught": false,
+        "x": 220,
+        "y": 1180,
+        "wires": [
+            [
+                "c3c54ddc39435b68"
+            ]
+        ]
+    },
+    {
+        "id": "4fab4477a5dae9fd",
+        "type": "ui_toast",
+        "z": "67991373.45438c",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 610,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "c3c54ddc39435b68",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "function 8",
+        "func": "msg.payload = msg.error.message\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1180,
+        "wires": [
+            [
+                "4fab4477a5dae9fd",
+                "3edc4444ae0d428e"
+            ]
+        ]
+    },
+    {
+        "id": "3edc4444ae0d428e",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 26",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "96facefabfa129ae",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "Inject a reporting ID",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "reporting_id",
+                "v": "3010013214",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3010013214",
+        "payloadType": "num",
+        "x": 830,
+        "y": 1100,
+        "wires": [
+            [
+                "b50c075944f35652"
+            ]
+        ]
+    },
+    {
+        "id": "29e5403351fd72d9",
+        "type": "debug",
+        "z": "67991373.45438c",
+        "name": "debug 28",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "b50c075944f35652",
+        "type": "http request",
+        "z": "67991373.45438c",
+        "name": "API Get Facts by RID",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://localhost/rulesrepo/factsandrules/{{{reporting_id}}}?DEBUG=true",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "X-JBID",
+                "valueType": "other",
+                "valueValue": "kapoo"
+            },
+            {
+                "keyType": "other",
+                "keyValue": "X-API-KEY",
+                "valueType": "other",
+                "valueValue": "x5nDCpvGTkvHniq8wJ9m"
+            }
+        ],
+        "x": 1280,
+        "y": 1100,
+        "wires": [
+            [
+                "29e5403351fd72d9"
+            ]
+        ]
+    },
+    {
+        "id": "2a1010c6c72b92ee",
+        "type": "ui_toast",
+        "z": "67991373.45438c",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Show Job is submitted",
+        "x": 3330,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "f87a1ec1239428aa",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Job Submitted",
+        "func": "msg.payload = 'Job Submitted at: '+ new Date().toLocaleString()\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3120,
+        "y": 900,
+        "wires": [
+            [
+                "2a1010c6c72b92ee"
             ]
         ]
     },
@@ -4253,7 +4678,8 @@
         "wires": [
             [
                 "12d8ce370fc2153f",
-                "eee34fb243fcc025"
+                "eee34fb243fcc025",
+                "da904483e17171f2"
             ],
             []
         ]
@@ -4272,8 +4698,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 870,
-        "y": 480,
+        "x": 850,
+        "y": 500,
         "wires": []
     },
     {
@@ -4286,6 +4712,52 @@
         "x": 180,
         "y": 340,
         "wires": []
+    },
+    {
+        "id": "2afe1b70382b1d3c",
+        "type": "ui_toast",
+        "z": "d103860e993c1512",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 770,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "da904483e17171f2",
+        "type": "change",
+        "z": "d103860e993c1512",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.ruleName",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 680,
+        "wires": [
+            [
+                "2afe1b70382b1d3c"
+            ]
+        ]
     },
     {
         "id": "f0bda8ccf069c334",
@@ -6491,6 +6963,58 @@
         "wires": [
             [
                 "71ec6c626243f535"
+            ]
+        ]
+    },
+    {
+        "id": "cffb599fd51d0200",
+        "type": "http in",
+        "z": "813a171cf0470b24",
+        "name": "Test Input Point",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 140,
+        "wires": [
+            [
+                "3cc51bee5b3acd4c"
+            ]
+        ]
+    },
+    {
+        "id": "0d49c1e77a91ecc4",
+        "type": "debug",
+        "z": "813a171cf0470b24",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3cc51bee5b3acd4c",
+        "type": "function",
+        "z": "813a171cf0470b24",
+        "name": "function 6",
+        "func": "msg.payload = \"Service called\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "0d49c1e77a91ecc4"
             ]
         ]
     }
