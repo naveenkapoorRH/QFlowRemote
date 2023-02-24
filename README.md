@@ -32,5 +32,23 @@ b) Get a ui Table for 4.a) to display the key values. Make an entry in the spad 
 
 
 
+----------------------------
+
+### Endpoints
+========
+
+URL: http://localhost/rulesrepo?X-API-KEY=x5nDCpvGTkvHniq8wJ9m&X-JBID=kapoo&DEBUG=false
+Type: Get
+Headers/Params:
+  X-API-KEY: x5nDCpvGTkvHniq8wJ9m
+  X-JBID: kapoo
+  DEBUG: false
+Response: Json of all rules
+
+
+URL: http://localhost/rulesrepo/getruletype
+Type: Get
+Response: Array of objects containing all rules types 
+
 
 
