@@ -1939,7 +1939,7 @@
         "type": "function",
         "z": "82cc831b154f3133",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n\n// Build conditionstring cs\nlet cs  = r['CONDITION'] || 'PAY_ANN > 0'\n\nlet shortCondition = r['Short Condition'] || ''\n\ncs = (shortCondition == '') ? cs : shortCondition + ' and ' + cs\n\n\n\n\n    let actionStringRHS = ''\n    let action =[] // [{ 'FAILURE': true }]\n    let actionString = (r['ACTIONSTRING']).trim()\n\n    // actionString = (actionString.endsWith(\";\")) ? actionString.slice(0, -1) + \"\" : \"\"\n    \n\n\n  \n\n    let arr = actionString.split(\";\");\n\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n\n        let c_key = key.replace(/[^\\x20-\\x7E]/g, \"\").trim()\n        let c_value = val.replace(\" eq \", \"=\").trim()\n\n        if (key)\n            action.push({ [c_key]: c_value });\n    }\n    \n\n    let sector = r['SECTOR/TRADE'] ? r['SECTOR/TRADE'] : \"All\"\n    let validationType = \"Sector \"+sector\n\n\n\n //&& r['ACTIONSTRING'] != '' ? r['ACTIONSTRING'] :  [{'FAILURE': true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    type: k+2,\n    priority: r['PRIORITY'] || 5,\n    conditionstring:  cs ,\n    message: r['DESCRIPTION'], \n    action,\n    actionString: JSON.stringify(action),\n    validationType,\n    sector\n    })\n\n})\n\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n\n// Build conditionstring cs\nlet cs  = r['CONDITION'] || 'PAY_ANN > 0'\n\nlet shortCondition = r['Short Condition'] || ''\n\ncs = (shortCondition == '') ? cs : shortCondition + ' and ' + cs\n\n\n\n\n    let actionStringRHS = ''\n    let action =[] // [{ 'FAILURE': true }]\n    let actionString = (r['ACTIONSTRING']).trim()\n\n    // actionString = (actionString.endsWith(\";\")) ? actionString.slice(0, -1) + \"\" : \"\"\n    \n\n\n  \n\n    let arr = actionString.split(\";\");\n\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n\n        let c_key = key.replace(/[^\\x20-\\x7E]/g, \"\").trim()\n        let c_value = val.replace(\" eq \", \"=\").trim()\n\n        if (key)\n            action.push({ [c_key]: c_value });\n    }\n    \n    action.push({[\"TOTAL\"]: r['TOTAL']}) \n\n// GET DETAIL TOTALS:\nlet SUM_DET = ''\nlet SUM_DET_ARRAY = []\n\n\n\n\nfor(let j = 0 ; j < 14; ++j){\n    \n    let detVar = r['DETAIL ' + j] ? r['DETAIL ' + j] : ''\n   if(detVar !=='') SUM_DET_ARRAY.push(detVar) \n}\n\n\n\n    SUM_DET = SUM_DET_ARRAY.join(' + ')\n\n\naction.push({\"SUM_DET\":SUM_DET })\n\n    let sector = r['SECTOR/TRADE'] ? r['SECTOR/TRADE'] : \"All\"\n    let validationType = \"Sector \"+sector\n\n\n\n //&& r['ACTIONSTRING'] != '' ? r['ACTIONSTRING'] :  [{'FAILURE': true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    type: k+2,\n    priority: r['PRIORITY'] || 5,\n    conditionstring:  cs ,\n    message: r['DESCRIPTION'], \n    action,\n    actionString: JSON.stringify(action),\n    validationType,\n    sector\n    })\n\n})\n\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2683,7 +2683,7 @@
         "type": "function",
         "z": "8d5b6ce343b26ccf",
         "name": "Save Events",
-        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
+        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = [...dashboardLog];\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3507,7 +3507,7 @@
         "type": "debug",
         "z": "67991373.45438c",
         "name": "debug 5",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3917,7 +3917,7 @@
         "type": "subflow:8d5b6ce343b26ccf",
         "z": "67991373.45438c",
         "name": "",
-        "x": 3980,
+        "x": 4600,
         "y": 820,
         "wires": []
     },
@@ -3942,20 +3942,19 @@
         "id": "73055769ca44b5f7",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "Create Payload",
-        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n\n\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    // ruleType: 'validation',\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
+        "name": "Save QBES Payload",
+        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = flow.get(\"reporting_id\")// parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n// Save Checkboxes\n\nlet cb_ff = flow.get(\"cb_ff\")\nlet cb_fd = flow.get(\"cb_fd\")\n\nlet cb_rf = flow.get(\"cb_rf\")\nlet cb_rd = flow.get(\"cb_rd\")\n\n\nlet cb_network = flow.get(\"cb_network\")\nlet cb_attached = flow.get(\"cb_attached\")\n\n\nlet facts = (cb_ff) ? [flow.get(\"facts\")] : []\nlet rules = (cb_rf) ? flow.get(\"rules\") :[]\nlet attended = cb_attached\nlet showNetwork = cb_network\n\nlet QBESpayload = {\n    facts,     \n    rules, \n    attended, \n    showNetwork,\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nflow.set(\"QBESPayload\",QBESpayload)\nmsg.payload = QBESpayload\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3200,
+        "x": 3220,
         "y": 820,
         "wires": [
             [
-                "2d31a9cbb8b25e8f",
-                "d7f2fcd5e791ba92",
-                "f87a1ec1239428aa"
+                "f87a1ec1239428aa",
+                "bdf7069659cda7af"
             ]
         ]
     },
@@ -3964,15 +3963,16 @@
         "type": "debug",
         "z": "67991373.45438c",
         "name": "debug 23",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3340,
-        "y": 600,
+        "x": 4340,
+        "y": 340,
         "wires": []
     },
     {
@@ -4240,8 +4240,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3630,
-        "y": 900,
+        "x": 4110,
+        "y": 1000,
         "wires": []
     },
     {
@@ -4279,7 +4279,7 @@
                 "valueValue": "true"
             }
         ],
-        "x": 3410,
+        "x": 3850,
         "y": 820,
         "wires": [
             [
@@ -4299,7 +4299,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3690,
+        "x": 4210,
         "y": 820,
         "wires": [
             [
@@ -4563,8 +4563,8 @@
         "className": "",
         "topic": "",
         "name": "Show Job is submitted",
-        "x": 3330,
-        "y": 1000,
+        "x": 3610,
+        "y": 1180,
         "wires": []
     },
     {
@@ -4578,8 +4578,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3120,
-        "y": 900,
+        "x": 3400,
+        "y": 1080,
         "wires": [
             [
                 "2a1010c6c72b92ee"
@@ -4782,6 +4782,118 @@
         "x": 1670,
         "y": 100,
         "wires": []
+    },
+    {
+        "id": "3134b3146429fc29",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3400,
+        "y": 480,
+        "wires": [
+            [
+                "bdf7069659cda7af"
+            ]
+        ]
+    },
+    {
+        "id": "bdf7069659cda7af",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Split RIDs array and prepare for QBES",
+        "func": "\nmsg.payload = flow.get(\"reporting_id\") || []\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3650,
+        "y": 480,
+        "wires": [
+            [
+                "d8efd0a725820987"
+            ]
+        ]
+    },
+    {
+        "id": "27cb39e661a5761a",
+        "type": "delay",
+        "z": "67991373.45438c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 4080,
+        "y": 480,
+        "wires": [
+            [
+                "7f28fb8befeb2f38"
+            ]
+        ]
+    },
+    {
+        "id": "7f28fb8befeb2f38",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Iterate over each RID",
+        "func": "\nlet reporting_id = msg.payload\nlet QBESpayload = flow.get(\"QBESPayload\")\nQBESpayload.reporting_id = parseInt(reporting_id)\n msg.payload = QBESpayload\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4280,
+        "y": 480,
+        "wires": [
+            [
+                "2d31a9cbb8b25e8f",
+                "d7f2fcd5e791ba92"
+            ]
+        ]
+    },
+    {
+        "id": "d8efd0a725820987",
+        "type": "split",
+        "z": "67991373.45438c",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 3910,
+        "y": 240,
+        "wires": [
+            [
+                "27cb39e661a5761a"
+            ]
+        ]
     },
     {
         "id": "5a1e132daec8024a",
