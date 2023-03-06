@@ -77,14 +77,6 @@
         "info": ""
     },
     {
-        "id": "adb3cbccdc688b93",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "813a171cf0470b24",
         "type": "tab",
         "label": "Flow 2",
@@ -726,15 +718,6 @@
         "className": ""
     },
     {
-        "id": "7f1aa02d.2ce9",
-        "type": "ui_tab",
-        "name": "Qbes Editor",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "fe5119d6c50995ed",
         "type": "ui_base",
         "theme": {
@@ -818,7 +801,7 @@
             "name": "QFlow",
             "hideToolbar": "false",
             "allowSwipe": "false",
-            "lockMenu": "icon",
+            "lockMenu": "true",
             "allowTempTheme": "none",
             "dateFormat": "MM/DD/YYYY",
             "sizes": {
@@ -857,7 +840,7 @@
         "id": "aaf91b7e.c5ca7",
         "type": "ui_group",
         "name": "template",
-        "tab": "579134ab.a3cad4",
+        "tab": "",
         "order": 1,
         "disp": true,
         "width": "6",
@@ -867,45 +850,28 @@
         "id": "d7c16b88.658fa8",
         "type": "ui_group",
         "name": "iframe",
-        "tab": "579134ab.a3cad4",
+        "tab": "",
         "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false
     },
     {
-        "id": "579134ab.a3cad4",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "order": 1,
-        "disabled": true,
-        "hidden": false
-    },
-    {
         "id": "99274104.d1d6",
         "type": "ui_group",
         "name": "Weather",
-        "tab": "12e195b2.3de9fa",
+        "tab": "",
         "order": 3,
         "disp": false,
         "width": "5",
         "collapse": false
     },
     {
-        "id": "12e195b2.3de9fa",
-        "type": "ui_tab",
-        "name": "Cameras",
-        "icon": "mi-videogame_asset",
-        "order": 1,
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "e7dc0c12a87bf783",
         "type": "ui_tab",
-        "name": "Workflows",
+        "name": "Rules",
         "icon": "dashboard",
+        "order": 6,
         "disabled": false,
         "hidden": false
     },
@@ -934,7 +900,8 @@
         "id": "da612906.998368",
         "type": "ui_tab",
         "name": "Parameters",
-        "icon": "dashboard",
+        "icon": "home",
+        "order": 4,
         "disabled": false,
         "hidden": false
     },
@@ -945,19 +912,9 @@
         "tab": "e7dc0c12a87bf783",
         "order": 3,
         "disp": true,
-        "width": "6",
+        "width": 30,
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "c76aaa5098c96374",
-        "type": "ui_spacer",
-        "z": "67991373.45438c",
-        "name": "spacer",
-        "group": "440f78388bf9306a",
-        "order": 3,
-        "width": 1,
-        "height": 1
     },
     {
         "id": "5c07c02344a2bd3d",
@@ -1019,6 +976,7 @@
         "type": "ui_tab",
         "name": "Files",
         "icon": "dashboard",
+        "order": 7,
         "disabled": false,
         "hidden": false
     },
@@ -1037,6 +995,7 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
+        "order": 8,
         "disabled": false,
         "hidden": false
     },
@@ -1055,6 +1014,7 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
+        "order": 9,
         "disabled": false,
         "hidden": false
     },
@@ -1114,9 +1074,10 @@
     {
         "id": "67ff17e9.83751",
         "type": "ui_tab",
+        "d": true,
         "name": "Forms Example ",
         "icon": "home",
-        "order": 2,
+        "order": 10,
         "disabled": false,
         "hidden": false
     },
@@ -1147,7 +1108,7 @@
         "type": "ui_tab",
         "name": "LeaderBoard",
         "icon": "dashboard",
-        "order": 3,
+        "order": 11,
         "disabled": false,
         "hidden": false
     },
@@ -1167,6 +1128,7 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "dashboard",
+        "order": 12,
         "disabled": false,
         "hidden": false
     },
@@ -1424,22 +1386,92 @@
     {
         "id": "6f46629ba1286c64",
         "type": "ui_tab",
-        "name": "Notifications",
-        "icon": "dashboard",
-        "order": 12,
+        "name": "Jobs",
+        "icon": "fa-hand-o-right ",
+        "order": 5,
         "disabled": false,
         "hidden": false
     },
     {
         "id": "48c415689cc2322d",
         "type": "ui_group",
-        "name": "Notification",
+        "name": "Submit Jobs",
         "tab": "6f46629ba1286c64",
         "order": 1,
         "disp": true,
-        "width": "24",
+        "width": 23,
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "feff05cd26e0da54",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "34fc56d907f44e90",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f081928bfa9474f1",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8d5c276b9010e981",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5b0ed2ae974ff3e1",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8333ef5178609617",
+        "type": "ui_spacer",
+        "z": "67991373.45438c",
+        "name": "spacer",
+        "group": "440f78388bf9306a",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2a87ea2fcd055deb",
+        "type": "ui_spacer",
+        "z": "2e37e573b3c922d6",
+        "name": "spacer",
+        "group": "48c415689cc2322d",
+        "order": 3,
+        "width": 3,
+        "height": 1
     },
     {
         "id": "9a0d32273f30aad5",
@@ -1939,7 +1971,7 @@
         "type": "function",
         "z": "82cc831b154f3133",
         "name": "Convert Parameter File to Pre-Processed Rules",
-        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n\n// Build conditionstring cs\nlet cs  = r['CONDITION'] || 'PAY_ANN > 0'\n\nlet shortCondition = r['Short Condition'] || ''\n\ncs = (shortCondition == '') ? cs : shortCondition + ' and ' + cs\n\n\n\n\n    let actionStringRHS = ''\n    let action =[] // [{ 'FAILURE': true }]\n    let actionString = (r['ACTIONSTRING']).trim()\n\n    // actionString = (actionString.endsWith(\";\")) ? actionString.slice(0, -1) + \"\" : \"\"\n    \n\n\n  \n\n    let arr = actionString.split(\";\");\n\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n\n        let c_key = key.replace(/[^\\x20-\\x7E]/g, \"\").trim()\n        let c_value = val.replace(\" eq \", \"=\").trim()\n\n        if (key)\n            action.push({ [c_key]: c_value });\n    }\n    \n\n    let sector = r['SECTOR/TRADE'] ? r['SECTOR/TRADE'] : \"All\"\n    let validationType = \"Sector \"+sector\n\n\n\n //&& r['ACTIONSTRING'] != '' ? r['ACTIONSTRING'] :  [{'FAILURE': true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    type: k+2,\n    priority: r['PRIORITY'] || 5,\n    conditionstring:  cs ,\n    message: r['DESCRIPTION'], \n    action,\n    actionString: JSON.stringify(action),\n    validationType,\n    sector\n    })\n\n})\n\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
+        "func": "let preRules = []\n\nmsg.payload.map((r, k) => {\n\n\n// Build conditionstring cs\nlet cs  = r['CONDITION'] || 'PAY_ANN > 0'\n\nlet shortCondition = r['Short Condition'] || ''\n\ncs = (shortCondition == '') ? cs : shortCondition + ' and ' + cs\n\n\n\n\n    let actionStringRHS = ''\n    let action =[] // [{ 'FAILURE': true }]\n    let actionString = (r['ACTIONSTRING']).trim()\n\n    // actionString = (actionString.endsWith(\";\")) ? actionString.slice(0, -1) + \"\" : \"\"\n    \n\n\n  \n\n    let arr = actionString.split(\";\");\n\n    for (let i = 0; i < arr.length; i++) {\n        const equation = arr[i];\n        const [key, val] = equation.split(/(?<=^[^\\=]+)\\=/) //split(\"=\");\n\n\n        let c_key = key.replace(/[^\\x20-\\x7E]/g, \"\").trim()\n        let c_value = val.replace(\" eq \", \"=\").trim()\n\n        if (key)\n            action.push({ [c_key]: c_value });\n    }\n    \n   \n// GET DETAIL TOTALS:\nlet SUM_DET = ''\nlet SUM_DET_ARRAY = []\n\n\n\n\nfor(let j = 0 ; j < 14; ++j){\n    \n    let detVar = r['DETAIL ' + j] ? r['DETAIL ' + j] : ''\n   if(detVar !=='') SUM_DET_ARRAY.push(detVar) \n}\n\n\nif(SUM_DET_ARRAY.length > 0){\n    action.push({ [\"TOTAL\"]: r['TOTAL'] }) \nSUM_DET = SUM_DET_ARRAY.join(' + ')\naction.push({\"SUM_DET\":SUM_DET })\n\n\n}\n    let sector = r['SECTOR/TRADE'] ? r['SECTOR/TRADE'] : \"All\"\n    let validationType = \"Sector \"+sector\n\n\n\n //&& r['ACTIONSTRING'] != '' ? r['ACTIONSTRING'] :  [{'FAILURE': true}]\n    preRules.push({ \n    key: k+2, \n    ruleId: k+2,\n    type: k+2,\n    priority: r['PRIORITY'] || 5,\n    conditionstring:  cs ,\n    message: r['DESCRIPTION'], \n    action,\n    actionString: JSON.stringify(action),\n    validationType,\n    sector\n    })\n\n})\n\nmsg.preRules = preRules\nmsg.params = preRules\nmsg.payload = {paramFile: preRules}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2683,7 +2715,7 @@
         "type": "function",
         "z": "8d5b6ce343b26ccf",
         "name": "Save Events",
-        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = dashboardLog;\nreturn msg;\n",
+        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar dashboardLog = context.get('dashboardLog')|| [];\n\ndashboardLog.push(msg);\nif (dashboardLog.length > 20){\n    // Delete oldest message if > 20\n    dashboardLog.shift();\n    dashboardLog.length = 20;\n} \n\n\n// store the value back\ncontext.set('dashboardLog',dashboardLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = [...dashboardLog];\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2693,8 +2725,7 @@
         "y": 240,
         "wires": [
             [
-                "20fe51011ee16859",
-                "42849eb6f8ee9501"
+                "20fe51011ee16859"
             ]
         ]
     },
@@ -3917,7 +3948,7 @@
         "type": "subflow:8d5b6ce343b26ccf",
         "z": "67991373.45438c",
         "name": "",
-        "x": 3980,
+        "x": 4600,
         "y": 820,
         "wires": []
     },
@@ -3942,20 +3973,19 @@
         "id": "73055769ca44b5f7",
         "type": "function",
         "z": "67991373.45438c",
-        "name": "Create Payload",
-        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n\n\nmsg.payload = {\n    facts: [flow.get(\"facts\")], \n    rules: flow.get(\"rules\"), \n    attended: flow.get(\"cb_attached\"), \n    showNetwork:flow.get(\"cb_network\"),\n    // ruleType: 'validation',\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nreturn msg;",
+        "name": "Save QBES Payload",
+        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = flow.get(\"reporting_id\")// parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n// Save Checkboxes\n\nlet cb_ff = flow.get(\"cb_ff\")\nlet cb_fd = flow.get(\"cb_fd\")\n\nlet cb_rf = flow.get(\"cb_rf\")\nlet cb_rd = flow.get(\"cb_rd\")\n\n\nlet cb_network = flow.get(\"cb_network\") || true\nlet cb_attached = flow.get(\"cb_attached\") || false\n\n\nlet facts = (cb_ff) ? [flow.get(\"facts\")] : []\nlet rules = (cb_rf) ? flow.get(\"rules\") :[]\nlet attended = cb_attached\nlet showNetwork = cb_network\n\nlet QBESpayload = {\n    facts,     \n    rules, \n    attended, \n    showNetwork,\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nflow.set(\"QBESPayload\",QBESpayload)\nmsg.payload = QBESpayload\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3200,
+        "x": 3220,
         "y": 820,
         "wires": [
             [
-                "2d31a9cbb8b25e8f",
-                "d7f2fcd5e791ba92",
-                "f87a1ec1239428aa"
+                "f87a1ec1239428aa",
+                "bdf7069659cda7af"
             ]
         ]
     },
@@ -3968,11 +3998,12 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3340,
-        "y": 600,
+        "x": 4340,
+        "y": 340,
         "wires": []
     },
     {
@@ -4240,8 +4271,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3630,
-        "y": 900,
+        "x": 4110,
+        "y": 1000,
         "wires": []
     },
     {
@@ -4279,7 +4310,7 @@
                 "valueValue": "true"
             }
         ],
-        "x": 3410,
+        "x": 3850,
         "y": 820,
         "wires": [
             [
@@ -4299,7 +4330,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3690,
+        "x": 4210,
         "y": 820,
         "wires": [
             [
@@ -4563,8 +4594,8 @@
         "className": "",
         "topic": "",
         "name": "Show Job is submitted",
-        "x": 3330,
-        "y": 1000,
+        "x": 3610,
+        "y": 1180,
         "wires": []
     },
     {
@@ -4578,8 +4609,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 3120,
-        "y": 900,
+        "x": 3400,
+        "y": 1080,
         "wires": [
             [
                 "2a1010c6c72b92ee"
@@ -4649,7 +4680,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "getrules ready for saving from params file",
-        "func": "let rules = flow.get(\"rules\")\nlet rA = []\nrules.map((r) => {\n    let name = (r.event.name || \"Dynamic Rule\") + \": \"+r.event.ruleId\n    let description = name\n    \n    r.event.ruleId = \"0\"\n    r.event.type = \"0\"\n    \n    \n\n    rA.push({ parsed_rule: r, data: r, name, description, id: 0 })\n})\n\nmsg.payload = {data:rA}\n\n// Send it to the backend for future processing\nreturn msg;\n",
+        "func": "let rules = flow.get(\"rules\")\nlet rA = []\nrules.map((r) => {\n    let name = (r.event.name || \"Dynamic Rule\") + \": \"+r.event.ruleId\n    let description = name\n    \n    r.event.ruleId = \"0\"\n    r.event.type = \"0\"\n    r.event.eventType = \"impute\"\n    \n    \n\n    rA.push({ parsed_rule: r, data: r, name, description, id: 0 })\n})\n\nmsg.payload = {data:rA}\n\n// Send it to the backend for future processing\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4784,6 +4815,118 @@
         "wires": []
     },
     {
+        "id": "3134b3146429fc29",
+        "type": "inject",
+        "z": "67991373.45438c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 3400,
+        "y": 480,
+        "wires": [
+            [
+                "bdf7069659cda7af"
+            ]
+        ]
+    },
+    {
+        "id": "bdf7069659cda7af",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Split RIDs array and prepare for QBES",
+        "func": "\nmsg.payload = flow.get(\"reporting_id\") || []\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3650,
+        "y": 480,
+        "wires": [
+            [
+                "d8efd0a725820987"
+            ]
+        ]
+    },
+    {
+        "id": "27cb39e661a5761a",
+        "type": "delay",
+        "z": "67991373.45438c",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 3940,
+        "y": 540,
+        "wires": [
+            [
+                "7f28fb8befeb2f38"
+            ]
+        ]
+    },
+    {
+        "id": "7f28fb8befeb2f38",
+        "type": "function",
+        "z": "67991373.45438c",
+        "name": "Iterate over each RID",
+        "func": "\nlet reporting_id = msg.payload\nlet QBESpayload = flow.get(\"QBESPayload\")\nQBESpayload.reporting_id = parseInt(reporting_id)\n msg.payload = QBESpayload\n\n \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4280,
+        "y": 480,
+        "wires": [
+            [
+                "2d31a9cbb8b25e8f",
+                "d7f2fcd5e791ba92"
+            ]
+        ]
+    },
+    {
+        "id": "d8efd0a725820987",
+        "type": "split",
+        "z": "67991373.45438c",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 3910,
+        "y": 240,
+        "wires": [
+            [
+                "27cb39e661a5761a"
+            ]
+        ]
+    },
+    {
         "id": "5a1e132daec8024a",
         "type": "inject",
         "z": "2e37e573b3c922d6",
@@ -4893,7 +5036,7 @@
         "id": "cec8ed2593f9fd72",
         "type": "debug",
         "z": "2e37e573b3c922d6",
-        "name": "debug 33",
+        "name": "debug Got data from QBES",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -4902,7 +5045,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
+        "x": 660,
         "y": 540,
         "wires": []
     },
@@ -4911,7 +5054,7 @@
         "type": "function",
         "z": "2e37e573b3c922d6",
         "name": "Save Events",
-        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar notificationLog = context.get('notificationLog')|| [];\nmsg.payload.data = JSON.stringify(msg.payload.data)\nnotificationLog.push(msg.payload);\nif (notificationLog.length > 200){\n    // Delete oldest message if > 20\n    notificationLog.shift();\n    notificationLog.length = 200;\n} \n\ncontext.set('notificationLog', [])\n// store the value back\ncontext.set('notificationLog', notificationLog);\n\n// make it part of the outgoing msg object\nmsg = {};\nmsg.payload = notificationLog;\nreturn msg;\n",
+        "func": "// NK will set the submitted flow to null\n\n// flow.set(\"submitted\", null)\n// initialise the counter to 0 if it doesn't exist already\nvar notificationLog = context.get('notificationLog')|| [];\n// msg.payload.data = JSON.stringify(msg.payload.data)\nnotificationLog.push(msg.payload);\nif (notificationLog.length > 200){\n    // Delete oldest message if > 20\n    notificationLog.shift();\n    notificationLog.length = 200;\n} \n\ncontext.set('notificationLog', [])\n// store the value back\ncontext.set('notificationLog', notificationLog);\n\n// make it part of the outgoing msg object\nmsg = {};\n// msg.payload = {\n//     command: 'addData',\n//     arguments:[msg.payload]\n// }\n\nmsg.payload = [...notificationLog];\nreturn msg;\n",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -4921,8 +5064,7 @@
         "y": 380,
         "wires": [
             [
-                "27055eaf0324d25e",
-                "751a113306f1cfd5"
+                "27055eaf0324d25e"
             ]
         ]
     },
@@ -4970,8 +5112,8 @@
         "z": "2e37e573b3c922d6",
         "name": "",
         "group": "48c415689cc2322d",
-        "order": 3,
-        "width": 8,
+        "order": 4,
+        "width": 6,
         "height": 1,
         "passthru": false,
         "label": "Reset Notifications",
@@ -5017,9 +5159,9 @@
         "z": "2e37e573b3c922d6",
         "group": "48c415689cc2322d",
         "name": "Output",
-        "order": 1,
-        "width": 24,
-        "height": 7,
+        "order": 5,
+        "width": 23,
+        "height": 15,
         "columns": [
             {
                 "field": "DEBUG",
@@ -5027,6 +5169,16 @@
                 "width": "",
                 "align": "left",
                 "formatter": "rownum",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "data.id",
+                "title": "JOBS ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
                 "formatterParams": {
                     "target": "_blank"
                 }
@@ -5060,38 +5212,33 @@
                 "formatterParams": {
                     "target": "_blank"
                 }
-            },
-            {
-                "field": "data",
-                "title": "Data",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
             }
         ],
-        "outputs": 0,
-        "cts": false,
+        "outputs": 1,
+        "cts": true,
         "x": 790,
         "y": 300,
-        "wires": []
+        "wires": [
+            [
+                "751a113306f1cfd5"
+            ]
+        ]
     },
     {
         "id": "751a113306f1cfd5",
         "type": "debug",
         "z": "2e37e573b3c922d6",
-        "name": "debug 34",
+        "name": "JOBS Output",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload.data",
+        "targetType": "jsonata",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 460,
+        "x": 1040,
+        "y": 300,
         "wires": []
     },
     {
@@ -5734,10 +5881,10 @@
         "z": "ae7e9f579855357c",
         "name": "",
         "label": "date",
-        "group": "b42243a688b5a996",
+        "group": "48c415689cc2322d",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": 7,
+        "height": 1,
         "passthru": true,
         "topic": "topic",
         "topicType": "msg",
@@ -5755,10 +5902,10 @@
         "name": "Input Workflow ID",
         "label": "Workflow ID",
         "tooltip": "Enter a Workflow ID from the SPAD",
-        "group": "b42243a688b5a996",
+        "group": "48c415689cc2322d",
         "order": 2,
-        "width": 0,
-        "height": 0,
+        "width": 7,
+        "height": 1,
         "passthru": true,
         "mode": "text",
         "delay": "0",
@@ -5780,9 +5927,9 @@
         "z": "ae7e9f579855357c",
         "group": "440f78388bf9306a",
         "name": "Rules Repository",
-        "order": 2,
-        "width": "14",
-        "height": "6",
+        "order": 1,
+        "width": 29,
+        "height": "15",
         "columns": [
             {
                 "field": "id",
@@ -6401,8 +6548,8 @@
         ],
         "outputs": 1,
         "cts": true,
-        "x": 650,
-        "y": 180,
+        "x": 590,
+        "y": 260,
         "wires": [
             [
                 "e9526a4d013da44f",
@@ -6522,8 +6669,8 @@
         "topicType": "msg",
         "splitLayout": true,
         "className": "",
-        "x": 720,
-        "y": 380,
+        "x": 1060,
+        "y": 460,
         "wires": [
             []
         ]
@@ -6539,8 +6686,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 480,
-        "y": 100,
+        "x": 400,
+        "y": 60,
         "wires": [
             []
         ]

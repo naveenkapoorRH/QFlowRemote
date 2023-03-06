@@ -1,3 +1,41 @@
+Time stamp: March 5 2023
+Name: Naveen
+**completed #1, #2 
+In process: #3,
+TBD: #4- #7**
+# Changes:
+## 1) Rules parsing from the parameters file have been changed in the sub flow for uploading params files
+### 1.1) XLS Spreadsheet should look like this.
+BALANCING ERROR CONDITION	UNIT TYPE	TOTAL	DETAIL 1	DETAIL 2
+TRUCK_NUM_TOT != sum(TRUCK_WD_NUM,TRUCK_WOD_NUM)		TRUCK_NUM_TOT	TRUCK_WD_NUM	TRUCK_WOD_NUM
+TRUCK_NUM_TOT != sum(TRUCK_WD_NUM,TRUCK_WOD_NUM)	KAU	TRUCK_NUM_TOT	TRUCK_WD_NUM	TRUCK_WOD_NUM
+
+There are 14 columns in the spreadsheet. Add all DETAIL 1, DETAIL...14 and make it equal to an action like so:
+
+[{TOTAL":"TRUCK_NUM_TOT"},{"SUM_DET":"TRUCK_WD_NUM + TRUCK_WOD_NUM"}]
+
+## 2) csv column for actionString instead of FAILURE1 or FAILURE{#} its all converted to FAILURE for each row in the params csv file
+ACTION	ACTIONSTRING
+SET FAILURE FLAG	naics00 = naics
+SET FAILURE FLAG	FAILED=1
+SET FAILURE FLAG	FAILED=1
+
+RULES are parsed and saved with new action items..
+
+
+## 3) Check if the cb_flags are set properly and pass only those flow variables that have cb checked
+## 4) Iterate with a timer on the reporting_ids
+## 5) Test with facts files
+## 6) Add Balance Module
+## 7) Add router from http in and route by topic/switch to go to the correct flow
+
+
+
+
+
+
+
+
 QFlow
 =====
 Time stamp: 3:37 Monday 27 Feb
