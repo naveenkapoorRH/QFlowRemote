@@ -2725,8 +2725,7 @@
         "y": 240,
         "wires": [
             [
-                "20fe51011ee16859",
-                "42849eb6f8ee9501"
+                "20fe51011ee16859"
             ]
         ]
     },
@@ -3539,7 +3538,7 @@
         "type": "debug",
         "z": "67991373.45438c",
         "name": "debug 5",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3975,7 +3974,7 @@
         "type": "function",
         "z": "67991373.45438c",
         "name": "Save QBES Payload",
-        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = flow.get(\"reporting_id\")// parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n// Save Checkboxes\n\nlet cb_ff = flow.get(\"cb_ff\")\nlet cb_fd = flow.get(\"cb_fd\")\n\nlet cb_rf = flow.get(\"cb_rf\")\nlet cb_rd = flow.get(\"cb_rd\")\n\n\nlet cb_network = flow.get(\"cb_network\")\nlet cb_attached = flow.get(\"cb_attached\")\n\n\nlet facts = (cb_ff) ? [flow.get(\"facts\")] : []\nlet rules = (cb_rf) ? flow.get(\"rules\") :[]\nlet attended = cb_attached\nlet showNetwork = cb_network\n\nlet QBESpayload = {\n    facts,     \n    rules, \n    attended, \n    showNetwork,\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nflow.set(\"QBESPayload\",QBESpayload)\nmsg.payload = QBESpayload\nreturn msg;",
+        "func": "// workflow id will default to 0 if not provided. It corresponds to the spad.id db col.\n// \nlet reporting_id = flow.get(\"reporting_id\")// parseInt(flow.get(\"reporting_id\") || 2002865554)\nflow.set(\"startTime\", new Date().toLocaleString())\n// Save Checkboxes\n\nlet cb_ff = flow.get(\"cb_ff\")\nlet cb_fd = flow.get(\"cb_fd\")\n\nlet cb_rf = flow.get(\"cb_rf\")\nlet cb_rd = flow.get(\"cb_rd\")\n\n\nlet cb_network = flow.get(\"cb_network\") || true\nlet cb_attached = flow.get(\"cb_attached\") || false\n\n\nlet facts = (cb_ff) ? [flow.get(\"facts\")] : []\nlet rules = (cb_rf) ? flow.get(\"rules\") :[]\nlet attended = cb_attached\nlet showNetwork = cb_network\n\nlet QBESpayload = {\n    facts,     \n    rules, \n    attended, \n    showNetwork,\n    ruleType: (flow.get(\"validationType\")) || [],\n    parent_id: flow.get(\"workFlowId\") || 0,\n    reporting_id\n}\nflow.set(\"QBESPayload\",QBESpayload)\nmsg.payload = QBESpayload\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3995,7 +3994,7 @@
         "type": "debug",
         "z": "67991373.45438c",
         "name": "debug 23",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5037,7 +5036,7 @@
         "id": "cec8ed2593f9fd72",
         "type": "debug",
         "z": "2e37e573b3c922d6",
-        "name": "debug 33",
+        "name": "debug Got data from QBES",
         "active": true,
         "tosidebar": true,
         "console": false,
@@ -5046,7 +5045,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
+        "x": 660,
         "y": 540,
         "wires": []
     },
@@ -5175,6 +5174,16 @@
                 }
             },
             {
+                "field": "data.id",
+                "title": "JOBS ID",
+                "width": "",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
                 "field": "message",
                 "title": "Message",
                 "width": "",
@@ -5197,16 +5206,6 @@
             {
                 "field": "sentTo",
                 "title": "Sent To",
-                "width": "",
-                "align": "left",
-                "formatter": "plaintext",
-                "formatterParams": {
-                    "target": "_blank"
-                }
-            },
-            {
-                "field": "data",
-                "title": "Data",
                 "width": "",
                 "align": "left",
                 "formatter": "plaintext",
