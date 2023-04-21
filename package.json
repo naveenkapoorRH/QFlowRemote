@@ -2,6 +2,9 @@
     "name": "QFlow",
     "description": "Node-red Functionality",
     "version": "0.0.2",
+    "scripts": {
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"
+    },
     "dependencies": {},
     "node-red": {
         "settings": {
